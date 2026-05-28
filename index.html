@@ -244,6 +244,24 @@
   details.transcript-box { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; }
   details.transcript-box summary { cursor: pointer; padding: 14px 0; font-weight: 700; color: var(--text); }
 
+  /* Result rings + share */
+  .result-rings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+  @media (max-width: 520px){ .result-rings { grid-template-columns: 1fr; } }
+  .ring-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 18px 14px; text-align: center; }
+  .ring-card .ring-label { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .ring-card .ring-num { font-size: 1.9rem; font-weight: 800; line-height: 1; }
+  .ring-card .ring-den { font-size: 0.8rem; color: var(--muted); }
+  .ring-card .ring-verdict { margin-top: 10px; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 999px; display: inline-block; }
+  .share-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .share-btn {
+    display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none;
+    padding: 12px 14px; border-radius: 11px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text); font-size: 0.88rem; font-weight: 600;
+    font-family: inherit; transition: all 0.18s;
+  }
+  .share-btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .share-btn .s-ico { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #06231a; font-weight: 800; font-size: 0.8rem; flex-shrink: 0; }
+
   /* Lightbox */
   .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
   .lightbox.show { display: flex; }
@@ -270,9 +288,10 @@
     <button class="tab active" data-tab="ad8">① AD8 篩檢</button>
     <button class="tab" data-tab="risk">② 14 危險因子</button>
     <button class="tab" data-tab="rx">③ 9 大生活處方</button>
-    <button class="tab" data-tab="edu">④ 衛教知識</button>
-    <button class="tab" data-tab="media">⑤ 學習資源</button>
-    <button class="tab" data-tab="src">⑥ 資料來源</button>
+    <button class="tab" data-tab="result">④ 檢測結果</button>
+    <button class="tab" data-tab="edu">⑤ 衛教知識</button>
+    <button class="tab" data-tab="media">⑥ 學習資源</button>
+    <button class="tab" data-tab="src">⑦ 資料來源</button>
   </nav>
 
   <main>
@@ -321,7 +340,40 @@
       </div>
     </section>
 
-    <!-- ④ EDU -->
+    <!-- ④ RESULT / 檢測結果 -->
+    <section class="panel" id="panel-result">
+      <div class="section-title">檢測結果</div>
+      <div class="section-sub">以下彙整你在前三項的作答。可一鍵打包匯出，或分享給家人 / 醫師參考。</div>
+
+      <!-- 三項結果總覽 -->
+      <div class="result-rings" id="result-rings"></div>
+
+      <!-- 綜合判讀 -->
+      <div class="media-card" id="result-verdict-card">
+        <h3>🧾 綜合判讀</h3>
+        <div id="result-verdict" style="font-size:0.95rem;line-height:1.8;color:var(--text);">請先完成 ①②③ 的作答。</div>
+      </div>
+
+      <!-- 一鍵打包 -->
+      <div class="media-card">
+        <h3>📦 一鍵打包 · 案件匯出</h3>
+        <div class="media-sub">完整報告含：三項結果、逐題作答、9 大處方清單、學習資源連結與全部來源出處。</div>
+        <div class="share-grid">
+          <button class="share-btn" data-act="md"><span class="s-ico" style="background:#34d399">MD</span><span>下載完整報告</span></button>
+          <button class="share-btn" data-act="copy"><span class="s-ico" style="background:#fbbf24">📋</span><span>複製摘要</span></button>
+          <a class="share-btn" data-act="telegram" id="sh-tg" target="_blank"><span class="s-ico" style="background:#29b6f6">TG</span><span>Telegram</span></a>
+          <a class="share-btn" data-act="line" id="sh-line" target="_blank"><span class="s-ico" style="background:#06c755">L</span><span>LINE</span></a>
+          <a class="share-btn" data-act="email" id="sh-email" target="_blank"><span class="s-ico" style="background:#60a5fa">@</span><span>Email</span></a>
+        </div>
+        <div style="margin-top:12px;font-size:0.78rem;color:var(--muted);line-height:1.6;">
+          📡 分享內容會自動附上本站連結與 <a href="https://t.me/sam00may" target="_blank" style="color:#29b6f6;">t.me/sam00may</a>。Email 會帶完整報告與來源出處。
+        </div>
+      </div>
+
+      <div class="disclaimer" style="margin:0;">⚠️ 本結果為衛教自評，<strong>不能取代醫療診斷</strong>。AD8 有 2 項以上改變、或危險因子偏多時，請至神經內科 / 記憶門診評估。</div>
+    </section>
+
+    <!-- ⑤ EDU -->
     <section class="panel" id="panel-edu">
       <div class="section-title">衛教知識 · 你不知道的失智真相</div>
       <div class="section-sub">摘自馬西屏《寶傑說健康》訪談與國際研究。</div>
@@ -389,7 +441,7 @@
       </div>
     </section>
 
-    <!-- ⑤ MEDIA / 學習資源 -->
+    <!-- ⑥ MEDIA / 學習資源 -->
     <section class="panel" id="panel-media">
       <div class="section-title">學習資源 · NotebookLM 工作室</div>
       <div class="section-sub">影片、語音、簡報、資訊圖表、字卡、心智圖與文字稿 — 全部由「顛覆你的理解·失智症」NotebookLM 筆記本產出。</div>
@@ -554,16 +606,18 @@
       </div>
     </section>
 
-    <!-- ⑥ SRC -->
+    <!-- ⑦ SRC -->
     <section class="panel" id="panel-src">
       <div class="section-title">資料來源</div>
-      <div class="section-sub">本頁內容整理自以下來源，並以 NotebookLM 彙整。</div>
+      <div class="section-sub">主來源影片，以及影片中提及的所有研究、機構與出處。</div>
+
+      <h4 style="color:var(--accent);font-size:0.95rem;margin:0 0 10px;">🎬 主來源</h4>
       <div class="info-card">
         <div class="src-item">
           <div class="src-ico">▶️</div>
           <div>
-            <a href="https://www.youtube.com/results?search_query=馬西屏+對抗失智10年+寶傑說健康" target="_blank">【全集】馬西屏對抗失智 10 年揭秘「腦斷片」關鍵症狀</a>
-            <div class="muted">《寶傑說健康》劉寶傑 × 馬西屏．2026.05.23</div>
+            <a href="https://www.youtube.com/watch?v=Q0H4lv19vV0" target="_blank">【全集】馬英九駁失智影片曝光「成語都忘了」？馬西屏對抗失智 10 年揭秘「腦斷片」關鍵症狀</a>
+            <div class="muted">《寶傑說健康》劉寶傑 × 馬西屏．2026.05.23　·　YouTube：Q0H4lv19vV0</div>
           </div>
         </div>
         <div class="src-item">
@@ -573,25 +627,23 @@
             <div class="muted">逐字稿與重點彙整（需登入有權限的 Google 帳號）</div>
           </div>
         </div>
-        <div class="src-item">
-          <div class="src-ico">🔬</div>
-          <div>
-            <a href="https://www.thelancet.com/commissions/dementia2024" target="_blank">The Lancet Commission on dementia prevention 2024</a>
-            <div class="muted">14 項可控危險因子，可預防約 45% 失智</div>
-          </div>
-        </div>
-        <div class="src-item">
-          <div class="src-ico">📡</div>
-          <div>
-            <a href="https://t.me/sam00may" target="_blank">Telegram 頻道 · t.me/sam00may</a>
-            <div class="muted">身、心、靈平衡資訊分享</div>
-          </div>
-        </div>
       </div>
+
+      <h4 style="color:var(--accent);font-size:0.95rem;margin:18px 0 10px;">🔬 影片中提及的研究與出處</h4>
+      <div class="info-card" id="src-list"></div>
+
+      <h4 style="color:var(--accent);font-size:0.95rem;margin:18px 0 10px;">👤 影片中提及的失智案例</h4>
+      <div class="info-card">
+        <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;">雷根（美國前總統）、布魯斯·威利（額顳葉型失智）、林芳郁（前台大醫院長）、馬英九、陸鏗（資深新聞人）等公眾人物案例，皆於影片中被提及作為說明。</p>
+      </div>
+
       <div class="btn-row">
-        <button class="btn" id="btn-export">📄 匯出我的檢測結果</button>
+        <button class="btn" id="btn-export">📄 匯出完整報告</button>
         <a class="btn ghost" href="https://questions.3minstest.com">← 回測驗中心</a>
       </div>
+      <p style="font-size:0.76rem;color:var(--muted);margin-top:14px;line-height:1.6;">
+        ※ 影片為談話性節目，部分研究細節由訪談內容整理；正式醫療決策請以原始期刊與醫師診斷為準。
+      </p>
     </section>
   </main>
 
@@ -731,6 +783,7 @@ function updateScores(){
   else if(x>=7){ xv.textContent='大腦保護力強'; xv.className='score-verdict v-ok'; }
   else if(x>=4){ xv.textContent='做得不錯，可再加'; xv.className='score-verdict v-warn'; }
   else { xv.textContent='請從今天開始'; xv.className='score-verdict v-danger'; }
+  if(document.getElementById('panel-result')?.classList.contains('active')){ renderResult(); refreshShareLinks(); }
   save();
 }
 
@@ -741,6 +794,7 @@ document.querySelectorAll('.tab').forEach(t=>{
     document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
     t.classList.add('active');
     document.getElementById('panel-'+t.dataset.tab).classList.add('active');
+    if(t.dataset.tab==='result'){ renderResult(); refreshShareLinks(); }
     window.scrollTo({top:0,behavior:'smooth'});
   });
 });
@@ -764,32 +818,163 @@ function load(){
   }catch{}
 }
 
-/* ── export ── */
-document.getElementById('btn-export').addEventListener('click', ()=>{
+/* ══════════ SOURCES（影片中提及的研究與出處）══════════ */
+const SITE = 'https://dementia.3minstest.com';
+const CHANNEL = 'https://t.me/sam00may';
+const VIDEO = 'https://www.youtube.com/watch?v=Q0H4lv19vV0';
+const SOURCES = [
+  ['🔬','The Lancet《刺胳針》失智症預防委員會','危險因子報告：2017年9項 → 2020年12項 → 2024年14項；去除可預防／延緩約 45% 失智','https://www.thelancet.com/commissions/dementia2024'],
+  ['🇫🇮','芬蘭 FINGER 多重生活干預研究','證實飲食、運動、認知訓練、血管風險管理等多重干預可延緩認知退化',''],
+  ['🎓','哈佛大學 × 麻省理工學院 43 年追蹤研究','大規模追蹤分析生活習慣與失智風險的關聯',''],
+  ['🇯🇵','日本厚生省研究','牙齒少於 20 顆失智風險增 5 倍以上；推動「8020 計劃」與「失智症基本法」',''],
+  ['🇺🇸','美國 FDA','核准失智症「抽血檢測」；核准清除類澱粉蛋白的單株抗體新藥',''],
+  ['💉','單株抗體新藥（lecanemab / donanemab 類）','清除腦中 β 類澱粉蛋白；療程 12–18 個月、約 150 萬元、約 14% 適合',''],
+  ['🌿','台灣衛福部 國家中醫藥研究所｜「國家清腦一號」','科學中藥，動物實驗已證實清除類澱粉蛋白，準備技轉與申請藥證',''],
+  ['🍵','咖啡 / 茶 延緩失智研究','咖啡延緩 18%、茶 14%、兩者皆飲 34%；咖啡每日建議 ≤ 3 杯',''],
+  ['🚶','步行步數研究','每日 3000 步延緩 3 年 … 7500 步延緩 7 年（上限），每次須連續 15 分鐘',''],
+  ['💼','退休年齡研究','晚退休 1 年失智減緩 3.2%；60 歲退休比 65 歲風險高約 43%',''],
+  ['🧪','微量元素研究','缺乏維生素 B12、微量元素「鋰（Li）」與失智相關',''],
+  ['🏭','環境毒素研究','重金屬、PM2.5、塑膠微粒與失智的關聯',''],
+  ['🩺','臨床醫師見解','恩主公醫院副院長 陳昌明醫師等專科醫師的臨床建議',''],
+  ['💡','查理·蒙格（Charlie Munger）','「避開失敗」逆向思考的引用',''],
+];
+/* render sources list into ⑦ */
+(function(){
+  const el = document.getElementById('src-list'); if(!el) return;
+  el.innerHTML = SOURCES.map(s=>`
+    <div class="src-item">
+      <div class="src-ico">${s[0]}</div>
+      <div>
+        ${s[3] ? `<a href="${s[3]}" target="_blank">${s[1]}</a>` : `<b>${s[1]}</b>`}
+        <div class="muted">${s[2]}</div>
+      </div>
+    </div>`).join('');
+})();
+
+/* ══════════ RESULT 彙整 ══════════ */
+function verdicts(){
   const a=sum(state.ad8), r=sum(state.risk), x=sum(state.rx);
-  const lines=[];
-  lines.push('# 我的失智症風險檢測結果');
-  lines.push('日期：'+new Date().toLocaleString());
-  lines.push('');
-  lines.push('## ① AD8 篩檢：'+a+' / 8 項有改變　'+(a>=2?'⚠️ 建議就醫評估':'✅ 目前較無疑慮'));
-  AD8.forEach((t,i)=>{ if(state.ad8[i]!==undefined) lines.push(`- [${state.ad8[i]?'有改變':'無'}] ${t}`); });
-  lines.push('');
-  lines.push('## ② 危險因子：符合 '+r+' / 14 項');
-  RISK.forEach((t,i)=>{ if(state.risk[i]) lines.push('- ⚠️ '+t[0]); });
-  lines.push('');
-  lines.push('## ③ 生活處方：已執行 '+x+' / 9 項');
-  RX.forEach((t,i)=>{ lines.push(`- [${state.rx[i]?'✅ 已做':'⬜ 還沒'}] ${t[0]} — ${t[1]}`); });
-  lines.push('');
-  lines.push('---');
-  lines.push('資料來源：馬西屏《寶傑說健康》2026.05.23 · The Lancet 2024 · 整理 t.me/sam00may');
-  lines.push('※ 本結果為衛教自評，非醫療診斷。');
-  const blob=new Blob([lines.join('\n')],{type:'text/markdown'});
-  const url=URL.createObjectURL(blob); const aEl=document.createElement('a');
-  aEl.href=url; aEl.download='失智症檢測_'+Date.now()+'.md';
-  document.body.appendChild(aEl); aEl.click(); aEl.remove(); URL.revokeObjectURL(url);
-  const tt=document.getElementById('toast'); tt.textContent='已匯出檢測結果'; tt.classList.add('show');
-  setTimeout(()=>tt.classList.remove('show'),2200);
+  return {
+    a, r, x,
+    aAns: countAnswered(state.ad8), rAns: countAnswered(state.risk), xAns: countAnswered(state.rx),
+    aV: a>=2 ? '建議就醫評估' : '目前較無疑慮',
+    rV: r>=6 ? '危險因子偏多' : r>=3 ? '可再加強預防' : '控制良好',
+    xV: x>=7 ? '大腦保護力強' : x>=4 ? '做得不錯，可再加' : '請從今天開始',
+  };
+}
+function renderResult(){
+  const v = verdicts();
+  const ring = (label,num,den,vd,cls)=>`
+    <div class="ring-card">
+      <div class="ring-label">${label}</div>
+      <div class="ring-num" style="color:${cls}">${num}</div>
+      <div class="ring-den">／ ${den}</div>
+      <div class="ring-verdict" style="background:${cls}22;color:${cls}">${vd}</div>
+    </div>`;
+  const cA = v.a>=2?'var(--danger)':'var(--accent)';
+  const cR = v.r>=6?'var(--danger)':v.r>=3?'var(--warn)':'var(--accent)';
+  const cX = v.x>=7?'var(--accent)':v.x>=4?'var(--warn)':'var(--danger)';
+  document.getElementById('result-rings').innerHTML =
+    ring('① AD8 有改變', v.a, '8 項', v.aAns? v.aV:'未作答', cA) +
+    ring('② 危險因子', v.r, '14 項', v.rAns? v.rV:'未作答', cR) +
+    ring('③ 生活處方', v.x, '9 項', v.xAns? v.xV:'未作答', cX);
+
+  const vc = document.getElementById('result-verdict');
+  if(!v.aAns && !v.rAns && !v.xAns){ vc.textContent='請先完成 ①②③ 的作答，這裡會自動產生你的綜合判讀。'; return; }
+  const parts=[];
+  parts.push(`AD8 篩檢有 <b>${v.a}</b> 項改變 — <b style="color:${cA}">${v.aV}</b>。` + (v.a>=2?'（有 2 項以上改變，建議至記憶門診評估。）':''));
+  parts.push(`符合 <b>${v.r}</b> 項危險因子 — <b style="color:${cR}">${v.rV}</b>。`);
+  parts.push(`9 大生活處方已執行 <b>${v.x}</b> 項 — <b style="color:${cX}">${v.xV}</b>。`);
+  const todo = RX.map((t,i)=>state.rx[i]?null:t[0]).filter(Boolean);
+  if(todo.length) parts.push('建議優先補強：' + todo.slice(0,4).join('、') + '。');
+  vc.innerHTML = parts.map(p=>'• '+p).join('<br>');
+}
+
+/* ══════════ 文字組裝 ══════════ */
+function summaryText(){
+  const v=verdicts();
+  return [
+    '🧠 我的失智症風險檢測結果',
+    '',
+    `① AD8 篩檢：${v.a}/8 項有改變（${v.aAns?v.aV:'未作答'}）`,
+    `② 危險因子：符合 ${v.r}/14 項（${v.rAns?v.rV:'未作答'}）`,
+    `③ 生活處方：已執行 ${v.x}/9 項（${v.xAns?v.xV:'未作答'}）`,
+    '',
+    `完整檢測 → ${SITE}`,
+    `📡 ${CHANNEL}`
+  ].join('\n');
+}
+function sourcesText(){
+  const lines=['【資料來源】'];
+  lines.push(`主來源：馬西屏《寶傑說健康》2026.05.23　${VIDEO}`);
+  lines.push('NotebookLM：顛覆你的理解-失智症');
+  lines.push('影片中提及之研究與出處：');
+  SOURCES.forEach((s,i)=>lines.push(`${i+1}. ${s[1]}｜${s[2]}${s[3]?'（'+s[3]+'）':''}`));
+  lines.push('案例：雷根、布魯斯·威利、林芳郁、馬英九、陸鏗');
+  return lines.join('\n');
+}
+function fullReport(){
+  const v=verdicts(); const L=[];
+  L.push('# 失智症風險檢測 · 完整報告');
+  L.push('日期：'+new Date().toLocaleString());
+  L.push('檢測站：'+SITE);
+  L.push('');
+  L.push('## 一、檢測結果總覽');
+  L.push(`- ① AD8 篩檢：${v.a} / 8 項有改變 — ${v.aAns?v.aV:'未作答'}`);
+  L.push(`- ② 危險因子：符合 ${v.r} / 14 項 — ${v.rAns?v.rV:'未作答'}`);
+  L.push(`- ③ 生活處方：已執行 ${v.x} / 9 項 — ${v.xAns?v.xV:'未作答'}`);
+  L.push('');
+  L.push('## 二、AD8 逐題作答');
+  AD8.forEach((t,i)=>{ if(state.ad8[i]!==undefined) L.push(`- [${state.ad8[i]?'有改變':'無'}] ${t}`); });
+  L.push('');
+  L.push('## 三、符合的危險因子');
+  const rf=RISK.map((t,i)=>state.risk[i]?'- ⚠️ '+t[0]+'（'+t[1]+'）':null).filter(Boolean);
+  L.push(rf.length?rf.join('\n'):'（無 / 未作答）');
+  L.push('');
+  L.push('## 四、9 大生活處方執行狀況');
+  RX.forEach((t,i)=>L.push(`- [${state.rx[i]?'✅ 已做':'⬜ 還沒'}] ${t[0]} — ${t[1]}`));
+  L.push('');
+  L.push('## 五、學習資源');
+  L.push('- 原始影片：'+VIDEO);
+  L.push('- 線上檢測與影音 / 簡報 / 字卡：'+SITE+'（⑥ 學習資源）');
+  L.push('- 測驗中心：https://questions.3minstest.com');
+  L.push('');
+  L.push('## 六、'+sourcesText());
+  L.push('');
+  L.push('---');
+  L.push('※ 本報告為衛教自評，非醫療診斷。整理：'+CHANNEL);
+  return L.join('\n');
+}
+
+/* ══════════ 動作：下載 / 複製 / 分享 ══════════ */
+function toastMsg(m){ const t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2200); }
+function downloadReport(){
+  const blob=new Blob([fullReport()],{type:'text/markdown'});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a');
+  a.href=url; a.download='失智症檢測報告_'+Date.now()+'.md';
+  document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  toastMsg('已下載完整報告');
+}
+function refreshShareLinks(){
+  const sum_=encodeURIComponent(summaryText());
+  const url=encodeURIComponent(SITE);
+  const emailBody=encodeURIComponent(summaryText()+'\n\n'+sourcesText());
+  const subj=encodeURIComponent('我的失智症風險檢測結果');
+  const tg=document.getElementById('sh-tg'), ln=document.getElementById('sh-line'), em=document.getElementById('sh-email');
+  if(tg) tg.href=`https://t.me/share/url?url=${url}&text=${sum_}`;
+  if(ln) ln.href=`https://line.me/R/msg/text/?${sum_}`;
+  if(em) em.href=`mailto:?subject=${subj}&body=${emailBody}`;
+}
+document.querySelectorAll('.share-btn').forEach(b=>{
+  b.addEventListener('click', async e=>{
+    const act=b.dataset.act;
+    if(act==='md'){ e.preventDefault(); downloadReport(); }
+    else if(act==='copy'){ e.preventDefault(); try{ await navigator.clipboard.writeText(summaryText()); toastMsg('已複製摘要'); }catch{ toastMsg('複製失敗'); } }
+    // telegram / line / email are <a> with href set by refreshShareLinks
+  });
 });
+/* legacy 匯出鈕（在 ⑦ 資料來源頁）→ 下載完整報告 */
+document.getElementById('btn-export').addEventListener('click', downloadReport);
 
 /* ── Flashcards (fetch from assets/flashcards-1.json) ── */
 let fcCards = [], fcIdx = 0;
