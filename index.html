@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>失智症風險檢測 · AD8 篩檢 + 14 危險因子自評</title>
+<meta name="description" content="整合馬西屏對抗失智10年經驗與國際研究（The Lancet 14項危險因子、AD8極早期篩檢）。3分鐘自我評估失智風險，附9大生活處方。">
+<style>
+  :root {
+    --bg: #0a0f0d;
+    --surface: #121a16;
+    --card: #18221d;
+    --accent: #34d399;
+    --accent2: #22d3ee;
+    --warn: #fbbf24;
+    --danger: #f87171;
+    --text: #e6f0ea;
+    --muted: #8ba89a;
+    --border: #25342c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    min-height: 100vh; line-height: 1.7;
+  }
+  a { color: var(--accent); }
+
+  /* HEADER */
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,15,13,0.9); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 14px; padding: 12px 20px;
+  }
+  .topbar .logo { font-weight: 800; font-size: 0.98rem; flex: 1; }
+  .topbar .logo span { color: var(--accent); }
+  .topbar a.home { font-size: 0.8rem; color: var(--muted); text-decoration: none; padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px; }
+  .topbar a.home:hover { color: var(--text); border-color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    text-align: center; padding: 56px 24px 36px;
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(52,211,153,0.16) 0%, transparent 70%);
+  }
+  .badge {
+    display: inline-block; padding: 4px 14px; margin-bottom: 18px;
+    background: rgba(52,211,153,0.14); border: 1px solid rgba(52,211,153,0.4);
+    border-radius: 999px; font-size: 12px; color: var(--accent);
+    letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5.5vw, 3.4rem); font-weight: 800; margin-bottom: 14px;
+    background: linear-gradient(135deg, #e6f0ea 20%, var(--accent) 60%, var(--accent2) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .hero p { color: var(--muted); max-width: 600px; margin: 0 auto 8px; font-size: 1.02rem; }
+  .hero .src-note { font-size: 0.82rem; color: var(--muted); margin-top: 14px; }
+  .disclaimer {
+    max-width: 760px; margin: 18px auto 0; padding: 12px 16px;
+    background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.3);
+    border-radius: 10px; font-size: 0.82rem; color: var(--warn); line-height: 1.6;
+  }
+
+  /* NAV TABS */
+  .tabs {
+    position: sticky; top: 53px; z-index: 90;
+    display: flex; gap: 6px; overflow-x: auto; padding: 12px 20px;
+    background: rgba(10,15,13,0.9); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border); justify-content: center; flex-wrap: wrap;
+  }
+  .tab {
+    white-space: nowrap; padding: 8px 16px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--card); color: var(--muted);
+    font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s;
+  }
+  .tab.active { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #06231a; border-color: transparent; }
+  .tab:hover:not(.active) { color: var(--text); }
+
+  main { max-width: 820px; margin: 0 auto; padding: 32px 20px 80px; }
+  .panel { display: none; animation: fade 0.3s ease both; }
+  .panel.active { display: block; }
+  @keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .section-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; }
+  .section-sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 24px; }
+
+  /* QUESTION ITEM */
+  .q-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; transition: border-color 0.2s;
+  }
+  .q-item.answered { border-color: rgba(52,211,153,0.4); }
+  .q-head { display: flex; gap: 12px; margin-bottom: 14px; }
+  .q-no {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 8px;
+    background: var(--surface); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 700; color: var(--accent);
+  }
+  .q-text { font-size: 0.98rem; font-weight: 600; line-height: 1.5; }
+  .q-hint { font-size: 0.82rem; color: var(--muted); font-weight: 400; margin-top: 4px; }
+  .opts { display: flex; gap: 10px; }
+  .opt {
+    flex: 1; padding: 10px; border-radius: 10px; text-align: center; cursor: pointer;
+    border: 1.5px solid var(--border); background: var(--surface); color: var(--muted);
+    font-size: 0.9rem; font-weight: 600; font-family: inherit; transition: all 0.15s;
+  }
+  .opt:hover { border-color: var(--accent); color: var(--text); }
+  .opt.sel-yes { background: rgba(248,113,113,0.18); border-color: var(--danger); color: #fecaca; }
+  .opt.sel-no { background: rgba(52,211,153,0.18); border-color: var(--accent); color: #bbf7d0; }
+
+  /* SCORE BAR */
+  .score-box {
+    position: sticky; bottom: 0; margin-top: 20px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px 20px; box-shadow: 0 -8px 24px rgba(0,0,0,0.3);
+  }
+  .score-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .score-num { font-size: 1.6rem; font-weight: 800; }
+  .score-label { font-size: 0.85rem; color: var(--muted); }
+  .score-verdict { font-size: 0.92rem; font-weight: 700; padding: 6px 14px; border-radius: 999px; }
+  .v-ok { background: rgba(52,211,153,0.16); color: var(--accent); }
+  .v-warn { background: rgba(251,191,36,0.16); color: var(--warn); }
+  .v-danger { background: rgba(248,113,113,0.16); color: var(--danger); }
+  .score-track { height: 6px; background: var(--surface); border-radius: 99px; overflow: hidden; margin-top: 12px; }
+  .score-fill { height: 100%; border-radius: 99px; transition: all 0.4s; }
+  .score-advice { font-size: 0.85rem; color: var(--muted); margin-top: 12px; line-height: 1.6; }
+
+  /* CARDS / EDU */
+  .info-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 20px; margin-bottom: 16px;
+  }
+  .info-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+  .info-card h4 { font-size: 0.96rem; margin: 14px 0 6px; color: var(--text); }
+  .info-card p, .info-card li { font-size: 0.92rem; color: var(--text); }
+  .info-card ul { padding-left: 20px; margin: 8px 0; }
+  .info-card li { margin-bottom: 6px; }
+  .info-card .muted { color: var(--muted); font-size: 0.85rem; }
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 12px; margin: 14px 0; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px; text-align: center; }
+  .stat .big { font-size: 1.6rem; font-weight: 800; color: var(--accent); }
+  .stat .sm { font-size: 0.78rem; color: var(--muted); }
+  .rank-list { counter-reset: r; }
+  .rank-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .rank-item:last-child { border-bottom: none; }
+  .rank-badge { flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.82rem; color: var(--accent); }
+  .rank-badge.top { background: var(--danger); color: #fff; border-color: transparent; }
+  .tag { display: inline-block; font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; background: rgba(52,211,153,0.14); color: var(--accent); margin-left: 6px; }
+  .tag.new { background: rgba(248,113,113,0.18); color: var(--danger); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+    padding: 12px 22px; border-radius: 10px; font-size: 0.92rem; font-weight: 700;
+    border: none; font-family: inherit; transition: all 0.2s;
+    background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #06231a;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--muted); }
+  .btn.ghost:hover { color: var(--text); border-color: var(--accent); }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+
+  .src-item { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .src-item:last-child { border-bottom: none; }
+  .src-ico { font-size: 22px; }
+  .src-item a { font-weight: 600; }
+
+  footer { text-align: center; padding: 30px 16px; color: var(--muted); font-size: 0.82rem; border-top: 1px solid var(--border); line-height: 1.8; }
+  footer a { text-decoration: none; }
+
+  .toast {
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px);
+    background: var(--card); border: 1px solid var(--accent); color: var(--text);
+    padding: 12px 20px; border-radius: 10px; font-size: 0.88rem; z-index: 1000; opacity: 0; transition: all 0.3s;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">🧠 失智症<span>風險檢測</span></div>
+    <a class="home" href="https://questions.3minstest.com">← 測驗中心</a>
+    <a class="home" href="https://t.me/sam00may" target="_blank">📡 頻道</a>
+  </div>
+
+  <header class="hero">
+    <div class="badge">DEMENTIA RISK CHECK</div>
+    <h1>失智症風險檢測</h1>
+    <p>整合資深名嘴<strong>馬西屏</strong>對抗失智 10 年的親身經驗，以及 <strong>The Lancet</strong>、哈佛、芬蘭等國際研究。3 分鐘自我評估，附 9 大生活處方。</p>
+    <div class="src-note">資料來源：《寶傑說健康》2026.05.23 · NotebookLM 整理</div>
+    <div class="disclaimer">⚠️ 本檢測為衛教自評工具，<strong>不能取代醫療診斷</strong>。若有疑慮請至神經內科 / 記憶門診就醫。AD8 量表結果僅供參考。</div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="ad8">① AD8 篩檢</button>
+    <button class="tab" data-tab="risk">② 14 危險因子</button>
+    <button class="tab" data-tab="rx">③ 9 大生活處方</button>
+    <button class="tab" data-tab="edu">④ 衛教知識</button>
+    <button class="tab" data-tab="src">⑤ 資料來源</button>
+  </nav>
+
+  <main>
+    <!-- ① AD8 -->
+    <section class="panel active" id="panel-ad8">
+      <div class="section-title">AD8 極早期失智症篩檢</div>
+      <div class="section-sub">回想<strong>與過去相比（數年來的改變）</strong>，下列情況是否「有改變」。可由本人或熟悉的家人代答。</div>
+      <div id="ad8-list"></div>
+      <div class="score-box">
+        <div class="score-row">
+          <div><span class="score-num" id="ad8-score" style="color:var(--accent)">0</span><span class="score-label"> / 8 項有改變</span></div>
+          <div class="score-verdict v-ok" id="ad8-verdict">尚未作答</div>
+        </div>
+        <div class="score-track"><div class="score-fill" id="ad8-fill" style="width:0%;background:var(--accent)"></div></div>
+        <div class="score-advice" id="ad8-advice">AD8 是國際通用的極早期篩檢工具。<strong>有 2 項（含）以上改變</strong>，代表認知功能可能已受影響，建議盡快就醫評估。</div>
+      </div>
+    </section>
+
+    <!-- ② RISK -->
+    <section class="panel" id="panel-risk">
+      <div class="section-title">The Lancet 14 項可控危險因子</div>
+      <div class="section-sub">2024 年《刺胳針》失智症預防委員會指出：去除這 14 項危險因子，可<strong>預防或延緩約 45% 的失智症</strong>。勾選你目前「符合」的項目。</div>
+      <div id="risk-list"></div>
+      <div class="score-box">
+        <div class="score-row">
+          <div><span class="score-num" id="risk-score" style="color:var(--warn)">0</span><span class="score-label"> 項危險因子符合</span></div>
+          <div class="score-verdict v-ok" id="risk-verdict">尚未作答</div>
+        </div>
+        <div class="score-track"><div class="score-fill" id="risk-fill" style="width:0%;background:var(--warn)"></div></div>
+        <div class="score-advice" id="risk-advice">每一項都是可以改善的。符合越多，越值得從「③ 生活處方」開始調整。</div>
+      </div>
+    </section>
+
+    <!-- ③ RX -->
+    <section class="panel" id="panel-rx">
+      <div class="section-title">馬西屏 9 大生活處方</div>
+      <div class="section-sub">綜合 The Lancet 14 項、哈佛 43 年追蹤、芬蘭多重生活干預研究。<strong>全部做到，可延緩 / 預防失智超過 45%</strong>。勾選你「已經在做」的項目。</div>
+      <div id="rx-list"></div>
+      <div class="score-box">
+        <div class="score-row">
+          <div><span class="score-num" id="rx-score" style="color:var(--accent)">0</span><span class="score-label"> / 9 項已執行</span></div>
+          <div class="score-verdict v-ok" id="rx-verdict">尚未作答</div>
+        </div>
+        <div class="score-track"><div class="score-fill" id="rx-fill" style="width:0%;background:var(--accent)"></div></div>
+        <div class="score-advice" id="rx-advice">做得越多，大腦保護力越強。還沒做到的，就是你的下一步。</div>
+      </div>
+    </section>
+
+    <!-- ④ EDU -->
+    <section class="panel" id="panel-edu">
+      <div class="section-title">衛教知識 · 你不知道的失智真相</div>
+      <div class="section-sub">摘自馬西屏《寶傑說健康》訪談與國際研究。</div>
+
+      <div class="info-card">
+        <h3>⏳ 失智症的時間軸</h3>
+        <p>大腦出現「壞東西」（β 類澱粉蛋白沉積）到出現<strong>輕微失智，長達約 20 年潛伏期</strong>。這 20 年才是預防的黃金期。</p>
+        <div class="stat-grid">
+          <div class="stat"><div class="big">20 年</div><div class="sm">類澱粉沉積 → 輕微失智</div></div>
+          <div class="stat"><div class="big">3–10 年</div><div class="sm">輕度失智 → 死亡</div></div>
+          <div class="stat"><div class="big">60–80%</div><div class="sm">失智屬阿茲海默症</div></div>
+        </div>
+        <p class="muted">老化 →（失憶 / 輕度認知障礙 MCI，是老化與失智的中間體）→ 失智。馬西屏自述為「中度失憶、嚴重但尚未走入失智」。</p>
+      </div>
+
+      <div class="info-card">
+        <h3>🚨 早期警訊（馬西屏親身經歷）</h3>
+        <ul>
+          <li>在電影院看過的電影，回家用電視重看竟毫無印象</li>
+          <li>講不出物品名字，只會說「那個、那個」（蛋撻說不出來）</li>
+          <li>睡前看書，隔天完全接不上昨天的內容</li>
+          <li>從小背得滾瓜爛熟的唐詩，背不出來</li>
+          <li>大賣場只記得早已不存在的「萬客隆」</li>
+          <li>記不住朋友、學生的名字</li>
+          <li><strong>性格 180 度反轉</strong>（溫和變暴力）— 額顳葉型的可怕徵兆</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>👂 三大「五官」警訊（最容易被忽略）</h3>
+        <p class="muted">因為眼睛、耳朵、牙齒離大腦最近，退化直接衝擊認知。</p>
+        <div class="rank-list">
+          <div class="rank-item"><div class="rank-badge top">1</div><div><strong>聽力下降</strong><span class="tag">危險因子第一名</span><br><span class="muted">年輕人長時間戴耳機聽重音樂是高危險群。</span></div></div>
+          <div class="rank-item"><div class="rank-badge">2</div><div><strong>視力不好</strong><span class="tag new">2024 新增</span><br><span class="muted">眼睛神經與腦神經最接近。</span></div></div>
+          <div class="rank-item"><div class="rank-badge">3</div><div><strong>牙齒少於 20 顆</strong><br><span class="muted">日本研究：牙齒少於 20 顆失智增加 5 倍。日本推「8020 計劃」（80 歲保有 20 顆牙，假牙也算）。</span></div></div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h3>🩺 檢測方式</h3>
+        <ul>
+          <li><strong>核磁共振 MRI / 電腦斷層</strong>：只能測出中度、重度（已難挽回）</li>
+          <li><strong>正子攝影 PET</strong>：可測輕度，約需 6 萬元</li>
+          <li><strong>抽血檢測</strong>：今年美國 FDA 核准，約 2 萬元（最新發展）</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>💊 治療新發展</h3>
+        <ul>
+          <li><strong>單株抗體</strong>（lecanemab / donanemab）：清除類澱粉蛋白，一療程約 150 萬、需打 12–18 個月，僅約 14% 的人適合（避免腦出血 / 腦水腫）。</li>
+          <li><strong>國家清腦一號</strong>：台灣衛福部國家中醫藥研究所研發，已在小鼠與猴子身上清除類澱粉蛋白，正進行人體實驗。</li>
+          <li><strong>「洗腦」機制</strong>：深度睡眠時腦細胞萎縮產生空隙，腦脊髓液趁機沖洗掉類澱粉等廢物。<strong>睡眠是免費的清道夫</strong>。</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>📊 台灣失智海嘯</h3>
+        <div class="stat-grid">
+          <div class="stat"><div class="big">2025</div><div class="sm">12 月進入超高齡社會（全球最快，僅 7 年）</div></div>
+          <div class="stat"><div class="big">8%→翻倍</div><div class="sm">65 歲以上失智比例，10 年後翻倍</div></div>
+          <div class="stat"><div class="big">女 > 男</div><div class="sm">女性 9.35% / 男性 6.36%</div></div>
+        </div>
+        <p class="muted">女性風險較高，原因之一是社交與外出學習較少 — 因此「持續學習、社交互動」對女性尤其重要。</p>
+      </div>
+    </section>
+
+    <!-- ⑤ SRC -->
+    <section class="panel" id="panel-src">
+      <div class="section-title">資料來源</div>
+      <div class="section-sub">本頁內容整理自以下來源，並以 NotebookLM 彙整。</div>
+      <div class="info-card">
+        <div class="src-item">
+          <div class="src-ico">▶️</div>
+          <div>
+            <a href="https://www.youtube.com/results?search_query=馬西屏+對抗失智10年+寶傑說健康" target="_blank">【全集】馬西屏對抗失智 10 年揭秘「腦斷片」關鍵症狀</a>
+            <div class="muted">《寶傑說健康》劉寶傑 × 馬西屏．2026.05.23</div>
+          </div>
+        </div>
+        <div class="src-item">
+          <div class="src-ico">📚</div>
+          <div>
+            <a href="https://notebooklm.google.com/notebook/788077ce-060a-4318-8807-7f957a7cfe9f" target="_blank">NotebookLM：顛覆你的理解 - 失智症</a>
+            <div class="muted">逐字稿與重點彙整（需登入有權限的 Google 帳號）</div>
+          </div>
+        </div>
+        <div class="src-item">
+          <div class="src-ico">🔬</div>
+          <div>
+            <a href="https://www.thelancet.com/commissions/dementia2024" target="_blank">The Lancet Commission on dementia prevention 2024</a>
+            <div class="muted">14 項可控危險因子，可預防約 45% 失智</div>
+          </div>
+        </div>
+        <div class="src-item">
+          <div class="src-ico">📡</div>
+          <div>
+            <a href="https://t.me/sam00may" target="_blank">Telegram 頻道 · t.me/sam00may</a>
+            <div class="muted">身、心、靈平衡資訊分享</div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn" id="btn-export">📄 匯出我的檢測結果</button>
+        <a class="btn ghost" href="https://questions.3minstest.com">← 回測驗中心</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    失智症風險檢測　·　衛教用途，非醫療診斷　·　© <span id="y"></span><br>
+    📡 訂閱頻道取得更多健康內容：<a href="https://t.me/sam00may" target="_blank">t.me/sam00may</a>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+/* ── AD8 量表（8 題，與過去相比是否「有改變」）── */
+const AD8 = [
+  '判斷力出現問題（落入圈套或騙局、財務決策變差、買不合宜的禮物）',
+  '對活動和嗜好的興趣降低',
+  '重複相同的問題、故事或陳述',
+  '學習使用工具 / 電器 / 3C 有困難（電視、洗衣機、微波爐、遙控器等）',
+  '忘記正確的月份或年份',
+  '處理複雜財務有困難（忘記繳費、報稅、帳單）',
+  '記住約會時間有困難',
+  '持續出現思考或記憶方面的問題'
+];
+
+/* ── The Lancet 14 危險因子 ── */
+const RISK = [
+  ['聽力下降', '危險因子第一名；長期戴耳機、重聽未配助聽器'],
+  ['壞膽固醇（LDL）偏高', '2024 新增；今年並列第一名'],
+  ['教育 / 認知刺激不足', '中年後缺乏學習與動腦'],
+  ['視力受損未矯正', '2024 新增；白內障等未處理'],
+  ['頭部外傷', '曾撞擊頭部、腦震盪'],
+  ['缺乏運動', '每天連續步行不足'],
+  ['糖尿病 / 三高', '血糖、血壓控制不佳'],
+  ['抽菸', '吸菸或長期二手菸'],
+  ['高血壓', '中年血壓偏高未控制'],
+  ['肥胖', 'BMI 過高、腰圍超標'],
+  ['過量飲酒', '長期或大量飲酒'],
+  ['憂鬱 / 長期壓力', '憂鬱症、恐慌症、慢性高壓'],
+  ['社交孤立', '獨居、很少與人互動的「孤獨老人」'],
+  ['空氣污染 / 環境毒', 'PM2.5、重金屬、塑膠微粒暴露']
+];
+
+/* ── 9 大生活處方 ── */
+const RX = [
+  ['🧩 動腦', '下棋、橋牌、學新東西，活化腦細胞與海馬迴'],
+  ['🚶 規律運動', '每天連續步行 ≥15 分鐘、累積 3000–7500 步（3000步延緩3年，7500步封頂7年）'],
+  ['🥗 健康飲食', '地中海飲食：多魚、多蔬菜、用好油（橄欖油）'],
+  ['🗣️ 社交互動', '常與人聊天往來，避免變成孤獨老人'],
+  ['📖 持續學習', '不停止學習；上長青大學、參加社團（女性尤其重要）'],
+  ['🚭 戒菸少酒', '戒菸、減少飲酒'],
+  ['☕ 適量茶與咖啡', '咖啡延緩18%、茶14%、都喝34%；咖啡每天≤3杯，避免塑膠杯裝熱飲'],
+  ['💼 晚一點退休', '晚退休1年失智減緩3.2%；60歲退休 vs 65歲差約43%'],
+  ['😴 良好睡眠 + 控制體重', '深度睡眠「洗腦」清廢物；慎用安眠藥、控制肥胖']
+];
+
+const state = { ad8:{}, risk:{}, rx:{} };
+
+/* ── render AD8 ── */
+const ad8List = document.getElementById('ad8-list');
+ad8List.innerHTML = AD8.map((t,i)=>`
+  <div class="q-item" id="ad8-q${i}">
+    <div class="q-head"><div class="q-no">${i+1}</div><div class="q-text">${t}</div></div>
+    <div class="opts">
+      <button class="opt" data-ad8="${i}" data-v="1">是，有改變</button>
+      <button class="opt" data-ad8="${i}" data-v="0">沒有改變</button>
+    </div>
+  </div>`).join('');
+
+/* ── render RISK ── */
+document.getElementById('risk-list').innerHTML = RISK.map((r,i)=>`
+  <div class="q-item" id="risk-q${i}">
+    <div class="q-head"><div class="q-no">${i+1}</div><div class="q-text">${r[0]}<div class="q-hint">${r[1]}</div></div></div>
+    <div class="opts">
+      <button class="opt" data-risk="${i}" data-v="1">符合</button>
+      <button class="opt" data-risk="${i}" data-v="0">沒有</button>
+    </div>
+  </div>`).join('');
+
+/* ── render RX ── */
+document.getElementById('rx-list').innerHTML = RX.map((r,i)=>`
+  <div class="q-item" id="rx-q${i}">
+    <div class="q-head"><div class="q-no">${i+1}</div><div class="q-text">${r[0]}<div class="q-hint">${r[1]}</div></div></div>
+    <div class="opts">
+      <button class="opt" data-rx="${i}" data-v="1">已經在做</button>
+      <button class="opt" data-rx="${i}" data-v="0">還沒</button>
+    </div>
+  </div>`).join('');
+
+/* ── click handling ── */
+document.querySelector('main').addEventListener('click', e=>{
+  const b = e.target.closest('.opt'); if(!b) return;
+  let grp, idx;
+  if(b.dataset.ad8!==undefined){ grp='ad8'; idx=+b.dataset.ad8; }
+  else if(b.dataset.risk!==undefined){ grp='risk'; idx=+b.dataset.risk; }
+  else if(b.dataset.rx!==undefined){ grp='rx'; idx=+b.dataset.rx; }
+  else return;
+  const v = +b.dataset.v;
+  state[grp][idx] = v;
+  const item = document.getElementById(`${grp}-q${idx}`);
+  item.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel-yes','sel-no'));
+  // ad8/risk: v=1(是/符合)=紅；rx: v=1(已做)=綠
+  if(grp==='rx') b.classList.add(v ? 'sel-no' : 'sel-yes');
+  else           b.classList.add(v ? 'sel-yes' : 'sel-no');
+  item.classList.add('answered');
+  updateScores();
+});
+
+function countAnswered(o){ return Object.keys(o).length; }
+function sum(o){ return Object.values(o).reduce((a,c)=>a+c,0); }
+
+function updateScores(){
+  // AD8
+  const a = sum(state.ad8), aAns = countAnswered(state.ad8);
+  document.getElementById('ad8-score').textContent = a;
+  document.getElementById('ad8-fill').style.width = (a/8*100)+'%';
+  const av = document.getElementById('ad8-verdict');
+  if(aAns===0){ av.textContent='尚未作答'; av.className='score-verdict v-ok'; document.getElementById('ad8-fill').style.background='var(--accent)'; }
+  else if(a>=2){ av.textContent='建議就醫評估'; av.className='score-verdict v-danger'; document.getElementById('ad8-fill').style.background='var(--danger)'; }
+  else { av.textContent='目前較無疑慮'; av.className='score-verdict v-ok'; document.getElementById('ad8-fill').style.background='var(--accent)'; }
+
+  // RISK
+  const r = sum(state.risk), rAns=countAnswered(state.risk);
+  document.getElementById('risk-score').textContent = r;
+  document.getElementById('risk-fill').style.width = (r/14*100)+'%';
+  const rv = document.getElementById('risk-verdict');
+  if(rAns===0){ rv.textContent='尚未作答'; rv.className='score-verdict v-ok'; }
+  else if(r>=6){ rv.textContent='危險因子偏多'; rv.className='score-verdict v-danger'; }
+  else if(r>=3){ rv.textContent='可再加強預防'; rv.className='score-verdict v-warn'; }
+  else { rv.textContent='控制良好'; rv.className='score-verdict v-ok'; }
+
+  // RX
+  const x = sum(state.rx), xAns=countAnswered(state.rx);
+  document.getElementById('rx-score').textContent = x;
+  document.getElementById('rx-fill').style.width = (x/9*100)+'%';
+  const xv = document.getElementById('rx-verdict');
+  if(xAns===0){ xv.textContent='尚未作答'; xv.className='score-verdict v-ok'; }
+  else if(x>=7){ xv.textContent='大腦保護力強'; xv.className='score-verdict v-ok'; }
+  else if(x>=4){ xv.textContent='做得不錯，可再加'; xv.className='score-verdict v-warn'; }
+  else { xv.textContent='請從今天開始'; xv.className='score-verdict v-danger'; }
+  save();
+}
+
+/* ── tabs ── */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-'+t.dataset.tab).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+
+/* ── persistence ── */
+function save(){ localStorage.setItem('dementia-check', JSON.stringify(state)); }
+function load(){
+  try{
+    const d = JSON.parse(localStorage.getItem('dementia-check'));
+    if(!d) return;
+    ['ad8','risk','rx'].forEach(g=>{
+      Object.entries(d[g]||{}).forEach(([i,v])=>{
+        state[g][i]=v;
+        const item=document.getElementById(`${g}-q${i}`); if(!item) return;
+        const btn=item.querySelector(`.opt[data-v="${v}"]`); if(!btn) return;
+        if(g==='rx') btn.classList.add(v?'sel-no':'sel-yes'); else btn.classList.add(v?'sel-yes':'sel-no');
+        item.classList.add('answered');
+      });
+    });
+    updateScores();
+  }catch{}
+}
+
+/* ── export ── */
+document.getElementById('btn-export').addEventListener('click', ()=>{
+  const a=sum(state.ad8), r=sum(state.risk), x=sum(state.rx);
+  const lines=[];
+  lines.push('# 我的失智症風險檢測結果');
+  lines.push('日期：'+new Date().toLocaleString());
+  lines.push('');
+  lines.push('## ① AD8 篩檢：'+a+' / 8 項有改變　'+(a>=2?'⚠️ 建議就醫評估':'✅ 目前較無疑慮'));
+  AD8.forEach((t,i)=>{ if(state.ad8[i]!==undefined) lines.push(`- [${state.ad8[i]?'有改變':'無'}] ${t}`); });
+  lines.push('');
+  lines.push('## ② 危險因子：符合 '+r+' / 14 項');
+  RISK.forEach((t,i)=>{ if(state.risk[i]) lines.push('- ⚠️ '+t[0]); });
+  lines.push('');
+  lines.push('## ③ 生活處方：已執行 '+x+' / 9 項');
+  RX.forEach((t,i)=>{ lines.push(`- [${state.rx[i]?'✅ 已做':'⬜ 還沒'}] ${t[0]} — ${t[1]}`); });
+  lines.push('');
+  lines.push('---');
+  lines.push('資料來源：馬西屏《寶傑說健康》2026.05.23 · The Lancet 2024 · 整理 t.me/sam00may');
+  lines.push('※ 本結果為衛教自評，非醫療診斷。');
+  const blob=new Blob([lines.join('\n')],{type:'text/markdown'});
+  const url=URL.createObjectURL(blob); const aEl=document.createElement('a');
+  aEl.href=url; aEl.download='失智症檢測_'+Date.now()+'.md';
+  document.body.appendChild(aEl); aEl.click(); aEl.remove(); URL.revokeObjectURL(url);
+  const tt=document.getElementById('toast'); tt.textContent='已匯出檢測結果'; tt.classList.add('show');
+  setTimeout(()=>tt.classList.remove('show'),2200);
+});
+
+document.getElementById('y').textContent=new Date().getFullYear();
+load();
+</script>
+</body>
+</html>
