@@ -174,6 +174,81 @@
     padding: 12px 20px; border-radius: 10px; font-size: 0.88rem; z-index: 1000; opacity: 0; transition: all 0.3s;
   }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── MEDIA / LEARNING RESOURCES ── */
+  .media-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 20px; margin-bottom: 20px;
+  }
+  .media-card > h3 {
+    font-size: 1.12rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; color: var(--text);
+  }
+  .media-card .media-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 14px; }
+  .video-wrap { position: relative; padding-top: 56.25%; border-radius: 12px; overflow: hidden; background: #000; }
+  .video-wrap iframe, .video-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+  video.local, audio.local { width: 100%; border-radius: 12px; background: #000; }
+  audio.local { background: var(--surface); }
+  .pdf-embed { width: 100%; height: 560px; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
+  .infographic-img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; cursor: zoom-in; }
+  .dl-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+  .dl-btn {
+    display: inline-flex; align-items: center; gap: 6px; text-decoration: none;
+    padding: 9px 16px; border-radius: 9px; font-size: 0.85rem; font-weight: 600;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text); transition: all 0.15s; cursor: pointer;
+  }
+  .dl-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Flashcards */
+  .fc-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .fc-counter { font-size: 0.85rem; color: var(--muted); }
+  .fc-counter b { color: var(--accent); }
+  .flashcard {
+    perspective: 1200px; cursor: pointer; margin-bottom: 14px; user-select: none;
+  }
+  .fc-inner {
+    position: relative; width: 100%; min-height: 180px;
+    transition: transform 0.5s; transform-style: preserve-3d;
+  }
+  .flashcard.flipped .fc-inner { transform: rotateY(180deg); }
+  .fc-face {
+    position: absolute; inset: 0; backface-visibility: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 24px; border-radius: 14px; text-align: center; border: 1.5px solid var(--border);
+  }
+  .fc-front { background: var(--surface); }
+  .fc-back { background: linear-gradient(135deg, rgba(52,211,153,0.14), rgba(34,211,238,0.1)); transform: rotateY(180deg); border-color: rgba(52,211,153,0.4); }
+  .fc-tag { font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .fc-back .fc-tag { color: var(--accent); }
+  .fc-q { font-size: 1.02rem; font-weight: 600; line-height: 1.6; }
+  .fc-a { font-size: 1.1rem; font-weight: 700; line-height: 1.6; color: var(--accent); }
+  .fc-nav { display: flex; gap: 10px; justify-content: center; }
+  .fc-flip-hint { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 8px; }
+
+  /* Mind map */
+  .mindmap { display: flex; flex-direction: column; gap: 10px; }
+  .mm-root {
+    text-align: center; padding: 14px; border-radius: 12px; font-weight: 800; font-size: 1.05rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #06231a; margin-bottom: 6px;
+  }
+  .mm-branch { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 12px 14px; }
+  .mm-branch > .mm-title { font-weight: 700; color: var(--accent); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  .mm-leaves { display: flex; flex-wrap: wrap; gap: 8px; }
+  .mm-leaf { font-size: 0.82rem; padding: 5px 12px; border-radius: 999px; background: var(--card); border: 1px solid var(--border); color: var(--text); }
+
+  /* Transcript */
+  .transcript h4 { color: var(--accent); font-size: 1rem; margin: 18px 0 8px; }
+  .transcript p { font-size: 0.92rem; margin-bottom: 10px; line-height: 1.8; }
+  .transcript ul { padding-left: 20px; margin: 8px 0 12px; }
+  .transcript li { font-size: 0.9rem; margin-bottom: 6px; line-height: 1.7; }
+  .transcript strong { color: var(--text); }
+  details.transcript-box { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 4px 20px; }
+  details.transcript-box summary { cursor: pointer; padding: 14px 0; font-weight: 700; color: var(--text); }
+
+  /* Lightbox */
+  .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; }
+  .lightbox.show { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+  .lightbox .close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 2rem; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -196,7 +271,8 @@
     <button class="tab" data-tab="risk">② 14 危險因子</button>
     <button class="tab" data-tab="rx">③ 9 大生活處方</button>
     <button class="tab" data-tab="edu">④ 衛教知識</button>
-    <button class="tab" data-tab="src">⑤ 資料來源</button>
+    <button class="tab" data-tab="media">⑤ 學習資源</button>
+    <button class="tab" data-tab="src">⑥ 資料來源</button>
   </nav>
 
   <main>
@@ -313,7 +389,172 @@
       </div>
     </section>
 
-    <!-- ⑤ SRC -->
+    <!-- ⑤ MEDIA / 學習資源 -->
+    <section class="panel" id="panel-media">
+      <div class="section-title">學習資源 · NotebookLM 工作室</div>
+      <div class="section-sub">影片、語音、簡報、資訊圖表、字卡、心智圖與文字稿 — 全部由「顛覆你的理解·失智症」NotebookLM 筆記本產出。</div>
+
+      <!-- 原始來源影片 -->
+      <div class="media-card">
+        <h3>🎬 原始來源影片</h3>
+        <div class="media-sub">馬西屏 × 劉寶傑《寶傑說健康》2026.05.23 — 對抗失智 10 年完整訪談</div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/Q0H4lv19vV0" title="馬西屏對抗失智10年" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- NotebookLM 影片摘要 -->
+      <div class="media-card">
+        <h3>🎞️ AI 影片摘要</h3>
+        <div class="media-sub">神經醫學藍圖：解碼馬西屏的失憶之戰（NotebookLM 生成）</div>
+        <video class="local" controls preload="metadata" playsinline>
+          <source src="assets/video-overview.mp4" type="video/mp4">
+          您的瀏覽器不支援影片播放。
+        </video>
+        <div class="dl-row">
+          <a class="dl-btn" href="assets/video-overview.mp4" download>⬇️ 下載影片 (MP4)</a>
+        </div>
+      </div>
+
+      <!-- 語音摘要 -->
+      <div class="media-card">
+        <h3>🎧 語音摘要（線上播放）</h3>
+        <div class="media-sub">打贏靈魂保衛戰 — 雙人對談 Podcast（NotebookLM 生成）</div>
+        <audio class="local" controls preload="metadata">
+          <source src="assets/audio-overview.m4a" type="audio/mp4">
+          您的瀏覽器不支援音訊播放。
+        </audio>
+        <div class="dl-row">
+          <a class="dl-btn" href="assets/audio-overview.m4a" download>⬇️ 下載語音 (M4A)</a>
+        </div>
+      </div>
+
+      <!-- 簡報 -->
+      <div class="media-card">
+        <h3>📊 簡報</h3>
+        <div class="media-sub">20 Year Brain Defense — 失智防禦 20 年簡報</div>
+        <embed class="pdf-embed" src="assets/slides.pdf#toolbar=1" type="application/pdf">
+        <div class="dl-row">
+          <a class="dl-btn" href="assets/slides.pdf" target="_blank">🔍 開新視窗看簡報</a>
+          <a class="dl-btn" href="assets/slides.pdf" download>⬇️ 下載簡報 (PDF)</a>
+        </div>
+      </div>
+
+      <!-- 資訊圖表 -->
+      <div class="media-card">
+        <h3>🖼️ 資訊圖表</h3>
+        <div class="media-sub">點圖可放大；可右鍵或按鈕下載原圖</div>
+        <h4 style="font-size:0.92rem;margin:8px 0;">① 預防失智的鋰元素指南</h4>
+        <img class="infographic-img" src="assets/infographic-lithium.png" alt="預防失智的鋰元素指南" loading="lazy">
+        <div class="dl-row"><a class="dl-btn" href="assets/infographic-lithium.png" download>⬇️ 下載原圖</a></div>
+        <h4 style="font-size:0.92rem;margin:18px 0 8px;">② 失智症對抗自救指南</h4>
+        <img class="infographic-img" src="assets/infographic-selfhelp.png" alt="失智症對抗自救指南" loading="lazy">
+        <div class="dl-row"><a class="dl-btn" href="assets/infographic-selfhelp.png" download>⬇️ 下載原圖</a></div>
+      </div>
+
+      <!-- 互動字卡 -->
+      <div class="media-card">
+        <h3>🃏 互動學習字卡</h3>
+        <div class="media-sub">失智預防字卡 — 點卡片翻面看答案</div>
+        <div class="fc-toolbar">
+          <div class="fc-counter">第 <b id="fc-now">1</b> / <span id="fc-total">0</span> 張</div>
+          <div class="fc-nav">
+            <button class="dl-btn" id="fc-prev">← 上一張</button>
+            <button class="dl-btn" id="fc-next">下一張 →</button>
+          </div>
+        </div>
+        <div class="flashcard" id="flashcard">
+          <div class="fc-inner">
+            <div class="fc-face fc-front"><div class="fc-tag">問題</div><div class="fc-q" id="fc-q">載入中…</div></div>
+            <div class="fc-face fc-back"><div class="fc-tag">答案</div><div class="fc-a" id="fc-a"></div></div>
+          </div>
+        </div>
+        <div class="fc-flip-hint">💡 點卡片翻面</div>
+      </div>
+
+      <!-- 心智圖 -->
+      <div class="media-card">
+        <h3>🧠 心智圖</h3>
+        <div class="media-sub">隱形殺手：失智症的高危因子與前兆指南</div>
+        <div class="mindmap">
+          <div class="mm-root">隱形殺手 · 失智高危因子與前兆</div>
+          <div class="mm-branch"><div class="mm-title">🚨 早期前兆</div><div class="mm-leaves">
+            <span class="mm-leaf">看過的電影忘記</span><span class="mm-leaf">講不出名詞（只說「那個」）</span><span class="mm-leaf">唐詩背不出來</span><span class="mm-leaf">只記得「萬客隆」</span><span class="mm-leaf">認不得熟人名字</span><span class="mm-leaf">性格 180° 反轉</span>
+          </div></div>
+          <div class="mm-branch"><div class="mm-title">👂 五官警訊</div><div class="mm-leaves">
+            <span class="mm-leaf">聽力下降（第一名）</span><span class="mm-leaf">視力受損</span><span class="mm-leaf">牙齒少於 20 顆（風險 ×5）</span>
+          </div></div>
+          <div class="mm-branch"><div class="mm-title">🩸 疾病與代謝</div><div class="mm-leaves">
+            <span class="mm-leaf">壞膽固醇 LDL 偏高</span><span class="mm-leaf">三高 / 糖尿病</span><span class="mm-leaf">心血管疾病</span><span class="mm-leaf">B12 / 鋰 缺乏</span>
+          </div></div>
+          <div class="mm-branch"><div class="mm-title">😰 情緒與藥物</div><div class="mm-leaves">
+            <span class="mm-leaf">憂鬱 / 恐慌症</span><span class="mm-leaf">長期高壓</span><span class="mm-leaf">安眠藥過量</span><span class="mm-leaf">全身麻醉</span>
+          </div></div>
+          <div class="mm-branch"><div class="mm-title">🏭 環境毒素</div><div class="mm-leaves">
+            <span class="mm-leaf">重金屬</span><span class="mm-leaf">PM2.5 空污</span><span class="mm-leaf">塑膠微粒</span>
+          </div></div>
+          <div class="mm-branch"><div class="mm-title">⚠️ 其他</div><div class="mm-leaves">
+            <span class="mm-leaf">頭部外傷</span><span class="mm-leaf">遺傳基因</span><span class="mm-leaf">社交孤獨</span><span class="mm-leaf">肥胖</span>
+          </div></div>
+        </div>
+      </div>
+
+      <!-- 文字稿 -->
+      <div class="media-card">
+        <h3>📝 文字稿 / 重點整理</h3>
+        <div class="media-sub">由 NotebookLM 將訪談整理為通順的結構化重點（保留醫學數據）</div>
+        <details class="transcript-box" open>
+          <summary>展開 / 收合文字稿</summary>
+          <div class="transcript">
+            <h4>一、台灣高齡危機與失智海嘯</h4>
+            <p>台灣人口老化速度世界第一：1993 年進入高齡化社會，2018 年轉為高齡社會，2025 年底即步入 65 歲以上佔比超過 20% 的「超高齡社會」，從高齡到超高齡僅花 7 年。政府推估 2065 年總人口恐減半至 1,200 萬。目前 60 歲以上約 8% 罹患失智，預估十年後翻倍；女性比例（9.35%）高於男性（6.36%）。</p>
+            <h4>二、失智時間軸與黃金 20 年潛伏期</h4>
+            <p>從輕度失智到死亡約 3–10 年。但大腦從開始累積「β 類澱粉蛋白」到出現輕微失智，中間有長達 <strong>20 年潛伏期</strong>——這是預防、延緩甚至阻止發病的黃金關鍵期。失憶（MCI 輕度認知障礙）是老化與失智的中間體。</p>
+            <h4>三、早期警訊：「腦斷片」現象</h4>
+            <ul>
+              <li><strong>短期記憶無法留存</strong>：電影院看完的電影回家毫無印象；睡前讀的書隔天接不上。</li>
+              <li><strong>熟悉名詞遺忘</strong>：知道物品樣子卻叫不出名（蛋撻只能說「那個」）；大賣場只記得早已倒閉的「萬客隆」。</li>
+              <li><strong>長期記憶與認人困難</strong>：背熟的唐詩突然背不出；看到熟人叫不出名字，只能迂迴套話確認身分。</li>
+            </ul>
+            <h4>四、五官警訊：聽力、視力與牙齒</h4>
+            <ul>
+              <li><strong>聽力下降</strong>：《The Lancet》列為失智危險因子第一名。長期戴耳機大聲聽音樂是高風險。</li>
+              <li><strong>牙齒少於 20 顆</strong>：日本厚生省研究，失智機率暴增 5 倍以上，故推「8020 計畫」（含假牙）。</li>
+              <li><strong>視力衰退</strong>：視神經與腦神經接近，視力受損同為重要危險因子。</li>
+            </ul>
+            <h4>五、日常可控的隱形殺手</h4>
+            <ul>
+              <li><strong>環境毒素</strong>：重金屬、PM2.5 會進入腦部；塑膠微粒被稱超級殺手（紙杯熱咖啡、塑膠袋裝熱食、瓶裝水）。</li>
+              <li><strong>壞膽固醇（LDL）過高</strong>：最新研究與聽力下降並列第一名。</li>
+              <li><strong>情緒與藥物</strong>：長期高壓、恐慌、憂鬱、安眠藥過量、全身麻醉皆傷腦細胞。</li>
+              <li><strong>微量元素缺乏</strong>：B12 與「鋰」缺乏皆會引發失智。</li>
+              <li><strong>頭部外傷</strong>：撞擊頭部有引發認知障礙的實際案例。</li>
+            </ul>
+            <h4>六、扭轉命運的「9 大生活干預」（可延緩 / 預防 &gt; 45%）</h4>
+            <ul>
+              <li><strong>持續學習</strong>：不學習多次被列第一/第二大危險因子。</li>
+              <li><strong>晚退休</strong>：腦細胞約 60 歲開始萎縮；60 歲退休比 65 歲風險高 43%，晚一年退休失智減緩 3.2%。</li>
+              <li><strong>連續步行</strong>：每天累積 3000 步延緩 3 年、7500 步延緩 7 年（上限），但每次須連續走滿 15 分鐘。</li>
+              <li><strong>社交互動</strong>：孤獨老人大腦長期靜止，失智機率極高。</li>
+              <li><strong>喝茶與咖啡</strong>：咖啡延緩 18%、茶 14%、兩者皆飲 34%；咖啡每日 ≤ 3 杯。</li>
+              <li><strong>持續動腦</strong>：下棋、橋牌、麻將維持神經元活性。</li>
+              <li><strong>健康飲食 + 控制體重</strong>：地中海飲食、好油（橄欖油）、避免肥胖。</li>
+              <li><strong>解決睡眠障礙</strong>：深度睡眠啟動大腦自清機制。</li>
+              <li><strong>戒菸少酒</strong>：降低腦神經發炎。</li>
+            </ul>
+            <h4>七、檢測方式與治療新發展</h4>
+            <ul>
+              <li><strong>檢測</strong>：核磁共振 / 正子攝影（PET，約 6 萬）→ 最新抽血檢測（約 2 萬，美 FDA 已核准）可及早發現。</li>
+              <li><strong>「洗腦」機制</strong>：深度睡眠時腦細胞萎縮騰出空隙，脊髓液沖洗類澱粉蛋白；失眠則排毒失效。</li>
+              <li><strong>單株抗體新藥</strong>：可清除類澱粉蛋白，一療程 12–18 個月、約 150 萬元，僅約 14% 適合（防腦出血 / 腦水腫）。</li>
+              <li><strong>國家清腦一號</strong>：台灣衛福部國家中醫藥研究所研發，動物實驗已證實清除類澱粉蛋白，準備技轉申請藥證。</li>
+            </ul>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ⑥ SRC -->
     <section class="panel" id="panel-src">
       <div class="section-title">資料來源</div>
       <div class="section-sub">本頁內容整理自以下來源，並以 NotebookLM 彙整。</div>
@@ -360,6 +601,7 @@
   </footer>
 
   <div class="toast" id="toast"></div>
+  <div class="lightbox" id="lightbox"><span class="close" id="lb-close">×</span><img id="lb-img" src="" alt=""></div>
 
 <script>
 /* ── AD8 量表（8 題，與過去相比是否「有改變」）── */
@@ -548,6 +790,35 @@ document.getElementById('btn-export').addEventListener('click', ()=>{
   const tt=document.getElementById('toast'); tt.textContent='已匯出檢測結果'; tt.classList.add('show');
   setTimeout(()=>tt.classList.remove('show'),2200);
 });
+
+/* ── Flashcards (fetch from assets/flashcards-1.json) ── */
+let fcCards = [], fcIdx = 0;
+const fcEl = document.getElementById('flashcard');
+function renderCard(){
+  if(!fcCards.length) return;
+  const c = fcCards[fcIdx];
+  fcEl.classList.remove('flipped');
+  document.getElementById('fc-q').textContent = c.front;
+  document.getElementById('fc-a').textContent = c.back;
+  document.getElementById('fc-now').textContent = fcIdx + 1;
+}
+fcEl.addEventListener('click', ()=> fcEl.classList.toggle('flipped'));
+document.getElementById('fc-prev').addEventListener('click', e=>{ e.stopPropagation(); fcIdx=(fcIdx-1+fcCards.length)%fcCards.length; renderCard(); });
+document.getElementById('fc-next').addEventListener('click', e=>{ e.stopPropagation(); fcIdx=(fcIdx+1)%fcCards.length; renderCard(); });
+fetch('assets/flashcards-1.json').then(r=>r.json()).then(d=>{
+  fcCards = (d.cards||[]).filter(c=>c.front && c.back);
+  document.getElementById('fc-total').textContent = fcCards.length;
+  if(fcCards.length){ renderCard(); } else { document.getElementById('fc-q').textContent='（無字卡資料）'; }
+}).catch(()=>{ document.getElementById('fc-q').textContent='字卡載入失敗'; });
+
+/* ── Lightbox for infographics ── */
+const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lb-img');
+document.querySelectorAll('.infographic-img').forEach(img=>{
+  img.addEventListener('click', ()=>{ lbImg.src = img.src; lb.classList.add('show'); });
+});
+function closeLb(){ lb.classList.remove('show'); lbImg.src=''; }
+document.getElementById('lb-close').addEventListener('click', closeLb);
+lb.addEventListener('click', e=>{ if(e.target===lb) closeLb(); });
 
 document.getElementById('y').textContent=new Date().getFullYear();
 load();
