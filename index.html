@@ -188,6 +188,45 @@
   .video-wrap iframe, .video-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
   video.local, audio.local { width: 100%; border-radius: 12px; background: #000; }
   audio.local { background: var(--surface); }
+
+  /* Audio synced transcript */
+  .audio-hero { background: linear-gradient(135deg, rgba(52,211,153,0.1), rgba(34,211,238,0.06)); border:1px solid rgba(52,211,153,0.3); }
+  .must-badge { display:inline-block; font-size:0.7rem; font-weight:800; letter-spacing:1px; color:#06231a; background:var(--accent); padding:2px 10px; border-radius:999px; margin-left:8px; vertical-align:middle; }
+  .must-tab { position: relative; }
+  .must-dot {
+    display: inline-block; font-size: 0.6rem; font-weight: 800; letter-spacing: 0.5px;
+    color: #fff; background: #ef4444; padding: 1px 6px; border-radius: 999px;
+    margin-left: 5px; vertical-align: top; animation: mustPulse 2s ease-in-out infinite;
+  }
+  @keyframes mustPulse { 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:.7; transform:scale(1.12); } }
+  .must-tab.active .must-dot { background: #fff; color: #06231a; }
+  .ts-langbar { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin:12px 0 4px; }
+  .ts-langlabel { font-size:0.8rem; color:var(--muted); margin-right:2px; }
+  .ts-lang { cursor:pointer; padding:5px 12px; border-radius:999px; border:1px solid var(--border); background:var(--surface); color:var(--muted); font-size:0.8rem; font-weight:700; font-family:inherit; transition:all .15s; }
+  .ts-lang:hover { color:var(--text); border-color:var(--accent); }
+  .ts-lang.on { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#06231a; border-color:transparent; }
+  .ts-toolbar { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:6px 0 10px; }
+  .ts-btn { display:inline-flex; align-items:center; gap:6px; cursor:pointer; padding:7px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); font-size:0.8rem; font-weight:600; font-family:inherit; transition:all .15s; }
+  .ts-btn:hover { border-color:var(--accent); color:var(--accent); }
+  .ts-btn.on { background:rgba(52,211,153,0.16); border-color:var(--accent); color:var(--accent); }
+  .ts-spacer { flex:1; }
+  .ts-fontctl { display:inline-flex; align-items:center; gap:4px; }
+  .audio-transcript {
+    max-height: 360px; overflow-y:auto; border:1px solid var(--border); border-radius:12px;
+    background: var(--surface); padding: 6px; scroll-behavior:smooth;
+    font-size: var(--ts-fs, 0.95rem); transition: max-height .3s;
+  }
+  .audio-transcript.expanded { max-height: 720px; }
+  .ts-seg {
+    display:flex; gap:10px; padding:9px 12px; border-radius:9px; cursor:pointer;
+    color: var(--muted); line-height:1.7; transition: background .15s, color .15s;
+  }
+  .ts-seg:hover { background: rgba(255,255,255,0.04); color: var(--text); }
+  .ts-seg.active { background: rgba(52,211,153,0.16); color: var(--text); font-weight:600; }
+  .ts-seg.active .ts-time { color: var(--accent); }
+  .ts-time { flex-shrink:0; font-variant-numeric:tabular-nums; font-size:0.78em; color:var(--muted); padding-top:2px; min-width:42px; }
+  .ts-txt { flex:1; }
+  .ts-status { text-align:center; padding:24px; color:var(--muted); font-size:0.88rem; }
   .pdf-embed { width: 100%; height: 560px; border: 1px solid var(--border); border-radius: 12px; background: #fff; }
   .infographic-img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; cursor: zoom-in; }
   .dl-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
@@ -289,8 +328,8 @@
     <button class="tab" data-tab="risk">② 14 危險因子</button>
     <button class="tab" data-tab="rx">③ 9 大生活處方</button>
     <button class="tab" data-tab="result">④ 檢測結果</button>
-    <button class="tab" data-tab="edu">⑤ 衛教知識</button>
-    <button class="tab" data-tab="media">⑥ 學習資源</button>
+    <button class="tab must-tab" data-tab="edu">⑤ 衛教知識<span class="must-dot">必讀</span></button>
+    <button class="tab must-tab" data-tab="media">⑥ 學習資源<span class="must-dot">必讀</span></button>
     <button class="tab" data-tab="src">⑦ 資料來源</button>
   </nav>
 
@@ -468,17 +507,43 @@
         </div>
       </div>
 
-      <!-- 語音摘要 -->
-      <div class="media-card">
-        <h3>🎧 語音摘要（線上播放）</h3>
-        <div class="media-sub">打贏靈魂保衛戰 — 雙人對談 Podcast（NotebookLM 生成）</div>
-        <audio class="local" controls preload="metadata">
+      <!-- 語音摘要 + 即時文字稿 -->
+      <div class="media-card audio-hero">
+        <h3>🎧 語音摘要 · 線上播放<span class="must-badge">必聽</span></h3>
+        <div class="media-sub">打贏靈魂保衛戰 — 雙人對談 Podcast（NotebookLM 生成）· 約 24 分鐘</div>
+        <audio class="local" id="audio-player" controls preload="metadata">
           <source src="assets/audio-overview.m4a" type="audio/mp4">
           您的瀏覽器不支援音訊播放。
         </audio>
+
+        <div class="ts-langbar" id="ts-langbar">
+          <span class="ts-langlabel">🌐 語言：</span>
+          <button class="ts-lang on" data-lang="zh-Hant">繁中</button>
+          <button class="ts-lang" data-lang="zh-Hans">简中</button>
+          <button class="ts-lang" data-lang="en">EN</button>
+          <button class="ts-lang" data-lang="da">DA</button>
+        </div>
+
+        <div class="ts-toolbar">
+          <button class="ts-btn on" id="ts-autoscroll">📜 自動捲動：開</button>
+          <button class="ts-btn" id="ts-copy">📋 複製全文</button>
+          <button class="ts-btn" id="ts-expand">↕️ 展開</button>
+          <span class="ts-spacer"></span>
+          <span class="ts-fontctl">
+            <button class="ts-btn" id="ts-fs-dec">A−</button>
+            <button class="ts-btn" id="ts-fs-inc">A＋</button>
+          </span>
+        </div>
+
+        <div class="audio-transcript" id="audio-transcript">
+          <div class="ts-status" id="ts-status">📝 即時文字稿載入中…（首次需待轉錄完成）</div>
+        </div>
+
         <div class="dl-row">
           <a class="dl-btn" href="assets/audio-overview.m4a" download>⬇️ 下載語音 (M4A)</a>
+          <a class="dl-btn" id="ts-dl" href="assets/audio-transcript.txt" download>⬇️ 下載文字稿 (TXT)</a>
         </div>
+        <div style="font-size:0.74rem;color:var(--muted);margin-top:8px;">💡 點任一句文字可跳到該段播放</div>
       </div>
 
       <!-- 簡報 -->
@@ -526,7 +591,7 @@
 
       <!-- 心智圖 -->
       <div class="media-card">
-        <h3>🧠 心智圖</h3>
+        <h3>🧠 心智圖 <button class="dl-btn" id="copy-mindmap" style="margin-left:auto;">📋 複製</button></h3>
         <div class="media-sub">隱形殺手：失智症的高危因子與前兆指南</div>
         <div class="mindmap">
           <div class="mm-root">隱形殺手 · 失智高危因子與前兆</div>
@@ -553,7 +618,7 @@
 
       <!-- 文字稿 -->
       <div class="media-card">
-        <h3>📝 文字稿 / 重點整理</h3>
+        <h3>📝 文字稿 / 重點整理 <button class="dl-btn" id="copy-transcript" style="margin-left:auto;">📋 複製全文</button></h3>
         <div class="media-sub">由 NotebookLM 將訪談整理為通順的結構化重點（保留醫學數據）</div>
         <details class="transcript-box" open>
           <summary>展開 / 收合文字稿</summary>
@@ -1004,6 +1069,98 @@ document.querySelectorAll('.infographic-img').forEach(img=>{
 function closeLb(){ lb.classList.remove('show'); lbImg.src=''; }
 document.getElementById('lb-close').addEventListener('click', closeLb);
 lb.addEventListener('click', e=>{ if(e.target===lb) closeLb(); });
+
+/* ── Audio synced transcript (multi-language) ── */
+(function(){
+  const audio = document.getElementById('audio-player');
+  const box = document.getElementById('audio-transcript');
+  const status = document.getElementById('ts-status');
+  const dlBtn = document.getElementById('ts-dl');
+  if(!audio || !box) return;
+  let segs = [], cur = -1, autoscroll = true, fs = 0.95, lang = 'zh-Hant';
+  const fmt = s => { s=Math.floor(s); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
+
+  function renderSegs(){
+    box.innerHTML = segs.map((s,i)=>`<div class="ts-seg" data-i="${i}" data-t="${s.start}"><span class="ts-time">${fmt(s.start)}</span><span class="ts-txt">${(s.text||'').replace(/</g,'&lt;').trim()}</span></div>`).join('');
+    box.querySelectorAll('.ts-seg').forEach(el=>{
+      el.addEventListener('click',()=>{ audio.currentTime = parseFloat(el.dataset.t)+0.01; audio.play(); });
+    });
+    cur = -1; highlight();
+  }
+  function highlight(){
+    if(!segs.length) return;
+    const t = audio.currentTime; let idx=-1;
+    for(let i=0;i<segs.length;i++){ if(t>=segs[i].start) idx=i; else break; }
+    if(idx===cur) return; cur=idx;
+    box.querySelectorAll('.ts-seg').forEach(el=>el.classList.remove('active'));
+    if(idx>=0){ const el=box.querySelector(`.ts-seg[data-i="${idx}"]`); if(el){ el.classList.add('active'); if(autoscroll){ const top=el.offsetTop-box.offsetTop-box.clientHeight/2+el.clientHeight/2; box.scrollTo({top,behavior:'smooth'}); } } }
+  }
+  function loadLang(code){
+    lang = code;
+    if(dlBtn) dlBtn.href = `assets/audio-transcript.${code}.txt`;
+    box.innerHTML = `<div class="ts-status">載入中…</div>`;
+    fetch(`assets/audio-transcript.${code}.json`).then(r=>{ if(!r.ok) throw 0; return r.json(); }).then(d=>{
+      segs = (d.segments||[]).filter(s=>s.text && s.text.trim());
+      if(!segs.length){ box.innerHTML='<div class="ts-status">（此語言文字稿尚無內容）</div>'; return; }
+      renderSegs();
+    }).catch(()=>{ box.innerHTML='<div class="ts-status">📝 此語言文字稿產生中，稍後重新整理即可顯示。<br><span style="font-size:0.8rem">（語音仍可正常播放）</span></div>'; segs=[]; });
+  }
+
+  audio.addEventListener('timeupdate', highlight);
+  document.querySelectorAll('.ts-lang').forEach(b=>{
+    b.addEventListener('click', ()=>{ document.querySelectorAll('.ts-lang').forEach(x=>x.classList.remove('on')); b.classList.add('on'); loadLang(b.dataset.lang); });
+  });
+  document.getElementById('ts-autoscroll').addEventListener('click', e=>{ autoscroll=!autoscroll; e.target.classList.toggle('on',autoscroll); e.target.textContent='📜 自動捲動：'+(autoscroll?'開':'關'); });
+  document.getElementById('ts-expand').addEventListener('click', e=>{ box.classList.toggle('expanded'); e.target.textContent = box.classList.contains('expanded')?'↕️ 收合':'↕️ 展開'; });
+  document.getElementById('ts-fs-inc').addEventListener('click', ()=>{ fs=Math.min(1.4,fs+0.08); box.style.setProperty('--ts-fs',fs+'rem'); });
+  document.getElementById('ts-fs-dec').addEventListener('click', ()=>{ fs=Math.max(0.78,fs-0.08); box.style.setProperty('--ts-fs',fs+'rem'); });
+  document.getElementById('ts-copy').addEventListener('click', async ()=>{
+    if(!segs.length){ toastMsg('文字稿尚未載入'); return; }
+    try{ await navigator.clipboard.writeText(segs.map(s=>s.text.trim()).join('\n')); toastMsg('已複製文字稿全文（'+lang+'）'); }catch{ toastMsg('複製失敗'); }
+  });
+
+  loadLang('zh-Hant');
+})();
+
+/* ── Copy mindmap text ── */
+document.getElementById('copy-mindmap').addEventListener('click', async ()=>{
+  const mm = document.querySelector('.mindmap');
+  if(!mm){ toastMsg('找不到心智圖'); return; }
+  const text = mm.innerText.replace(/\n{3,}/g,'\n\n').trim();
+  try{ await navigator.clipboard.writeText(text); toastMsg('已複製心智圖內容'); }catch{ toastMsg('複製失敗'); }
+});
+
+/* ── Copy transcript text ── */
+document.getElementById('copy-transcript').addEventListener('click', async ()=>{
+  const t = document.querySelector('.transcript');
+  if(!t){ toastMsg('找不到文字稿'); return; }
+  const text = t.innerText.trim();
+  try{ await navigator.clipboard.writeText(text); toastMsg('已複製文字稿全文'); }catch{ toastMsg('複製失敗'); }
+});
+
+/* ── Auto-navigate to 必讀 + auto-play after all 3 sections done ── */
+let autoNavDone = false;
+function checkAutoNav(){
+  if(autoNavDone) return;
+  const aAns = countAnswered(state.ad8), rAns = countAnswered(state.risk), xAns = countAnswered(state.rx);
+  if(aAns >= 8 && rAns >= 14 && xAns >= 9){
+    autoNavDone = true;
+    setTimeout(()=>{
+      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+      const mediaTab = document.querySelector('[data-tab="media"]');
+      const mediaPanel = document.getElementById('panel-media');
+      if(mediaTab) mediaTab.classList.add('active');
+      if(mediaPanel) mediaPanel.classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+      toastMsg('三項檢測完成！為你開啟「必讀」學習資源');
+      const ap = document.getElementById('audio-player');
+      if(ap){ setTimeout(()=>{ ap.scrollIntoView({behavior:'smooth',block:'center'}); ap.play().catch(()=>{}); }, 800); }
+    }, 600);
+  }
+}
+const _origUpdateScores = updateScores;
+updateScores = function(){ _origUpdateScores(); checkAutoNav(); };
 
 document.getElementById('y').textContent=new Date().getFullYear();
 load();
