@@ -331,7 +331,7 @@
     <button class="tab must-tab" data-tab="edu">⑤ 衛教知識<span class="must-dot">必讀</span></button>
     <button class="tab must-tab" data-tab="media">⑥ 學習資源<span class="must-dot">必讀</span></button>
     <button class="tab" data-tab="src">⑦ 資料來源</button>
-    <button class="tab" data-tab="selfcheck">⑧ 自我檢測</button>
+    <button class="tab" data-tab="selfcheck">⑧ AD8 篩檢 進階版</button>
   </nav>
 
   <main>
@@ -742,7 +742,7 @@
 
     <!-- ⑧ SELF-CHECK -->
     <section class="panel" id="panel-selfcheck">
-      <div class="section-title">失智風險自我檢測</div>
+      <div class="section-title">AD8 篩檢 進階版</div>
       <div class="section-sub">把「症狀警訊」與「風險因子」拆開判讀，比單一總分更準。符合選「是」，不符合選「否」。</div>
 
       <div class="info-card" style="margin-bottom:16px;border-left:4px solid var(--warn);">
@@ -1335,14 +1335,14 @@ document.getElementById('sc-reset')?.addEventListener('click',()=>{
   SC_Q.forEach(q=>delete scState[q.id]);
   localStorage.removeItem('dementia-sc');
   renderSC(); updateSC();
-  toastMsg('自我檢測已重設');
+  toastMsg('AD8 進階版已重設');
 });
 document.getElementById('sc-copy')?.addEventListener('click',()=>{
   const w=SC_Q.filter(q=>q.group==='warning').reduce((s,q)=>s+(scState[q.id]===1?1:0),0);
   const r=SC_Q.filter(q=>q.group==='risk').reduce((s,q)=>s+(scState[q.id]===1?1:0),0);
   const t=w+r;
   const band=t>=9||w>=3?'建議進一步評估':t>=4||w>=1?'中度關注':'低度風險';
-  const lines=['【失智風險自我檢測摘要】',`總分：${t} / 16（${band}）`,`症狀警訊：${w} / 6`,`風險因子：${r} / 10`,''];
+  const lines=['【AD8 篩檢 進階版摘要】',`總分：${t} / 16（${band}）`,`症狀警訊：${w} / 6`,`風險因子：${r} / 10`,''];
   SC_Q.forEach(q=>{
     const a=scState[q.id]; if(a===undefined) return;
     lines.push(`${a?'☑':'☐'} ${q.text}`);
