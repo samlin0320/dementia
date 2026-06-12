@@ -329,7 +329,7 @@
     <button class="tab" data-tab="risk">② 14 危險因子</button>
     <button class="tab" data-tab="rx">③ 10 大生活處方</button>
     <button class="tab" data-tab="result">④ 檢測結果</button>
-    <button class="tab must-tab" data-tab="edu">⑤ 衛教知識<span class="must-dot">必讀</span></button>
+    <button class="tab must-tab" data-tab="edu">⑤ 衛教知識 · 你不知道的失智真相<span class="must-dot">必讀</span></button>
     <button class="tab must-tab" data-tab="media">⑥ 學習資源<span class="must-dot">必讀</span></button>
     <button class="tab" data-tab="src">⑦ 資料來源</button>
   </nav>
@@ -417,6 +417,10 @@
     <section class="panel" id="panel-edu">
       <div class="section-title">衛教知識 · 你不知道的失智真相</div>
       <div class="section-sub">摘自馬西屏《寶傑說健康》訪談與國際研究。</div>
+      <div style="display:flex;gap:10px;margin:12px 0 8px;">
+        <button class="dl-btn" id="copy-edu-md">📋 一鍵全頁複製 Md</button>
+        <button class="dl-btn" id="copy-edu-txt">📋 全頁複製</button>
+      </div>
 
       <div class="info-card">
         <h3>⏳ 失智症的時間軸</h3>
@@ -1223,6 +1227,40 @@ document.getElementById('copy-transcript').addEventListener('click', async ()=>{
   if(!t){ toastMsg('找不到文字稿'); return; }
   const text = t.innerText.trim();
   try{ await navigator.clipboard.writeText(text); toastMsg('已複製文字稿全文'); }catch{ toastMsg('複製失敗'); }
+});
+
+/* ── Copy edu panel (Md / plain) ── */
+function eduToMd(){
+  const p = document.getElementById('panel-edu');
+  if(!p) return '';
+  const lines = [];
+  p.querySelectorAll('.info-card').forEach(card=>{
+    const h = card.querySelector('h3');
+    if(h) lines.push('## '+h.textContent.trim());
+    card.querySelectorAll('p, li').forEach(el=>{
+      const txt = el.textContent.trim();
+      if(!txt) return;
+      lines.push(el.tagName==='LI'? '- '+txt : txt);
+    });
+    card.querySelectorAll('.stat').forEach(s=>{
+      const b=s.querySelector('.big')?.textContent?.trim();
+      const sm=s.querySelector('.sm')?.textContent?.trim();
+      if(b) lines.push(`**${b}** ${sm||''}`);
+    });
+    lines.push('');
+  });
+  return lines.join('\n').trim();
+}
+document.getElementById('copy-edu-md')?.addEventListener('click', async ()=>{
+  const md = eduToMd();
+  if(!md){ toastMsg('找不到衛教內容'); return; }
+  try{ await navigator.clipboard.writeText(md); toastMsg('已複製衛教知識（Markdown）'); }catch{ toastMsg('複製失敗'); }
+});
+document.getElementById('copy-edu-txt')?.addEventListener('click', async ()=>{
+  const p = document.getElementById('panel-edu');
+  if(!p){ toastMsg('找不到衛教內容'); return; }
+  const text = p.innerText.trim();
+  try{ await navigator.clipboard.writeText(text); toastMsg('已複製衛教知識（純文字）'); }catch{ toastMsg('複製失敗'); }
 });
 
 /* ── Auto-navigate to 必讀 + auto-play after all 3 sections done ── */
