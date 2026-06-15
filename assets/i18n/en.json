@@ -1,0 +1,400 @@
+{
+  "meta": { "code": "en", "name": "English" },
+
+  "topbar": { "logo": "🧠 Dementia<span>Risk Check</span>", "home": "← Test Center", "channel": "📡 Channel" },
+
+  "hero": {
+    "badge": "DEMENTIA RISK CHECK",
+    "title": "Dementia Risk Assessment",
+    "desc": "Integrating veteran commentator <strong>Ma Hsi-ping</strong>'s 10-year personal battle against dementia, along with international research from <strong>The Lancet</strong>, Harvard, and Finland. A 3-minute self-assessment with 10 lifestyle prescriptions.",
+    "src": "Source: \"Pao-chieh Health Talk\" 2026.05.23 · Compiled by NotebookLM",
+    "disclaimer": "⚠️ This assessment is a health education self-screening tool and <strong>cannot replace medical diagnosis</strong>. If you have concerns, please visit a neurologist or memory clinic. AD8 scale results are for reference only."
+  },
+
+  "tabs": {
+    "ad8": "① AD8 Screening",
+    "selfcheck": "①-1 AD8 Screening Advanced",
+    "risk": "② 14 Risk Factors",
+    "rx": "③ 10 Lifestyle Prescriptions",
+    "result": "④ Test Results",
+    "edu": "⑤ Health Education · Dementia Facts You Didn't Know",
+    "media": "⑥ Learning Resources",
+    "src": "⑦ Sources",
+    "mustRead": "Must Read"
+  },
+
+  "ad8": {
+    "title": "AD8 Very Early Dementia Screening",
+    "sub": "Think about <strong>changes compared to the past (over the past few years)</strong>. Have the following situations \"changed\"? Can be answered by yourself or a family member who knows you well.",
+    "questions": [
+      "Problems with judgment (falling for scams, poor financial decisions, buying inappropriate gifts)",
+      "Reduced interest in activities and hobbies",
+      "Repeating the same questions, stories, or statements",
+      "Difficulty learning to use tools / appliances / electronics (TV, washing machine, microwave, remote control, etc.)",
+      "Forgetting the correct month or year",
+      "Difficulty handling complex finances (forgetting to pay bills, file taxes, manage accounts)",
+      "Difficulty remembering appointments",
+      "Persistent problems with thinking or memory"
+    ],
+    "btnYes": "Yes, changed",
+    "btnNo": "No change",
+    "scoreLabel": " / 8 items changed",
+    "notAnswered": "Not answered",
+    "suggest": "Medical evaluation recommended",
+    "ok": "No significant concerns at this time",
+    "advice": "AD8 is an internationally used very early screening tool. <strong>2 or more items changed</strong> indicates that cognitive function may already be affected. Prompt medical evaluation is recommended."
+  },
+
+  "risk": {
+    "title": "The Lancet 14 Modifiable Risk Factors",
+    "sub": "The 2024 Lancet Commission on Dementia Prevention identified: eliminating these 14 risk factors could <strong>prevent or delay approximately 45% of dementia cases</strong>. Check the items that currently apply to you.",
+    "factors": [
+      ["Hearing loss", "The #1 risk factor; prolonged headphone use, untreated hearing impairment without hearing aids"],
+      ["High LDL cholesterol", "Newly added in 2024; tied for #1 this year"],
+      ["Insufficient education / cognitive stimulation", "Lack of learning and mental engagement after middle age"],
+      ["Uncorrected vision impairment", "Newly added in 2024; untreated cataracts, etc."],
+      ["Head injury", "History of head impact or concussion"],
+      ["Physical inactivity", "Insufficient daily continuous walking"],
+      ["Diabetes / metabolic syndrome", "Poor blood sugar and blood pressure control"],
+      ["Smoking", "Active smoking or long-term secondhand smoke exposure"],
+      ["Hypertension", "Uncontrolled high blood pressure in midlife"],
+      ["Obesity", "Elevated BMI, excessive waist circumference"],
+      ["Excessive alcohol consumption", "Chronic or heavy drinking"],
+      ["Depression / chronic stress", "Depression, panic disorder, chronic high stress"],
+      ["Social isolation", "Living alone, rarely interacting with others"],
+      ["Air pollution / environmental toxins", "PM2.5, heavy metals, microplastic exposure"]
+    ],
+    "btnYes": "Applies",
+    "btnNo": "No",
+    "scoreLabel": " risk factors apply",
+    "notAnswered": "Not answered",
+    "high": "Multiple risk factors present",
+    "mid": "Room for improvement in prevention",
+    "ok": "Well controlled",
+    "advice": "Every single factor is modifiable. The more that apply, the more worthwhile it is to start adjusting with the \"③ Lifestyle Prescriptions.\""
+  },
+
+  "rx": {
+    "title": "Ma Hsi-ping's 10 Lifestyle Prescriptions",
+    "sub": "Based on The Lancet's 14 factors, Harvard's 43-year follow-up, and Finland's multi-domain lifestyle intervention studies. <strong>Doing all of them can delay/prevent dementia by over 45%</strong>. Check the items you are \"already doing.\"",
+    "items": [
+      ["🧩 Mental stimulation", "Chess, bridge, learning new things — activating brain cells and the hippocampus"],
+      ["🚶 Regular exercise", "Continuous walking ≥15 minutes per day, accumulating 3,000–7,500 steps (3,000 steps delays by 3 years, 7,500 steps caps at 7 years)"],
+      ["🥗 Healthy diet", "Mediterranean diet: more fish, more vegetables, use good oils (olive oil)"],
+      ["🗣️ Social interaction", "Regularly chatting and socializing with others, avoiding social isolation"],
+      ["📖 Continuous learning", "Never stop learning; attend senior universities, join clubs (especially important for women)"],
+      ["🚭 Quit smoking, reduce alcohol", "Quit smoking and reduce alcohol consumption"],
+      ["☕ Moderate tea and coffee", "Coffee delays by 18%, tea by 14%, both together by 34%; coffee ≤3 cups per day, avoid hot drinks in plastic cups"],
+      ["💼 Delay retirement", "Each year of delayed retirement reduces dementia risk by 3.2%; retiring at 60 vs. 65 differs by about 43%"],
+      ["😴 Good sleep + weight control", "Deep sleep \"brain wash\" clears waste; use sleep aids cautiously, control obesity"],
+      ["💕 Happy dopamine", "Do things that make you happy (exercise, running, falling in love, emotional connections) — a dopamine surge can prevent Parkinson's disease. Ma Hsi-ping's father dated from age 90 to 100, keeping his mind sharp and dementia-free"]
+    ],
+    "btnYes": "Already doing",
+    "btnNo": "Not yet",
+    "scoreLabel": " / 10 items practiced",
+    "notAnswered": "Not answered",
+    "high": "Strong brain protection",
+    "mid": "Doing well, can add more",
+    "low": "Start today",
+    "advice": "The more you do, the stronger your brain protection. Items you haven't started are your next step."
+  },
+
+  "result": {
+    "title": "Test Results",
+    "sub": "Below is a summary of your answers from the first three sections. You can export them in one click or share with family / your doctor.",
+    "ringAd8": "① AD8 Changes",
+    "ringRisk": "② Risk Factors",
+    "ringRx": "③ Lifestyle Prescriptions",
+    "ofItems": "items",
+    "notDone": "Not answered",
+    "verdictTitle": "🧾 Overall Assessment",
+    "verdictEmpty": "Please complete sections ①②③ first.",
+    "packTitle": "📦 One-Click Export · Case Report",
+    "packSub": "Full report includes: three section results, item-by-item answers, 9 prescription checklist, learning resource links, and all source references.",
+    "dlReport": "Download Full Report",
+    "copySummary": "Copy Summary",
+    "shareNote": "📡 Shared content will automatically include a link to this site and",
+    "resultDisclaimer": "⚠️ This result is for health education self-assessment and <strong>cannot replace medical diagnosis</strong>. If AD8 shows 2 or more changes, or if you have multiple risk factors, please visit a neurologist or memory clinic for evaluation."
+  },
+
+  "edu": {
+    "title": "Health Education · Dementia Facts You Didn't Know",
+    "sub": "Excerpted from Ma Hsi-ping's interview on \"Pao-chieh Health Talk\" and international research.",
+    "copyMd": "📋 Copy Entire Page as Md",
+    "copyTxt": "📋 Copy Entire Page",
+    "cards": [
+      {
+        "title": "⏳ Dementia Timeline",
+        "body": "From the initial accumulation of \"bad proteins\" (β-amyloid deposits) in the brain to the onset of <strong>mild dementia, there is an approximately 20-year latency period</strong>. This 20-year window is the golden period for prevention.",
+        "stats": [
+          ["20 years", "Amyloid deposits → mild dementia"],
+          ["3–10 years", "Mild dementia → death"],
+          ["60–80%", "Of dementia is Alzheimer's disease"]
+        ],
+        "note": "Aging → (memory loss / Mild Cognitive Impairment MCI, an intermediate stage between aging and dementia) → dementia. Ma Hsi-ping describes himself as having \"moderate memory loss, severe but not yet dementia.\""
+      },
+      {
+        "title": "🚨 Early Warning Signs (Ma Hsi-ping's Personal Experience)",
+        "list": [
+          "Watched a movie in the theater, but had absolutely no memory of it when re-watching at home on TV",
+          "Unable to name objects, can only say \"that thing, that thing\" (couldn't say \"egg tart\")",
+          "Read a book before bed, but the next day couldn't recall where they left off",
+          "Couldn't recite Tang dynasty poems that were memorized since childhood",
+          "Could only remember \"Makro\" (a store that no longer exists) when thinking of hypermarkets",
+          "Couldn't remember friends' or students' names",
+          "<strong>180-degree personality reversal</strong> (gentle becoming violent) — a frightening sign of frontotemporal dementia"
+        ]
+      },
+      {
+        "title": "👂 Three Major \"Sensory\" Warning Signs (Most Easily Overlooked)",
+        "note": "Because the eyes, ears, and teeth are closest to the brain, their deterioration directly impacts cognition.",
+        "ranks": [
+          ["Hearing loss", "#1 risk factor", "Young people who listen to loud music with headphones for extended periods are a high-risk group."],
+          ["Poor vision", "Newly added in 2024", "The optic nerve is closest to the brain's neural pathways."],
+          ["Fewer than 20 teeth", "", "Japanese research: having fewer than 20 teeth increases dementia risk 5-fold. Japan promotes the \"8020 Plan\" (keeping 20 teeth at age 80, including dentures)."]
+        ]
+      },
+      {
+        "title": "🩺 Detection Methods",
+        "list": [
+          "<strong>MRI / CT scan</strong>: Can only detect moderate to severe stages (often too late to reverse)",
+          "<strong>PET scan</strong>: Can detect mild stages, costs approximately NT$60,000",
+          "<strong>Blood test</strong>: Approved by the U.S. FDA this year, costs approximately NT$20,000 (latest development)"
+        ]
+      },
+      {
+        "title": "💊 New Treatment Developments",
+        "list": [
+          "<strong>Monoclonal antibodies</strong> (lecanemab / donanemab): Clear amyloid proteins; one course costs approximately NT$1.5 million, requires 12–18 months of treatment, and only about 14% of patients are eligible (to avoid cerebral hemorrhage / cerebral edema).",
+          "<strong>National Brain Cleanse No. 1</strong>: Developed by Taiwan's Ministry of Health and Welfare, National Research Institute of Chinese Medicine. Has successfully cleared amyloid proteins in mice and monkeys; human trials are underway.",
+          "<strong>\"Brain wash\" mechanism</strong>: During deep sleep, brain cells shrink to create gaps, allowing cerebrospinal fluid to flush out amyloid and other waste. <strong>Sleep is nature's free cleaner</strong>."
+        ]
+      },
+      {
+        "title": "📊 Taiwan's Dementia Tsunami",
+        "stats": [
+          ["2025", "Enters super-aged society in December (fastest in the world, only 7 years)"],
+          ["8% → doubling", "Dementia rate among those 65+, doubling within 10 years"],
+          ["Women > Men", "Women 9.35% / Men 6.36%"]
+        ],
+        "note": "Women face higher risk, partly due to less social engagement and fewer learning opportunities — making \"continuous learning and social interaction\" especially important for women."
+      },
+      {
+        "title": "💕 Dopamine and Parkinson's Disease",
+        "body": "Parkinson's disease is caused by <strong>insufficient dopamine</strong> in the brain, which can further lead to dementia symptoms. Ma Hsi-ping points out that the best \"daily prescription\" is to actively engage in activities that bring <strong>happiness and trigger massive dopamine release (a dopamine surge)</strong>.",
+        "subTitle": "Specific Lifestyle Prescriptions",
+        "subList": [
+          "<strong>Exercise and running</strong>: Naturally stimulate dopamine production in the brain through physical activity.",
+          "<strong>Falling in love and emotional connections</strong>: Keeping emotions active effectively stimulates the brain. Any activity that brings joy and pleasure is helpful."
+        ],
+        "caseTitle": "🧓 Real Case: Ma Hsi-ping's Father",
+        "caseBody": "Ma Hsi-ping's father <strong>started dating at age 90 and continued until age 100</strong>. Dating triggered a massive dopamine surge in his brain, keeping his mind sharp and effectively preventing dementia.",
+        "stats": [
+          ["90 → 100", "years old · continuously dating"],
+          ["Dopamine", "surge · sharp mind"],
+          ["0 dementia", "Successfully prevented dementia"]
+        ],
+        "note": "💡 For Parkinson's disease patients, the most important concept is to encourage them to find and participate in activities that make them happy, naturally replenishing the dopamine their brain lacks through joyful emotions."
+      }
+    ]
+  },
+
+  "media": {
+    "title": "Learning Resources · NotebookLM Studio",
+    "sub": "Videos, audio, slides, infographics, flashcards, mind maps, and transcripts — all produced from the \"Rethinking Dementia\" NotebookLM notebook.",
+    "videoTitle": "🎬 Original Source Video",
+    "videoSub": "Ma Hsi-ping × Liu Pao-chieh \"Pao-chieh Health Talk\" 2026.05.23 — Full interview on 10 years of fighting dementia",
+    "aiVideoTitle": "🎞️ AI Video Summary",
+    "aiVideoSub": "Neuroscience Blueprint: Decoding Ma Hsi-ping's Battle Against Memory Loss (Generated by NotebookLM)",
+    "dlVideo": "⬇️ Download Video (MP4)",
+    "audioTitle": "🎧 Audio Summary · Online Playback",
+    "audioMust": "Must Listen",
+    "audioSub": "Winning the Battle for Your Mind — Dual-Host Podcast (Generated by NotebookLM) · Approx. 24 minutes",
+    "langLabel": "🌐 Language:",
+    "autoScroll": "📜 Auto-scroll:",
+    "autoOn": "On",
+    "autoOff": "Off",
+    "copyAll": "📋 Copy Full Text",
+    "expand": "↕️ Expand",
+    "collapse": "↕️ Collapse",
+    "dlAudio": "⬇️ Download Audio (M4A)",
+    "dlTranscript": "⬇️ Download Transcript (TXT)",
+    "clickToSeek": "💡 Click any sentence to jump to that segment",
+    "tsLoading": "📝 Live transcript loading… (first time requires transcription to complete)",
+    "tsEmpty": "(No transcript content available for this language)",
+    "tsFail": "📝 Transcript for this language is being generated. Refresh later to view.",
+    "slidesTitle": "📊 Slides",
+    "slidesSub": "20 Year Brain Defense — Dementia Prevention Slides",
+    "slidesOpen": "🔍 Open Slides in New Window",
+    "slidesDl": "⬇️ Download Slides (PDF)",
+    "infoTitle": "🖼️ Infographics",
+    "infoSub": "Click to enlarge; right-click or use the button to download the original",
+    "info1": "① Lithium Guide for Dementia Prevention",
+    "info2": "② Dementia Self-Help Guide",
+    "dlImg": "⬇️ Download Original",
+    "fcTitle": "🃏 Interactive Flashcards",
+    "fcSub": "Dementia Prevention Flashcards — Click a card to flip and see the answer",
+    "fcOf": "cards",
+    "fcPrev": "← Previous",
+    "fcNext": "Next →",
+    "fcQuestion": "Question",
+    "fcAnswer": "Answer",
+    "fcHint": "💡 Click card to flip",
+    "mmTitle": "🧠 Mind Map",
+    "mmCopy": "📋 Copy",
+    "mmSub": "The Silent Killer: Guide to Dementia Risk Factors and Warning Signs",
+    "mmRoot": "Silent Killer · Dementia Risk Factors & Warning Signs",
+    "mmBranches": [
+      { "icon": "🚨", "title": "Early Warning Signs", "leaves": ["Forgetting movies just watched", "Can't recall nouns (just says \"that thing\")", "Can't recite familiar poems", "Only remembers \"Makro\" (defunct store)", "Can't recognize familiar names", "180° personality reversal"] },
+      { "icon": "👂", "title": "Sensory Warnings", "leaves": ["Hearing loss (#1 factor)", "Vision impairment", "Fewer than 20 teeth (risk ×5)"] },
+      { "icon": "🩸", "title": "Disease & Metabolism", "leaves": ["High LDL cholesterol", "Metabolic syndrome / diabetes", "Cardiovascular disease", "B12 / lithium deficiency"] },
+      { "icon": "😰", "title": "Mood & Medication", "leaves": ["Depression / panic disorder", "Chronic high stress", "Excessive sleep medication", "General anesthesia"] },
+      { "icon": "🏭", "title": "Environmental Toxins", "leaves": ["Heavy metals", "PM2.5 air pollution", "Microplastics"] },
+      { "icon": "⚠️", "title": "Others", "leaves": ["Head injury", "Genetic factors", "Social isolation", "Obesity"] },
+      { "icon": "💕", "title": "Dopamine & Parkinson's", "leaves": ["Dopamine deficiency → Parkinson's", "Exercise & running stimulate dopamine", "Falling in love = dopamine surge", "Do things that make you happy", "Father dated age 90→100, prevented dementia"] }
+    ],
+    "transcriptTitle": "📝 Transcript / Key Highlights",
+    "transcriptCopy": "📋 Copy Full Text",
+    "transcriptSub": "Compiled by NotebookLM from the interview into structured key points (medical data preserved)",
+    "transcriptToggle": "Expand / Collapse Transcript",
+    "transcriptSections": [
+      { "title": "1. Taiwan's Aging Crisis and Dementia Tsunami", "body": "Taiwan has the world's fastest aging population: it entered an aging society in 1993, became an aged society in 2018, and by the end of 2025 will enter a \"super-aged society\" with over 20% of the population aged 65+, taking only 7 years from aged to super-aged. Government projections suggest the total population may halve to 12 million by 2065. Currently about 8% of those over 60 have dementia, expected to double within 10 years; women (9.35%) have a higher rate than men (6.36%)." },
+      { "title": "2. Dementia Timeline and the Golden 20-Year Latency Period", "body": "From mild dementia to death takes approximately 3–10 years. But from the brain's initial accumulation of \"β-amyloid protein\" to the onset of mild dementia, there is a <strong>20-year latency period</strong> — this is the golden window for prevention, delay, and even stopping the disease. Memory loss (MCI, Mild Cognitive Impairment) is the intermediate stage between aging and dementia." },
+      { "title": "3. Early Warning Signs: \"Brain Blackout\" Phenomena", "list": ["<strong>Short-term memory cannot be retained</strong>: No memory of a movie just watched in the theater; can't recall what was read before bed the next day.", "<strong>Forgetting familiar words</strong>: Knowing what an object looks like but unable to name it (can only say \"that thing\" instead of \"egg tart\"); only remembering \"Makro\" (a defunct store) when thinking of hypermarkets.", "<strong>Long-term memory and face recognition difficulties</strong>: Suddenly unable to recite well-memorized Tang dynasty poems; cannot recall familiar people's names, resorting to indirect conversation to confirm identity."] },
+      { "title": "4. Sensory Warning Signs: Hearing, Vision, and Teeth", "list": ["<strong>Hearing loss</strong>: Listed by The Lancet as the #1 dementia risk factor. Prolonged loud headphone use is high risk.", "<strong>Fewer than 20 teeth</strong>: Japanese Ministry of Health research shows dementia risk increases over 5-fold, hence the \"8020 Plan\" (including dentures).", "<strong>Vision decline</strong>: The optic nerve is close to brain neural pathways; vision impairment is also a significant risk factor."] },
+      { "title": "5. Hidden Killers in Daily Life", "list": ["<strong>Environmental toxins</strong>: Heavy metals and PM2.5 can enter the brain; microplastics are called a \"super killer\" (hot coffee in paper cups, hot food in plastic bags, bottled water).", "<strong>High LDL cholesterol</strong>: Latest research ranks it tied for #1 with hearing loss.", "<strong>Mood and medication</strong>: Chronic stress, panic, depression, excessive sleep medication, and general anesthesia all damage brain cells.", "<strong>Micronutrient deficiency</strong>: Both B12 and lithium deficiency can trigger dementia.", "<strong>Head injury</strong>: Head impacts have documented cases of causing cognitive impairment."] },
+      { "title": "6. The \"10 Lifestyle Interventions\" That Can Change Your Fate (Can Delay/Prevent >45%)", "list": ["<strong>Continuous learning</strong>: Not learning has been repeatedly listed as the #1 or #2 risk factor.", "<strong>Delayed retirement</strong>: Brain cells begin shrinking around age 60; retiring at 60 carries 43% higher risk than retiring at 65; each year of delayed retirement reduces dementia risk by 3.2%.", "<strong>Continuous walking</strong>: Accumulating 3,000 steps daily delays by 3 years, 7,500 steps delays by 7 years (maximum), but each session must be at least 15 continuous minutes.", "<strong>Social interaction</strong>: The brains of socially isolated elderly remain chronically inactive, with extremely high dementia risk.", "<strong>Tea and coffee</strong>: Coffee delays by 18%, tea by 14%, both together by 34%; coffee ≤3 cups per day.", "<strong>Continuous mental engagement</strong>: Chess, bridge, and mahjong maintain neuronal activity.", "<strong>Healthy diet + weight control</strong>: Mediterranean diet, good oils (olive oil), avoid obesity.", "<strong>Address sleep disorders</strong>: Deep sleep activates the brain's self-cleaning mechanism.", "<strong>Quit smoking, reduce alcohol</strong>: Reduces neuroinflammation."] },
+      { "title": "7. Detection Methods and New Treatment Developments", "list": ["<strong>Detection</strong>: MRI / PET scan (approx. NT$60,000) → latest blood test (approx. NT$20,000, FDA-approved) enables early detection.", "<strong>\"Brain wash\" mechanism</strong>: During deep sleep, brain cells shrink to create gaps, allowing cerebrospinal fluid to flush out amyloid protein; insomnia disrupts this detox process.", "<strong>Monoclonal antibody drugs</strong>: Can clear amyloid proteins; one course takes 12–18 months, costs approximately NT$1.5 million, and only about 14% are eligible (to prevent cerebral hemorrhage / cerebral edema).", "<strong>National Brain Cleanse No. 1</strong>: Developed by Taiwan's Ministry of Health and Welfare, National Research Institute of Chinese Medicine; animal studies have confirmed amyloid protein clearance; preparing for technology transfer and drug approval application."] },
+      { "title": "8. The Link Between Dopamine and Parkinson's Disease", "body": "Parkinson's disease is caused by <strong>insufficient dopamine</strong> in the brain, which can further lead to dementia symptoms. Ma Hsi-ping points out that the best \"daily prescription\" is to actively engage in activities that bring happiness and trigger a dopamine \"surge.\"", "list": ["<strong>Exercise and running</strong>: Naturally stimulate dopamine production in the brain through physical activity.", "<strong>Falling in love and emotional connections</strong>: Keeping emotions active effectively stimulates the brain. Ma Hsi-ping's father started dating at age 90 and continued until age 100, experiencing a massive dopamine surge that kept his mind sharp and successfully prevented dementia."], "conclusion": "Conclusion: Encourage Parkinson's disease patients to find and participate in activities that make them happy, naturally replenishing the dopamine their brain lacks through joyful emotions." }
+    ]
+  },
+
+  "sources": {
+    "title": "Sources",
+    "sub": "The primary source video, along with all studies, institutions, and references mentioned in the video.",
+    "mainLabel": "🎬 Primary Source",
+    "mainVideo": "[Full Episode] Ma Ying-jeou Refutes Dementia Video Revealing \"Forgot Idioms\"? Ma Hsi-ping's 10-Year Battle Against Dementia Reveals Key \"Brain Blackout\" Symptoms",
+    "mainVideoSub": "\"Pao-chieh Health Talk\" Liu Pao-chieh × Ma Hsi-ping · 2026.05.23 · YouTube: Q0H4lv19vV0",
+    "mainNb": "NotebookLM: Rethinking Dementia",
+    "mainNbSub": "Transcript and key highlights (requires login with an authorized Google account)",
+    "researchLabel": "🔬 Research and Sources Mentioned in the Video",
+    "items": [
+      ["🔬","The Lancet Commission on Dementia Prevention","Risk factor reports: 2017 (9 factors) → 2020 (12 factors) → 2024 (14 factors); eliminating them can prevent/delay approximately 45% of dementia"],
+      ["🇫🇮","Finland FINGER Multi-Domain Lifestyle Intervention Study","Confirmed that multi-domain interventions including diet, exercise, cognitive training, and vascular risk management can delay cognitive decline"],
+      ["🎓","Harvard University × MIT 43-Year Follow-Up Study","Large-scale longitudinal analysis of lifestyle habits and dementia risk"],
+      ["🇯🇵","Japanese Ministry of Health Research","Fewer than 20 teeth increases dementia risk over 5-fold; promotes the \"8020 Plan\" and the \"Basic Act on Dementia\""],
+      ["🇺🇸","U.S. FDA","Approved dementia \"blood test\"; approved monoclonal antibody drugs that clear amyloid proteins"],
+      ["💉","Monoclonal Antibody Drugs (lecanemab / donanemab class)","Clear β-amyloid protein in the brain; 12–18 month course, approximately NT$1.5 million, about 14% eligible"],
+      ["🌿","Taiwan MOHW National Research Institute of Chinese Medicine | \"National Brain Cleanse No. 1\"","Scientific Chinese medicine; animal studies confirmed amyloid protein clearance; preparing for technology transfer and drug approval application"],
+      ["🍵","Coffee / Tea Dementia Delay Studies","Coffee delays by 18%, tea by 14%, both together by 34%; recommended ≤3 cups of coffee per day"],
+      ["🚶","Step Count Studies","3,000 steps/day delays by 3 years … 7,500 steps delays by 7 years (maximum); each session must be at least 15 continuous minutes"],
+      ["💼","Retirement Age Studies","Each year of delayed retirement reduces dementia risk by 3.2%; retiring at 60 carries approximately 43% higher risk than retiring at 65"],
+      ["🧪","Micronutrient Studies","Deficiency in vitamin B12 and the trace element lithium (Li) linked to dementia"],
+      ["🏭","Environmental Toxin Studies","Links between heavy metals, PM2.5, microplastics and dementia"],
+      ["🩺","Clinical Physician Insights","Clinical recommendations from specialists including Dr. Chen Chang-ming, Vice President of En Chu Kong Hospital"],
+      ["💡","Charlie Munger","Referenced for his \"avoid failure\" inversion thinking approach"]
+    ],
+    "casesLabel": "👤 Dementia Cases Mentioned in the Video",
+    "casesBody": "Public figures including Ronald Reagan (former U.S. President), Bruce Willis (frontotemporal dementia), Lin Fang-yuh (former NTU Hospital President), Ma Ying-jeou, and Lu Keng (veteran journalist) were mentioned in the video as illustrative examples.",
+    "exportBtn": "📄 Export Full Report",
+    "backHome": "← Back to Test Center",
+    "note": "※ The video is a talk show program. Some research details were compiled from interview content; for formal medical decisions, please refer to original journal articles and physician diagnoses."
+  },
+
+  "selfcheck": {
+    "title": "AD8 Screening Advanced",
+    "sub": "Separates \"symptom warnings\" from \"risk factors\" for more precise interpretation than a single total score. Select \"Yes\" if applicable, \"No\" if not.",
+    "warnHeader": "🚨 Part 1: Symptom Warnings (6 questions)",
+    "warnSub": "Have you experienced cognitive changes recently? If multiple answers are \"Yes,\" the clinical significance is usually greater than the total score alone.",
+    "riskHeader": "🔍 Part 2: Modifiable Risk Factors (10 questions)",
+    "riskSub": "Currently known important risk factors and modifiable elements.",
+    "btnYes": "Yes",
+    "btnNo": "No",
+    "scoreLabel": " / 16 points",
+    "warnLabel": "🚨 Symptom warnings:",
+    "riskLabel": "🔍 Risk factors:",
+    "low": "Low risk",
+    "mid": "Moderate concern",
+    "high": "Further evaluation recommended",
+    "adviceLow": "Overall risk is currently low. Continue maintaining brain health. Keep up exercise, social interaction, and good sleep habits.",
+    "adviceMid": "Several modifiable factors have been identified. Prioritize addressing sleep, exercise, metabolic health, and sensory issues. Monitor for symptom changes.",
+    "adviceHigh": "Both symptom warnings and risk factors are elevated. Scheduling a neurology or memory clinic evaluation is recommended.",
+    "warnNote": "⚠️ If <strong>2 or more</strong> symptom warning questions are \"Yes,\" or if they are already affecting work, finances, medication management, navigation, or conversation, a <strong>neurology / memory clinic</strong> evaluation is recommended.",
+    "reset": "🔄 Reset All",
+    "copy": "📋 Copy Summary",
+    "bandLow": "✅ 0–3 points: Low risk",
+    "bandLowDesc": "Overall risk is currently low. Continue maintaining brain health.",
+    "bandMid": "⚡ 4–8 points: Moderate concern",
+    "bandMidDesc": "Several modifiable factors identified. Prioritize addressing sleep, exercise, metabolic health, and sensory issues.",
+    "bandHigh": "🔴 9–16 points: Further evaluation recommended",
+    "bandHighDesc": "Early formal evaluation is recommended, especially if symptom warning scores are high.",
+    "questions": [
+      { "id": "w1", "group": "warning", "text": "You have been frequently forgetting things that just happened recently, such as content you just read or things you just said, and it is noticeably worse than before.", "help": "The key is whether it has \"recently become noticeable\" and occurs repeatedly." },
+      { "id": "w2", "group": "warning", "text": "Difficulty finding words or naming common objects has been happening more frequently than before.", "help": "Occasionally forgetting a word is common; it becomes notable when it's increasingly frequent and affects conversation." },
+      { "id": "w3", "group": "warning", "text": "When seeing familiar people, you often can't recall their names, or you become confused about familiar faces and relationships.", "help": "A momentary lapse isn't necessarily abnormal; the key is whether it's increasing and affecting interactions." },
+      { "id": "w4", "group": "warning", "text": "You get more easily confused doing familiar tasks, such as making payments, organizing documents, or performing familiar procedures.", "help": "Changes in these functional abilities are clinically more significant than inability to recall old information." },
+      { "id": "w5", "group": "warning", "text": "Others have noticed that your memory, judgment, conversation, or work efficiency has recently declined.", "help": "Observations from others are often an important clue." },
+      { "id": "w6", "group": "warning", "text": "The above situations have begun affecting your work, finances, medication management, navigation, or daily planning.", "help": "If so, seeking medical evaluation is recommended." },
+      { "id": "r1", "group": "risk", "text": "You have hearing loss, severe tinnitus, or frequently can't hear clearly but haven't addressed it.", "help": "Hearing problems are one of the most important modifiable risk factors." },
+      { "id": "r2", "group": "risk", "text": "You have vision deterioration or eye disease, and your current correction or treatment is insufficient.", "help": "Untreated vision problems are also associated with increased dementia risk." },
+      { "id": "r3", "group": "risk", "text": "You have high LDL, high triglycerides, diabetes, hypertension, or cardiovascular disease.", "help": "Cardiometabolic control is highly related to brain health." },
+      { "id": "r4", "group": "risk", "text": "You usually don't get enough exercise — for example, most days you don't walk briskly for at least 15 continuous minutes.", "help": "Regular physical activity is associated with cognitive protection." },
+      { "id": "r5", "group": "risk", "text": "You have chronic poor sleep, or possibly have sleep apnea or severe daytime sleepiness.", "help": "Sleep problems can be both a risk factor and affect current cognitive performance." },
+      { "id": "r6", "group": "risk", "text": "You have been under chronic stress, depression, anxiety, or significant emotional distress.", "help": "Emotional state and cognitive performance often affect each other." },
+      { "id": "r7", "group": "risk", "text": "You smoke, are obese, or have a diet chronically high in saturated fat and low in fruits and vegetables.", "help": "Start by adjusting one or two actionable habits." },
+      { "id": "r8", "group": "risk", "text": "You interact with others infrequently, and your social activities in the past year have been significantly insufficient.", "help": "Insufficient social stimulation is associated with cognitive decline risk." },
+      { "id": "r9", "group": "risk", "text": "You have had a head injury, especially a concussion or impact that caused symptoms.", "help": "Head injury is a known risk factor." },
+      { "id": "r10", "group": "risk", "text": "Your current medications, B12 deficiency, thyroid issues, or other physical conditions may be causing memory or attention decline.", "help": "These conditions are often reversible causes and worth mentioning proactively during medical visits." }
+    ],
+    "disclaimer": "⚠️ Based on publicly available medical data: early warning signs reference the Alzheimer's Association and CDC; risk factors reference Lancet 2024; clinical evaluation references the Mayo Clinic MCI guidelines. This tool is for self-assessment only and <strong>does not replace diagnosis</strong>."
+  },
+
+  "footer": {
+    "line1": "Dementia Risk Assessment · For health education purposes, not a medical diagnosis",
+    "line2": "📡 Subscribe to the channel for more health content:"
+  },
+
+  "ui": {
+    "loading": "Loading…",
+    "copied": "Copied",
+    "copyFail": "Copy failed",
+    "allDone": "All three assessments complete! Opening \"Must Read\" learning resources for you",
+    "resetDone": "AD8 Advanced has been reset",
+    "copiedMd": "Health education content copied (Markdown)",
+    "copiedTxt": "Health education content copied (plain text)",
+    "copiedMindmap": "Mind map content copied",
+    "copiedTranscript": "Full transcript copied",
+    "copiedAudioLang": "Full transcript copied",
+    "dlDone": "Full report downloaded",
+    "noTranscript": "Transcript not yet loaded",
+    "reportTitle": "# Dementia Risk Assessment · Full Report",
+    "reportDate": "Date:",
+    "reportSite": "Assessment site:",
+    "reportS1": "## 1. Assessment Results Overview",
+    "reportS2": "## 2. AD8 Item-by-Item Responses",
+    "reportS3": "## 3. Applicable Risk Factors",
+    "reportS4": "## 4. 10 Lifestyle Prescriptions Implementation Status",
+    "reportS5": "## 5. Learning Resources",
+    "changed": "Changed",
+    "noChange": "No",
+    "done": "✅ Done",
+    "notDone": "⬜ Not yet",
+    "myResult": "🧠 My Dementia Risk Assessment Results",
+    "fullTest": "Full Assessment →",
+    "noData": "(None / Not answered)",
+    "prioritize": "Recommended priority areas:",
+    "videoNotSupported": "Your browser does not support video playback.",
+    "audioNotSupported": "Your browser does not support audio playback.",
+    "noFlashcards": "(No flashcard data)",
+    "fcLoadFail": "Flashcard loading failed",
+    "noMindmap": "Mind map not found",
+    "noTranscriptContent": "Transcript not found",
+    "noEdu": "Health education content not found",
+    "copiedSummary": "Summary copied",
+    "scCopyTitle": "【AD8 Screening Advanced Summary】",
+    "scCopyTotal": "Total score:",
+    "scCopyWarn": "Symptom warnings:",
+    "scCopyRisk": "Risk factors:",
+    "scCopyNote": "※ This is a self-screening, not a formal diagnosis."
+  }
+}
