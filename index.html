@@ -165,6 +165,54 @@
   .src-ico { font-size: 22px; }
   .src-item a { font-weight: 600; }
 
+  .transcript-collapse { margin-top: 14px; }
+  .transcript-collapse summary {
+    cursor: pointer; font-weight: 600; font-size: 0.93rem; color: var(--accent);
+    padding: 12px 16px; background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; list-style: none; display: flex; align-items: center; gap: 8px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .transcript-collapse summary::-webkit-details-marker { display: none; }
+  .transcript-collapse summary::before { content: '▶'; font-size: 0.75rem; transition: transform 0.2s; }
+  .transcript-collapse[open] summary::before { transform: rotate(90deg); }
+  .transcript-collapse summary:hover { background: var(--surface); border-color: var(--accent); }
+  .transcript-collapse[open] summary { border-radius: 10px 10px 0 0; border-bottom: none; }
+  .transcript-body {
+    background: var(--card); border: 1px solid var(--border); border-top: none;
+    border-radius: 0 0 10px 10px; padding: 18px 16px; max-height: 60vh; overflow-y: auto;
+  }
+  .transcript-body::-webkit-scrollbar { width: 6px; }
+  .transcript-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .transcript-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); line-height: 1.7; }
+  .transcript-section { margin-bottom: 18px; }
+  .transcript-section h5 { color: var(--accent2); font-size: 0.9rem; margin-bottom: 6px; }
+  .transcript-section p { font-size: 0.85rem; color: var(--text); line-height: 1.8; opacity: 0.9; }
+  .transcript-copy-bar { display: flex; justify-content: flex-end; padding: 10px 16px 0; }
+  .transcript-copy-btn { background: var(--surface); color: var(--accent); border: 1px solid var(--border); border-radius: 8px; padding: 6px 14px; font-size: 0.82rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 5px; }
+  .transcript-copy-btn:hover { background: var(--card); border-color: var(--accent); }
+  .comparison-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; margin-top: 20px; }
+  .comparison-card h3 { font-size: 1.12rem; color: var(--text); margin-bottom: 6px; }
+  .comparison-card .media-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 18px; }
+  .comparison-card h4 { color: var(--accent); font-size: 1rem; margin: 20px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .comparison-card h5 { color: var(--accent2); font-size: 0.92rem; margin: 14px 0 6px; }
+  .comparison-card p, .comparison-card li { font-size: 0.85rem; color: var(--text); line-height: 1.8; opacity: 0.92; }
+  .comparison-card ul { padding-left: 18px; margin: 6px 0 12px; }
+  .comparison-card li { margin-bottom: 8px; }
+  .comparison-card .highlight-box { background: var(--surface); border-left: 3px solid var(--accent); padding: 14px 16px; border-radius: 0 10px 10px 0; margin: 14px 0; font-size: 0.85rem; line-height: 1.8; }
+  .comparison-card .conclusion-box { background: linear-gradient(135deg, rgba(52,211,153,0.08), rgba(34,211,238,0.08)); border: 1px solid var(--border); border-radius: 12px; padding: 18px; margin-top: 18px; }
+  .guide-box { background: var(--card); border: 1px solid var(--border); border-radius: 14px; margin-bottom: 22px; }
+  .guide-box .guide-toggle { display: flex; align-items: center; justify-content: space-between; padding: 16px 18px; cursor: pointer; color: var(--accent); font-size: 1rem; font-weight: 700; list-style: none; }
+  .guide-box .guide-toggle::-webkit-details-marker { display: none; }
+  .guide-box .guide-arrow { font-size: 0.75rem; transition: transform 0.25s; }
+  .guide-box[open] .guide-arrow { transform: rotate(90deg); }
+  .guide-box .guide-body { padding: 0 18px 20px; }
+  .guide-box h4 { color: var(--accent); font-size: 1rem; margin: 0 0 14px; }
+  .guide-box .guide-steps { counter-reset: gs; padding: 0; list-style: none; }
+  .guide-box .guide-steps li { position: relative; padding: 10px 14px 10px 42px; margin-bottom: 8px; background: var(--surface); border-radius: 10px; font-size: 0.88rem; line-height: 1.7; color: var(--text); }
+  .guide-box .guide-steps li::before { counter-increment: gs; content: counter(gs); position: absolute; left: 12px; top: 10px; width: 22px; height: 22px; background: var(--accent); color: var(--bg); border-radius: 50%; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .guide-box .guide-tip { background: linear-gradient(135deg, rgba(52,211,153,0.08), rgba(34,211,238,0.08)); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-top: 14px; font-size: 0.85rem; line-height: 1.7; color: var(--text); }
+  .guide-box .guide-tip strong { color: var(--accent); }
+
   footer { text-align: center; padding: 30px 16px; color: var(--muted); font-size: 0.82rem; border-top: 1px solid var(--border); line-height: 1.8; }
   footer a { text-decoration: none; }
 
@@ -328,8 +376,8 @@
   <header class="hero">
     <div class="badge">DEMENTIA RISK CHECK</div>
     <h1>失智症風險檢測</h1>
-    <p>整合資深名嘴<strong>馬西屏</strong>對抗失智 10 年的親身經驗，以及 <strong>The Lancet</strong>、哈佛、芬蘭等國際研究。3 分鐘自我評估，附 10 大生活處方。</p>
-    <div class="src-note">資料來源：《寶傑說健康》2026.05.23 · NotebookLM 整理</div>
+    <p>整合資深名嘴<strong>馬西屏</strong>對抗失智 10 年的親身經驗、<strong>《博音》</strong>神經醫學博士<strong>曾文毅</strong>的腦科學解析，以及 <strong>The Lancet</strong>、哈佛、芬蘭等國際研究。3 分鐘自我評估，附 10 大生活處方。</p>
+    <div class="src-note">資料來源：《寶傑說健康》2026.05.23 ·《博音》曾博恩 × 曾文毅 · NotebookLM 整理</div>
     <div class="disclaimer">⚠️ 本檢測為衛教自評工具，<strong>不能取代醫療診斷</strong>。若有疑慮請至神經內科 / 記憶門診就醫。AD8 量表結果僅供參考。</div>
   </header>
 
@@ -349,6 +397,24 @@
     <section class="panel active" id="panel-ad8">
       <div class="section-title">AD8 極早期失智症篩檢</div>
       <div class="section-sub">回想<strong>與過去相比（數年來的改變）</strong>，下列情況是否「有改變」。可由本人或熟悉的家人代答。</div>
+
+      <details class="guide-box" id="ad8-guide">
+        <summary class="guide-toggle">📖 AD8 篩檢操作指南 <span class="guide-arrow">▶</span></summary>
+        <div class="guide-body">
+          <ol class="guide-steps">
+            <li>🧓 <strong>誰來回答？</strong> — 可由<strong>本人</strong>或<strong>熟悉的家屬 / 照顧者</strong>代為回答。家屬代答的準確度通常更高，因為患者可能缺乏病識感。</li>
+            <li>🔄 <strong>比較基準</strong> — 每一題都是在問<strong>「與過去（數年前）相比，是否有改變？」</strong>，不是問「現在做不做得到」。例如：以前很會記約會時間，現在經常忘記 → 算「有改變」。</li>
+            <li>✅ <strong>作答方式</strong> — 逐題點選<strong>「是，有改變」</strong>或<strong>「沒有改變」</strong>。選擇後會自動計分，可隨時更改答案。</li>
+            <li>📊 <strong>判讀標準</strong> — 8 題中<strong>有 2 項（含）以上選「有改變」</strong>，即建議至<strong>神經內科 / 記憶門診</strong>做進一步評估。</li>
+            <li>⏱️ <strong>所需時間</strong> — 約 <strong>1～2 分鐘</strong>即可完成，是國際公認最快速的極早期失智症篩檢工具之一。</li>
+            <li>🔒 <strong>隱私保障</strong> — 所有作答資料<strong>僅存於您的瀏覽器</strong>，不會上傳任何伺服器。關閉頁面即清除。</li>
+          </ol>
+          <div class="guide-tip">
+            💡 <strong>小提醒：</strong>AD8 量表是「篩檢」工具而非「診斷」工具。結果異常不代表確診失智症，但<strong>強烈建議盡早就醫</strong>，因為早期介入的效果最好。根據研究，失智症在出現明顯症狀前有長達 <strong>20 年的潛伏期</strong>，及早發現、及早行動，能有效延緩病程。
+          </div>
+        </div>
+      </details>
+
       <div id="ad8-list"></div>
       <div class="score-box">
         <div class="score-row">
@@ -445,6 +511,239 @@
         <div class="media-sub">馬西屏 × 劉寶傑《寶傑說健康》2026.05.23 — 對抗失智 10 年完整訪談</div>
         <div class="video-wrap">
           <iframe src="https://www.youtube.com/embed/Q0H4lv19vV0" title="馬西屏對抗失智10年" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <details class="transcript-collapse" id="transcript-toggle-1">
+          <summary>📝 影片完整文字稿（點擊展開／收合）</summary>
+          <div class="transcript-body">
+            <div class="transcript-copy-bar"><button class="transcript-copy-btn" onclick="copyTranscript('transcript-toggle-1')">📋 複製全文</button></div>
+            <div class="transcript-meta">
+              <strong>馬西屏親身經歷：失智海嘯來襲，如何自救？</strong><br>
+              主講者：馬西屏（資深名嘴、失智大使）<br>
+              頻道：寶傑點兵／寶傑怎麼說<br>
+              <a href="https://www.youtube.com/watch?v=Q0H4lv19vV0" target="_blank">▶ YouTube 原始連結</a>　·　<a href="https://tinyurl.com/24fq3y9p" target="_blank">短網址</a>
+            </div>
+            <div class="transcript-section">
+              <h5>🧠 失憶震驚與大使使命</h5>
+              <p>有一次是你講到一半，你就聲音發不出來，後來你就提前先走。我以為說是因為你的身體的關係，尤其我知道這一段時間裡面你其實不太上電視。我們當然找你來，你也說，你現在記不起來了。我以為說，那是你客氣了，那是你的謙辭。就搞了半天不是，你真的已經得到非常嚴重的失憶。這十年來，花很大精神研究失智。我立志做失智大使，因為失智海嘯已經來襲了，它是世紀疾病了。這是我來上節目第一件重要的事情。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>👂 聽力下降為首要因子</h5>
+              <p>我們看刺胳針，排第一名是什麼？聽力下降。聽力下降是失智危險因子第一名，第一個徵兆，第一名。所以現在年輕人每天拿個耳機放這邊，打電腦遊戲，然後跑步，重金屬，我告訴你，都是失智的高危險群。全世界第一個為失智症訂法律的厚生省做了一個研究，發覺人的牙齒少20顆，失智增加五倍以上。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>📺 博學名嘴的失憶</h5>
+              <p>我之前主持在電視節目《關鍵時刻》，他之所以被喜歡，被很多人接受，其實有一個非常關鍵的人物，那就是馬西屏。因為馬西屏的博學多聞，博聞強記，而且他講解話來呢，旁徵博引。你娓娓道來，你就覺得哇，那個厚度非常的深厚。而且你可以從他的談話裡面，完全可以知道說這個事件背後的真相，而且你可以知道這個故事之後，還有跟哪些東西，它的典故，它的來源，它的脈絡，你可以知道的一清二楚。所以對我來講，馬西屏一直是一個聰明的代表，是一個強記的代表。而這樣的一個博學多聞，能夠旁徵博引的人，他居然告訴我說，他最近正在失憶進行式中。而且他前一段時間，他不太上電視，是因為他被判定說他有嚴重的失憶。這個讓我太能想像了。所以今天呢，我們就要請他過來就是，他這個從這麼聰明，從這個博聞強記的過程，怎麼會變成失憶？因為很多人覺得你或如果你會有失智，你會失憶，是因為你不學習，是因為你的吸收太慢了，可他不是，他一直都在學習當中，而這麼一直都在學習當中的人，怎麼可能跟失智畫上等號呢？所以我們今天一定要找他來聊一聊。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>🗣️ 失憶的親身經歷</h5>
+              <p>我老師跟你講，各位觀眾，我剛剛講寶傑好這三個字，內心裡面是激傳的。我講了從20幾年前開始講寶傑好，就突然間有幾，最近幾年沒講了，突然間再講寶傑好，哇，那種感覺真回來了。寶傑西屏又合體了，所以這一集你一定要看一下。好。那個我這幾年，這十年來，花很大精神研究失智。我立志做失智大使，因為失智海嘯已經來襲了，它是世紀疾病了。那寶傑剛不相信，其實我也很悲傷啊。他別人說我上知天文下知地理，那等到人家問你什麼都答不出來，你就說，給仙的。然後還有人說我以前上節目是念大字報，那現在失智之後不是更慘了嗎？</p>
+            </div>
+            <div class="transcript-section">
+              <h5>📝 從博學到失憶的轉變</h5>
+              <p>我最近驚訝的是說，我不管給他什麼題目，我給他講戲上的題目，我給他講歷史的題目，我給他任何東西，他都可以生出一堆我從來沒有知道，我從來沒有辦法想像的故事在後面。而且剛剛講到的，他在《關鍵時刻》，他常常一個人就獨自了講了五分鐘、十分鐘，曾經講過20分鐘。他講20分鐘是從來沒有間斷，我也在旁邊就像聽著，完全不間斷，等於說他，你就像是背稿，你也背了20分鐘。那你怎麼會跟失智有關係呢？以前的《關鍵時刻》是一鏡到底的，是不能NG的。哇，那時候真是滔滔不絕，如長江大河。幸好後來可以NG了。我第一次講不出名字來，是行政院長江宜樺。他一下腦袋斷掉了，從此就越來越嚴重，越來越嚴重，我就很多東西開始記不起來。尤其是一些古文明的，我跟你講，我這個什麼時候開始特別開始覺得自己越來越嚴重，第一個，我在家裡面看電影。我老婆回來說，這電影好看嗎？我說好看。她說不久前才電影院看過。真的，我老婆。那我老婆從就喜歡戲弄我，他剛才不知道事情嚴重性。結果他買了蛋塔回來放冰箱，吃完飯之後我就說，把那個那個那個拿出來。我老婆說，哪個哪個哪個，你要講出來。我說那個那個那個。她說哪個哪個哪個。後來我去問醫生，醫生說你還知道冰箱裡面有個那個，還不錯。但你蛋塔講不出來。所以你剛剛講第一個是，我去電影院看過的電影。我知道你是非常愛看電影的人。你在電影院看完電影，然後你完全沒有印象。你回到家裡，再用電視看一遍，你還看得津津有味。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>😴 失眠與麻醉的影響</h5>
+              <p>這還不算，這還初期。我後來問了醫生，醫生說你還知道冰箱裡面有那個。他就跟我說，健忘是老化，失憶是老化跟失智的中間體。那失憶越來越嚴重，就會變成失智。各位知道失智有很多種嘛，那阿茲海默症大概佔，台灣佔六成，世界佔六成到八成。阿茲海默症就是以失憶為最開始的表現。我嚴重到什麼程度後來，我每天睡覺前要看30分鐘書，這固定的習慣，從小。看完書放床頭我就睡著了。我後來拿起書來，忘了昨天看的30分鐘是什麼東西。沒辦法，我接不下去。完全接不下去。接不下去怎麼辦呢？所以我從那時候就開始不看床頭書了。我就看歡樂的連續劇，追劇。看了歡樂，看半小時我就睡著。所以馬老師的意思是說，我如果今天看了30分鐘，我看到哪個段落我是非常清楚的，所以第二天我如果要睡覺前，我要從哪一頁，甚至我要從哪一頁，哪一張節看下去，你就非常清楚的。但後來你已經完全忘了我看了什麼。更可怕是我從小花很大精神去背唐詩宋詞。我上節目時候常可以把唐詩宋詞給它變起來，變得很好笑的，你知道嗎？我看那個《慶餘年》，我亂看那個張若昀。他是穿越到另外一個時代，那要做詩比賽，他用了杜甫的《登高》。我小時候那個《登高》啊，背得滾瓜爛熟，然後他一背杜甫的《登高》，我居然背不出來。我只記得「無邊落木蕭蕭下，不盡長江滾滾來」。其他我什麼「竹亭新酒」啊，我背不起來。我就開始把唐詩拿出來，看名字，看我可不可以背，考考我自己。幾乎都背不出來。就只能背《床前明月光》。真的，我自己考試，都發覺嚴重了。嚴重了。所以然後我們家人曾經在我剛開始的時候，很喜歡玩一個遊戲。我兒子女兒跟我老婆說，老爸，去大賣場了。然後我一定會說，走，去萬客隆。他們就哈哈大笑。因為奇怪了，大潤發什麼都跳不進來。我永遠只記得萬客隆。那最早的大賣場，最早的。我奇怪，我大賣場就只記得一個萬客隆。那其他的呢？其他就不記得。所以每次我都說去萬客隆，他們就哈哈大笑。可是現在沒有萬客隆了。早就沒有萬客隆。就所以我越來越嚴重。因此呢，我就做決定第一個去看醫生。那看了醫生當然就做了一些檢查，我等下都會慢慢講。然後第二個我就做了很多研究，看研究報告，世界級的。第三個我就開始自我療癒，自我治療。所以我各位一定要聽我講，為什麼？我是有醫生的講法，有世界期刊研究報告講法，還有我自身十年來對抗失憶，不要走上失智的心得，這邊今天要提供給大家。而且我記得你當時開始就是說接不上，我們剛剛講江宜樺那一次。還有一次是你講到一半，你就聲音發不出來，然後你就後來你就提前先走。那後來我以為說是因為你的身體的關係，因為你後來你的心臟，後來你的心臟開刀，然後魏徵把你那個心臟剝了一層皮。那我以為是這個關係。那後來我們也找了一個失智跟失智有關的醫生，曾醫師曾清圓醫師。他講說失智跟人的慢性發炎是有關的，特別是你有心血管疾病，你有心臟病的話，你跟你的失智，你跟這個東西是有關的嗎？我跟你講，曾醫師講是一部分，像心血管疾病會引發失智的。那腦部的發炎缺氧都會引發失智的。那我的失智，我自己這個跟醫生也談過這的，我是有幾個問題。第二個問題就是失眠跟吃安眠藥跟麻醉的問題。像我動大手術麻醉。那個麻醉就是把老細胞會受傷的。所以我做動手術麻醉，所以各位，不要輕易麻醉。這第一個。第二個，現在所有研究都證明，失眠是失智的殺手。但是呢，安眠藥吃多也是失智的殺手。所以這就成兩難。那我在那邊把我經驗告訴你，失眠要先解決。如果你有失眠，一定要吃安眠藥。但如果你安眠藥吃好之後，盡量把安眠藥推掉。這是很嚴重的事情。所以失智跟失眠，那我第二個是什麼？你以前失眠很嚴重。你也常去吃安眠藥。我吃安眠藥。所以我現在安眠藥已經減到半顆。戀多眠半顆。我打算要看能不能把這半顆再減掉。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>😥 壓力與情緒的危害</h5>
+              <p>第二個就是壓力跟情緒。我的那個，都劉寶傑給我的壓力啦，都他害我失智了。壓力太大。我有的時候，我最紅的時候，最紅，一天上七個節目。我從早上上大陸電視台，一直上上上上到晚上《關鍵時刻》，上七個。給自己壓力太大。壓力太大之後，我就變成有一點恐慌症。恐慌症。你還有恐慌症。恐慌症，壓力太大。各位要知道憂鬱症跟恐慌症，都是造成失智的重要原因之一。所以我會吃，偶爾上節目前我就會吃半顆贊安諾。你是贊安諾啊。半顆。上節目前要吃半顆贊安諾。可是現在吃贊安諾是有有影響的。我今天忘了吃贊安諾了，壓力好大。對，好。所以我自己的變化，我就去觀察。所以我剛剛已經講了幾個重點，但是我要系統跟大家講。各位看一下，我失憶記得女友數量，很有趣。然後再看下一個我更有趣，我失憶想不起仇人是誰。那我現在情況越來越好，仇人一個一個回來了。這是這是記憶越來越好了後遺症。所以馬老師你特別提到你剛剛講說，你在等於說你有重度失憶，而且你可怕的是說那個失憶是邁向失智的一個過程。可是你警覺到了，因為你剛剛講你看電影，發覺，你看電影怎麼，我看過電影我居然忘了，我居然這個所謂的蛋塔這個名字我居然記不得了，我永遠記得只有萬客隆，萬客隆已經沒了。我們大賣場我記不得。所以你馬上就馬上治療，你馬上就開始改善，你剛剛講，改善你的睡眠，改善你吃安眠藥，改善你的整個情緒。你的失憶是可以回轉的。好。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>🇹🇼 台灣失智國安危機</h5>
+              <p>我嚴重失憶之後，我就讀了很，剛看了很多醫生，也讀了很多。我先要這邊講一下，我特別感謝恩主公，名譽副院長這個陳昌明醫師。我給他偷學了很多。這個我先講一下，芬蘭做了一個兩年的研究，證明人的失智是可以用多重生活干預。哇，這個一下引爆世界，現在所有研究都知道它的意思，台大研究也跟他講。你說可以改善的。用多重生活來干預你的失智。這是經典的一個研究，我等下會拿來跟你講，就是你改善你的原因，改善你生活方式，你的失智是會延緩的，多少延緩，數字都有出來。第二個就是世界上最頂尖的雜誌《刺胳針》。《刺胳針》在芬蘭的研究出來之後，在2017年弄了九項，就是說你如果做這九項你就會失智。真的，九項。《刺胳針》的醫學委員會他自己本身做的。結果2017，2020年他有更新，變12項。現在最新的《刺胳針》向全世界發布，14項。你如果做這14項，你會失智。你把這14項去除，你的延緩或是預防失智達到多少？45%。一半可以預防。好。另外就是世界最大研究是哈佛跟麻省理工學院在做了43年的研究，43年呢，都不可思議啊。他們研究了13萬1121人。然後這在43年裡面這13萬多人，總共有11033人變成失智。那他就很簡單，你這你為什麼這13萬人這1萬1千人會變失智？他研究他生活習慣，他作息，他的原因。啪一下，怎麼樣？哇，我就是我現在要給你講的一個重點，就是到底這些頂尖研究，我看了40幾篇研究。這些頂尖研究到底怎麼樣可以讓我們在生活裡面，我們平常，而且很多很多是你這輩子想不到的。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>⏳ 失智潛伏期與預防</h5>
+              <p>下面我要跟大家正式講，你一定要聽我仔細講。你要如何像我一樣預防失智，因為寶傑我跟你講，當你輕度失智到死亡，現在有研究報告，三年到十年。你說輕度失智到死亡就要三年到十年。三年到十年。但是呢，當你腦袋出現壞東西，所謂壞東西就是β-澱粉樣蛋白。β-澱粉樣蛋白出現到你出現輕微失智，20年。所以這20年才是你的關鍵期，你不要說，哎呀，我不會失智啦。這輕度那是給失智人看的，錯了。我是給這20年期間你可以預防的，你可以延緩的，你可以阻止的。我是給這些年輕中壯年人聽的。哦，所以你如果發覺你輕度失智的前面你有20年的潛伏期嗎？潛伏期。對，你會健忘，會失憶，然後到失智。但這中間你是可以改善，可以預防，可以延緩。來，仔細聽我講幾個你不知道的。那我先簡單講，第一個就是，當然有遺傳，遺傳性很簡單，一抽血，六個遺傳基因，這個我們就不要詳細講。遺傳是會造成失智的。第二個外傷。外傷。我告訴各位，郝柏村有一段時間出現失智狀況，因為他拉鐵門撞到頭。許信良有一陣子出現失智狀況，你知道怎麼發生的？為什麼？雞蛋打到頭。雞蛋打到頭都會。最新的那個有個網紅叫博恩對不對？他老爸是老學管頂尖專家。他就滑雪撞頭，他說他現在出現失憶狀況。怎麼可能，這麼聰明。所以就不要撞到頭，不要撞到頭。所以頭要保護好。頭要保護好。好。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>👂 聽力、視力與牙齒健康</h5>
+              <p>第二主要聽清楚就疾病。馬老師說有什麼疾病，心血管疾病、甲狀腺低下、睡眠呼吸中止症，我不是要講這些。我要跟大家講幾件事情，第一件事情，寶傑你絕對沒聽過。眼睛不好，耳朵不好，牙齒不好。哦，失智。好，眼睛耳朵，牙齒。因為他們跟頭最接近。好，各位觀眾要聽清楚了，我不是給老人家講的這一段。來，寶傑，這是我來上節目第一件重要的事情。我們看刺胳針，14項，排第一名是什麼？排第一名是什麼？聽力下降。哦，聽力下降是失智危險因子第一名。第一個徵兆。第一名。哦，所以現在年輕人每天拿個耳機放這邊，打電腦遊戲，然後跑步，重金屬，我告訴你，都是失智的高危險群。所以今天我講第一個這個。所以聽力的衰減是失智的第一步。第一名。第一名。在《刺胳針》世界最頂尖的雜誌裡面，他把失智，這個聽力下降列為第一名。第二個，眼睛。視力不好會造成失智。因為眼睛的神經跟腦神經最近。再來一個牙齒。所以你剛剛講耳聰目明是真的有道理。我要跟大家講一個，你絕對不知道，這是這是我來第二第二重要的。哦，牙齒。牙齒不能少於20顆，少於20顆你失智。這誰做的研究？這是日本厚生省。厚生省就是我們的衛福部。厚生省把日，因為日本老人最多嘛。他們在2020年訂了失智症基本法。失智症基本法，居然是全世界第一個為失智症訂法律的。厚生省做了一個研究，發覺人的牙齒少於20顆，失智增加五倍以上。所以現在日本是全世界第一個訂了8020計畫。你知道什麼叫8020計畫？什麼？全日本80歲以上的老人不准有一個牙齒低於20顆。8020。對。那我裝假牙也可以嗎？假牙算。假牙算。所以全日本80歲以上老人不能少於20顆牙齒。所以我嘴巴裡面不管真的牙齒假的牙齒，我一定要20顆以上。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>🩸 三高與壞膽固醇</h5>
+              <p>那我再來，各位，除了牙齒、眼睛、耳朵，三高、糖尿病，這是必然的。三高糖尿病。在三高糖尿病裡面，最重要的就是壞膽固醇。就低密度膽固醇。低密度膽固醇。在《刺胳針》的研究裡面，各位，低密度膽固醇第一次是在第三名，第二次也是在第三名。啪一下，最新的，他跟聽力下降，聽力下降永遠是三次都第一名。跟聽力下降跟低膽固醇過高，合都是第一名。我一看這個之後，我就把膽固醇下降了。各位來看上面是我的檢驗報告。我的總膽固醇從200多變90。我的三酸甘油酯從160變80。我的LDL壞膽固醇從141.1變成39。降了100多。當然，現在有個醫學研究說，膽固醇降太低，也會對老老造成不好。但沒關係，壞膽固醇一定要降低，因為失智症裡面有個心血管疾病失智症，這很嚴重的。那心血管失智症，你把壞膽固醇降低，你心血管疾病會改善，同樣會改善失智。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>🏃‍♀️ 運動、學習與自救策略</h5>
+              <p>怎麼自救？我跟太多醫生談過，太多專家談過，每個都跟我講，這個人講兩項，那個人講兩項，這個人講三項。我看了，把醫生的綜合起來，我自己看了很多研究報告，再加上《刺胳針》的14項，再加上哈佛的，再加上芬蘭的。多重生活干預。我把它綜合成九個綜合生活干預。你如果做這九個，你的失智會延緩或者預防超過45%。第一個，動腦。讓老細胞活化。第二個就運動。大家都說日行一萬步，但到失智門診，醫生跟你講，每天走3000步。3000步延緩失智三年。4000步四年，5000步五年，6000步六年，7000步七年。到了7500步就是七年了，走一萬步也是七年。第三個就健康飲食，地中海飲食number one。第四個就是社交互動。孤獨老人失智第一名。第五個，持續學習。《刺胳針》不學習排第二名。第六個，戒菸少酒。第七個，喝茶喝咖啡可以大幅延緩失智。喝咖啡延緩18%，喝茶延緩14%，兩個都喝延緩34%。第八個，晚退休。60歲退休跟65歲退休，延緩失智程度差43%。第九個就是改善睡眠。</p>
+            </div>
+            <div class="transcript-section">
+              <h5>💊 檢測與治療新進展</h5>
+              <p>檢查以前，第一個，核磁共振、電腦斷層，但要中度或重度才照得出來。輕度的要正子攝影，六萬多。最新的發展今年，衛福部剛剛核准，可以抽血。抽血就可以知道。美國抽血是兩萬。治療方面，美國人做出兩種單株抗體，可以把壞的澱粉類蛋白去除。衛福部已決定今年年底一種單株抗體進台灣，明年第二種。但問題很大：一個療程150萬、會造成腦出血跟腦水腫、需要先做很詳細的檢查，在美國目前100個人裡面適合做只有14個。而且清掉壞東西後上游一直再產生，過一陣子又來了。中藥方面，衛福部國家中藥研究中心做出國家清腦一號，在小老鼠跟猴子上面把腦袋的β-澱粉樣蛋白清除掉，已經證明了，現在找廠商技術移轉做人體實驗。</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- 來源影片 2：曾博恩 × 鄭文意 -->
+      <div class="media-card">
+        <h3>🎬 來源影片 ②</h3>
+        <div class="media-sub">鄭文意博士 × 曾博恩《博音》— 腦霧、失智與AI：大腦的未來</div>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/NdENe_euGVU" title="腦霧、失智與AI：大腦的未來" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <details class="transcript-collapse" id="transcript-toggle-2">
+          <summary>📝 影片完整文字稿（點擊展開／收合）</summary>
+          <div class="transcript-body">
+            <div class="transcript-copy-bar"><button class="transcript-copy-btn" onclick="copyTranscript('transcript-toggle-2')">📋 複製全文</button></div>
+            <div class="transcript-meta">
+              <strong>腦霧、失智與AI：大腦的未來</strong><br>
+              主講者：鄭文意博士（上頂影像科技創辦人）<br>
+              頻道：曾博恩<br>
+              <a href="https://www.youtube.com/watch?v=NdENe_euGVU" target="_blank">▶ YouTube 原始連結</a>　·　<a href="https://tinyurl.com/2559cnj2" target="_blank">短網址</a>
+            </div>
+
+            <div class="transcript-section">
+              <h5>⚠️ 高智商非免死金牌</h5>
+              <p>智商很高的人，他有很好的認知儲備，讓他能夠應付各式各樣不同的難題。他在他的同儕當中呢，他顯得比較沒有失智，腦筋比較還是很清楚。別人都可能已經慢了、遲鈍了、錯誤百出了，可是他還是可以維持得相當不錯。可是呢，認知儲備的這個維持力，當他的整個腦部已經老化到一個程度的時候，他會突然地垮下來。認知退化是懸崖般的這樣子下墜。所以他會一直保持得很好，可是到了某一個點，就突然地下墜。所以不要認為智商高就絕對是免於這個失智。他可能一開始可以表現得還不錯，可是到最後，他如果還沒有抓到遠離失智的要領的話，他到最後還是會垮下來。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>🎙️ 神秘來賓：親生父親</h5>
+              <p>失智海嘯席捲全球，失智不只是老人的事，每個人都逃不掉。你的父母、長輩甚至自己都可能正在走向這條路，只是還沒發現而已。失智的原因到底是什麼？能提早預防嗎？今天的嘉賓正是台灣預防失智、逆轉腦年齡的專家，也是研發全世界第一個腦齡檢測技術的上頂影像科技的創辦人鄭文意博士。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>👴 失智親人的感受</h5>
+              <p>我父親慢慢地走向失智。我感覺他好像就是一個靈魂被囚禁在一個軀體裡面，好像沒有辦法釋放出來，可能他也沒有辦法表達什麼，他甚至手腳都沒辦法去搔他自己的癢，好像被囚禁在一個軀體裡面。可是我知道他內心好像還是，腦子裡面還是會有一些反應，會有一些感受，只是他講不出來。他沒辦法表達，因為他的手腳、言語都已經沒辦法去表達他的感受了。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>❓ 失智者的病識感</h5>
+              <p>我們可能以為他們沒有病識感。那說不定是他們沒有辦法正確地表達他們的病識感。日本的一個失智權威，他最後他自己也失智了。那時候還在很輕微失智的時候呢，他女兒一直勸他說去日照中心，去跟大家玩。這個爸爸就不願意。最後他冒出一句話：「你想要我早死啊？」因為他已經感受到他女兒背後的意思了。那個失智的人他雖然有一些功能已經喪失了，可是他有一些其他的功能可能還存留著，特別是那種感受。只是我們以為他們已經都失去了。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>📊 失智症的分類</h5>
+              <p>65歲以上人口中，8% 已確診失智症；18% 為輕度認知障礙（MCI）——還不算失智，但經過嚴謹的神經生理測驗，認知功能比正常標準稍低；另外 50% 為主觀認知缺損（SCD）——認知功能測試完全正常，但自己已感覺比去年思考速度、反應速度都變慢了。SCD 當中平均 30% 日後會變成失智。</p>
+              <p style="margin-top:8px;">50 + 18 + 8 = 76%，只有大約 25% 是真正正常健康、可能一輩子都不會失智的。其他的人都有失智的可能性。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>💔 照顧者的心情</h5>
+              <p>真的感受到照顧失智的家人的那種沉重。每一次我離開的時候我心裡都很難過。因為就是看到他這樣子，然後沒辦法好，然後我也無能為力，就離開了。逐漸地會不記得人、不認得人，這個是已經到了重度的失智。可是他還會保留一些最基本的東西，在他的腦海裡面。他當然記得我，他對我還是有反應。他好像也記得他所信靠的上帝。禱告的時候他還是會跟我一起禱告。所以我覺得好像有一些最核心的東西並沒有失去。</p>
+              <p style="margin-top:8px;">整個過程你陪伴他，有點像是你在陪伴一個小孩。他從小嬰兒誕生，然後長大，然後最後要步入他離開世界的旅程的最後一個階段是，他又變回小孩子的樣子。在這樣的過程當中其實我們就是去陪伴，去好好地讓他能夠完成人生的最後一段路。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>🧬 基因與生活習慣</h5>
+              <p>25% 不會失智的人，為什麼？<strong>55% 因為基因，45% 因為後天的環境、生活習慣。</strong>基因還是佔一個很大的部分。後天有很好的生活習慣——規律運動、健康飲食、充足睡眠、常去社交、樂觀開朗、認知挑戰豐富——腦部的認知儲備就非常豐富，可以撐得比較久，甚至到 90 歲以後還是不錯的。</p>
+              <p style="margin-top:8px;">另一種人是好的基因。好的基因的人腦部有很強的<strong>韌性</strong>（即使有 Aβ 或 tau 蛋白傷害腦細胞，認知仍不退化）和<strong>抵抗力</strong>（腦部就是沒有這些毒蛋白，非常乾淨）。</p>
+              <p style="margin-top:8px;">後天可改善的壞因子：發炎（腸漏症、過敏）、空氣環境（PM2.5、微粒塑膠、汞金屬）、三高、飲食中的有害物質。即使有 ApoE4/E4 高風險基因，把後天因素控制好，也有可能遠離失智。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>🧪 失智症的假說</h5>
+              <p>單株抗體藥物把類澱粉蛋白清掉了，可是病人的認知退化速度只減緩了 30%——部分有效，根本沒有治療好。代表以類澱粉蛋白為中心的假說可能是錯誤的。</p>
+              <p style="margin-top:8px;">現在越來越多人認為：失智是不同原因組合而形成的，是多重原因造成的。你可能有阿茲海默的基因，同時又合併血管型失智。那些蛋白搞不好不是原因，搞不好只是一個旁觀者——在過程中產生出來的東西。</p>
+              <p style="margin-top:8px;">不同的失智表現形態都不同：阿茲海默主要以記憶消失為主；Bruce Willis 的額顳葉失智最開始是講話不清楚；Robin Williams 的路易氏體失智是幻覺。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>🏃‍♀️ 運動與睡眠</h5>
+              <p>失智被形容為<strong>第三型糖尿病</strong>——胰島素阻抗是失智的重要原因。運動，特別是<strong>肌力訓練</strong>，能降低胰島素阻抗。肌肉越多，糖分可以在肌肉代謝掉。肌肉也是人體最大的內分泌器官，會分泌肌肉素（Myokine），包括鳶尾素（Irisin）和 IL-6，能保護大腦。</p>
+              <p style="margin-top:8px;"><strong>有氧運動</strong>能增加腦源性滋養物質（BDNF），研究證明有氧運動後海馬迴會變大（管記憶的部分），有神經新生的作用。</p>
+              <p style="margin-top:8px;">運動要配合休息和營養。一週做 2～3 次，一次約 30 分鐘。運動前後要攝取蛋白質。運動給身體的是短暫壓力，壓力過後的復原反應才對腦部有幫助。</p>
+              <p style="margin-top:8px;"><strong>睡眠</strong>：長期失眠的人失智風險很高。深眠時腦部會把類澱粉蛋白、tau 蛋白和代謝廢物排出腦外。沒有好好睡眠，廢物堆積就更多，就可能造成失智。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>🧠 人格特質與失智</h5>
+              <p>西北大學（2024）用 Big Five 人格模型研究發現：<strong>Neuroticism（神經質）</strong>跟失智的關聯非常高。負向情緒越強、波動越大的人越容易失智。原因：神經質的人壓力荷爾蒙會增加，長期壓力荷爾蒙會傷害腦部。</p>
+              <p style="margin-top:8px;">相反地，Big Five 特質越好的人，腦部有更好的抵抗力跟韌性，比較不受類澱粉蛋白或老化影響。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>🤖 AI 與大腦健康</h5>
+              <p>社群媒體故意推播焦慮和仇恨內容（rage baiting），長期對腦部健康有害。AI 時代需要一種新的教育——從小教孩子 AI 是什麼、怎麼正確使用、可能有什麼不好的影響。</p>
+              <p style="margin-top:8px;">自動化的重複性任務外包給 AI 反而對人腦有幫助（重複性操作耗腦對健康有害）。人類應發展 AI 不能做的創造力與批判性思考。我們的腦會因科技和社會變化而適應（plasticity），懂得利用 AI 的人會成功，被動地被社群餵養的人則可能受害。</p>
+            </div>
+
+            <div class="transcript-section">
+              <h5>⚠️ 生活中的失智警訊</h5>
+              <p>自己是對自己最敏銳的觀察者——你最知道自己體力或智力是否下滑。另外就是非常親近的家人或朋友最早偵測到變化。具體警訊：最近為什麼那麼暴躁、易怒（以前不是這樣）？買東西方法跟以前不一樣（以前考慮很久，現在一下就出手）？情緒不穩定？這些行為改變都是警訊。</p>
+              <p style="margin-top:8px;">腦霧（Brain Fog）：經常走進房間忘記為何進來、記憶力明顯衰退、判斷力變慢。跟一般健忘不同，腦霧是持續且明顯的認知功能下降。頭部外傷（TBI）會明確增加將來失智風險。</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <!-- 兩部影片比較分析 -->
+      <div class="comparison-card" id="comparison-content">
+        <h3>🔬 兩部影片深度比較分析</h3>
+        <div class="media-sub">馬西屏《寶傑說健康》 × 曾文毅《博音》— 交集與相異點完整對照</div>
+        <div class="transcript-copy-bar"><button class="transcript-copy-btn" onclick="copyComparison()">📋 複製全文</button></div>
+        <p>兩部影片分別由<strong>🧬 神經醫學專家曾文毅醫師</strong>（於《博音》節目）與<strong>🎙️ 資深媒體人馬西屏</strong>（於《寶傑說健康》節目）主講。雖然兩者都高度關注失智症的預防與成因，但切入的視角截然不同：曾醫師從腦科學、神經病理學與臨床醫療出發；馬西屏則是以自身對抗輕度失憶十年的「病患視角」，統整國際頂尖醫學期刊的數據來做衛教。</p>
+
+        <h4>💡 交集 — 兩部影片的共通觀念</h4>
+
+        <h5>1️⃣ 🤕 環境毒素與頭部外傷是共同殺手</h5>
+        <ul>
+          <li><strong>🧠 頭部外傷：</strong>兩部影片都明確指出「撞到頭」會大幅增加失智風險。曾文毅醫師提到兒子滑水時頭部常撞擊水面（腦震盪感）是未來失智的風險因子；馬西屏也舉例滑雪撞到頭、拉鐵門或被雞蛋打到頭，都曾引發失智症狀。</li>
+          <li><strong>🏭 環境污染：</strong>雙方都強調 <strong>PM2.5 及重金屬</strong> 會直接進入腦部造成傷害。馬西屏更特別強調「塑膠微粒」是超級殺手。</li>
+        </ul>
+
+        <h5>2️⃣ 😴 睡眠具有不可取代的「洗腦（排毒）」機制</h5>
+        <p>兩人都解釋了深度睡眠對大腦的關鍵作用：在非快速動眼期（深度睡眠）時，腦細胞會微幅縮小產生空隙，讓脊髓液或腦脊髓系統將白天堆積的廢物（如類澱粉蛋白）洗淨排出。⚠️ 長期失眠會導致廢物堆積，進而引發失智。</p>
+
+        <h5>3️⃣ 💉 單純清除「類澱粉蛋白」治標不治本</h5>
+        <p>針對目前最新的「單株抗體」藥物（洗腦療法），兩人都指出其侷限性。曾文毅醫師指出，即使把類澱粉蛋白清掉，患者認知退化的速度只減緩了 30%，代表「類澱粉蛋白假說」並非失智的唯一主因（失智是多重原因造成的）。馬西屏也形容這就像淡水河口清了垃圾，但上游的發炎、缺氧、心血管不良習慣若不改變，毒素過陣子還是會繼續累積。🔄</p>
+
+        <h5>4️⃣ 🫂 社交與情緒壓力管理極度重要</h5>
+        <p>兩人都認同孤立與壓力會傷害大腦。曾醫師引用研究指出，神經質、負面情緒高或要求完美的人，體內「壓力荷爾蒙」會長期偏高並傷害腦部 😰；馬西屏也將自己失憶的原因歸咎於長期的高壓、恐慌症與憂鬱症，並點出不善聊天的「孤獨老人」是大腦缺乏刺激的極高危險群。</p>
+
+        <h5>5️⃣ 🌱 後天生活干預可以有效改變命運</h5>
+        <p>雙方都鼓勵大眾，即使有先天基因或家族病史，依然可以透過強效的後天生活干預（🥗 飲食、🏃 運動、👥 社交、🔥 控制發炎等）來預防或大幅延緩失智的發生。✨</p>
+
+        <h4>🔍 相異點 — 兩部影片的獨特觀點</h4>
+
+        <h5>1️⃣ 🔬 對「失智病理核心」的著眼點不同</h5>
+        <div class="highlight-box">
+          <strong>🧪 曾文毅醫師（大腦代謝與肌肉內分泌）：</strong>他提出失智症常被稱為<strong>「第三型糖尿病」</strong>，核心在於大腦的<strong>胰島素阻抗</strong>。他極度強調<strong>「重量訓練（重訓）」💪</strong>的重要性，因為肌肉是人體最大的內分泌器官，能分泌肌肉素（如鳶尾素 Irisin）來保護大腦；有氧運動則能增加腦源性神經營養因子（BDNF）讓海馬迴變大。
+        </div>
+        <div class="highlight-box">
+          <strong>👂 馬西屏（五官退化與微量元素）：</strong>他更側重於肉眼可見的生理退化。他引述日本與國際期刊指出，<strong>「聽力下降」是危險因子第一名 🥇</strong>，此外<strong>「牙齒少於20顆」🦷</strong>會讓失智風險暴增五倍，還有視力神經受損 👁️、體內缺乏微量元素「鋰」、壞膽固醇過高，都是失智的超級殺手。
+        </div>
+
+        <h5>2️⃣ 🧩 對「高智商/持續用腦」的觀點差異</h5>
+        <div class="highlight-box">
+          <strong>📉 曾文毅醫師（認知儲備的懸崖效應）：</strong>他指出智商高的人擁有豐富的「認知儲備」，能撐得比一般人久，表現得沒有失智；但當腦部老化到一個極限點時，<strong>會發生「懸崖式下墜」的突發性失智 ⚡</strong>，瞬間垮下來。
+        </div>
+        <div class="highlight-box">
+          <strong>📊 馬西屏（退休年齡與日常學習）：</strong>他專注於行為數據，指出<strong>大腦缺乏刺激才是主因</strong>。例如「60歲提早退休」罹患失智的機率比65歲退休者高出 43% 📈；他也以自己每天下棋、打橋牌為例，強調持續動腦與不停止學習的重要性。
+        </div>
+
+        <h5>3️⃣ 📏 預防策略的「具體量化」程度</h5>
+        <div class="highlight-box">
+          <strong>🔢 馬西屏提供精確的「數字指標」：</strong>每天<strong>連續走路15分鐘且總步數達3000到7500步</strong> 🚶 能延緩失智3到7年；每天喝咖啡不能超過<strong>3杯</strong> ☕（延緩18%）或搭配喝茶 🍵（延緩34%）；壞膽固醇必須降到極低（他自己降到39）。
+        </div>
+        <div class="highlight-box">
+          <strong>🤖 曾文毅醫師提出「雙重作業運動」與「AI科技預測」：</strong>他分享了目前最先進的健腦運動方式，如 <strong>"Chess Boxing"（西洋棋拳擊）🥊♟️</strong> 或一邊騎車一邊根據隨機變化的規則打拳，這類結合認知與體能的運動對大腦極佳。他也探討了未來透過 AI 追蹤人類行為數據來預測失智的可能性。
+        </div>
+
+        <h5>4️⃣ 💊 最新的醫療解方推薦</h5>
+        <div class="highlight-box">
+          <strong>🇹🇼 馬西屏（台灣在地新進展）：</strong>他透露台灣剛核准了費用約兩萬元的「抽血檢測」🩸 可以及早驗出失智與重金屬殘留；同時他大力推崇台灣國家中醫藥研究所研發的科學中藥<strong>「國家清腦一號」🧪</strong>，在動物實驗中已證實能清除類澱粉蛋白，是未來的治療曙光。
+        </div>
+        <div class="highlight-box">
+          <strong>💛 曾文毅醫師（病患心理與陪伴哲學）：</strong>曾醫師身為家屬，他分享了更深刻的陪伴哲學。他認為失智病人其實「有病識感（知道自己能力退化）」，且即使失去表層記憶，內心仍保有最核心的情感 ❤️。照護失智症就像是陪伴一個人「變回小嬰兒」👶 走完人生最後一段路。
+        </div>
+
+        <h4>🏋️ 延伸解讀：重訓為何能防失智？</h4>
+        <p>醫學界常將失智症形容為「第三型糖尿病」🍬，其核心原因在於大腦出現了「胰島素阻抗」。這代表細胞對胰島素變得不敏銳，即使身體分泌了胰島素，細胞受體也沒有反應，無法有效消化與代謝多餘的糖分，導致血糖居高不下，進而對腦部造成傷害。</p>
+        <p>透過重量訓練（肌力訓練）💪 與其所產生的「肌肉素」，可以藉由以下兩個關鍵機制來預防這類型的失智症：</p>
+        <ul>
+          <li><strong>1️⃣ 直接代謝糖分，降低「胰島素阻抗」：</strong>重量訓練能有效增加人體的肌肉量。當身體擁有的肌肉越多，大量的糖分就可以直接在肌肉組織中被消耗與代謝掉。這個過程能顯著降低身體整體的胰島素阻抗，從根本解決「第三型糖尿病」發生的危機。</li>
+          <li><strong>2️⃣ 分泌「肌肉素」作為大腦的保護罩 🛡️：</strong>肌肉是人體內最大的「內分泌器官」。強健的肌肉會分泌出許多被稱為「肌肉素（Myokines）」的荷爾蒙分子，例如「鳶尾素（Irisin）」以及「介白素第六型（IL-6）」。這些由肌肉分泌的荷爾蒙分子，能夠直接發揮保護腦部的作用。</li>
+        </ul>
+
+        <div class="conclusion-box">
+          <h5>📌 總結</h5>
+          <p><strong>🧪 曾文毅醫師</strong>的內容適合想要了解「大腦生理機制、神經病理學及如何透過科學重訓抵抗失智」的人；而<strong>🎙️ 馬西屏</strong>的內容則像是一本「行動實戰手冊」📖，為一般大眾提供了如何透過規避生活毒素、改變步數與飲食來防堵失智的精確法則。</p>
+          <p>🌟 <strong>兩者結合，能為預防失智症提供極為完整的立體視野。</strong></p>
         </div>
       </div>
 
@@ -585,6 +884,106 @@
           </div>
         </div>
       </div>
+
+      <details class="transcript-collapse" id="transcript-toggle">
+        <summary>📝 影片完整文字稿（點擊展開／收合）</summary>
+        <div class="transcript-body">
+          <div class="transcript-copy-bar"><button class="transcript-copy-btn" onclick="copyTranscript('transcript-toggle')">📋 複製全文</button></div>
+          <div class="transcript-meta">
+            <strong>馬西屏親身經歷：失智海嘯來襲，如何自救？</strong><br>
+            頻道：寶傑點兵／寶傑怎麼說<br>
+            <a href="https://www.youtube.com/watch?v=Q0H4lv19vV0" target="_blank">▶ YouTube 原始連結</a>　·　<a href="https://tinyurl.com/24fq3y9p" target="_blank">短網址</a>
+          </div>
+
+          <div class="transcript-section">
+            <h5>🧠 失憶震驚與大使使命</h5>
+            <p>有一次是你講到一半，你就聲音發不出來，後來你就提前先走。我以為說是因為你的身體的關係，尤其我知道這一段時間裡面你其實不太上電視。我們當然找你來，你也說，你現在記不起來了。我以為說，那是你客氣了，那是你的謙辭。就搞了半天不是，你真的已經得到非常嚴重的失憶。這十年來，花很大精神研究失智。我立志做失智大使，因為失智海嘯已經來襲了，它是世紀疾病了。這是我來上節目第一件重要的事情。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>📺 博學名嘴的失憶</h5>
+            <p>我之前主持在電視節目《關鍵時刻》，他之所以被喜歡，被很多人接受，其實有一個非常關鍵的人物，那就是馬西屏。因為馬西屏的博學多聞，博聞強記，而且他講解話來呢，旁徵博引。你娓娓道來，你就覺得哇，那個厚度非常的深厚。而且你可以從他的談話裡面，完全可以知道說這個事件背後的真相，而且你可以知道這個故事之後，還有跟哪些東西，它的典故，它的來源，它的脈絡，你可以知道的一清二楚。所以對我來講，馬西屏一直是一個聰明的代表，是一個強記的代表。而這樣的一個博學多聞，能夠旁徵博引的人，他居然告訴我說，他最近正在失憶進行式中。而且他前一段時間，他不太上電視，是因為他被判定說他有嚴重的失憶。這個讓我太能想像了。所以今天呢，我們就要請他過來就是，他這個從這麼聰明，從這個博聞強記的過程，怎麼會變成失憶？因為很多人覺得你或如果你會有失智，你會失憶，是因為你不學習，是因為你的吸收太慢了，可他不是，他一直都在學習當中，而這麼一直都在學習當中的人，怎麼可能跟失智畫上等號呢？所以我們今天一定要找他來聊一聊。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>🗣️ 失憶的親身經歷</h5>
+            <p>我老師跟你講，各位觀眾，我剛剛講寶傑好這三個字，內心裡面是激傳的。我講了從20幾年前開始講寶傑好，就突然間有幾，最近幾年沒講了，突然間再講寶傑好，哇，那種感覺真回來了。寶傑西屏又合體了，所以這一集你一定要看一下。好。那個我這幾年，這十年來，花很大精神研究失智。我立志做失智大使，因為失智海嘯已經來襲了，它是世紀疾病了。那寶傑剛不相信，其實我也很悲傷啊。他別人說我上知天文下知地理，那等到人家問你什麼都答不出來，你就說，給仙的。然後還有人說我以前上節目是念大字報，那現在失智之後不是更慘了嗎？</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>📝 從博學到失憶的轉變</h5>
+            <p>我最近驚訝的是說，我不管給他什麼題目，我給他講戲上的題目，我給他講歷史的題目，我給他任何東西，他都可以生出一堆我從來沒有知道，我從來沒有辦法想像的故事在後面。而且剛剛講到的，他在《關鍵時刻》，他常常一個人就獨自了講了五分鐘、十分鐘，曾經講過20分鐘。他講20分鐘是從來沒有間斷，我也在旁邊就像聽著，完全不間斷，等於說他，你就像是背稿，你也背了20分鐘。那你怎麼會跟失智有關係呢？以前的《關鍵時刻》是一鏡到底的，是不能NG的。哇，那時候真是滔滔不絕，如長江大河。幸好後來可以NG了。我第一次講不出名字來，是行政院長江宜樺。他一下腦袋斷掉了，從此就越來越嚴重，越來越嚴重，我就很多東西開始記不起來。尤其是一些古文明的，我跟你講，我這個什麼時候開始特別開始覺得自己越來越嚴重，第一個，我在家裡面看電影。我老婆回來說，這電影好看嗎？我說好看。她說不久前才電影院看過。真的，我老婆。那我老婆從就喜歡戲弄我，他剛才不知道事情嚴重性。結果他買了蛋塔回來放冰箱，吃完飯之後我就說，把那個那個那個拿出來。我老婆說，哪個哪個哪個，你要講出來。我說那個那個那個。她說哪個哪個哪個。後來我去問醫生，醫生說你還知道冰箱裡面有個那個，還不錯。但你蛋塔講不出來。所以你剛剛講第一個是，我去電影院看過的電影。我知道你是非常愛看電影的人。你在電影院看完電影，然後你完全沒有印象。你回到家裡，再用電視看一遍，你還看得津津有味。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>😴 失眠與麻醉的影響</h5>
+            <p>這還不算，這還初期。我後來問了醫生，醫生說你還知道冰箱裡面有那個。他就跟我說，健忘是老化，失憶是老化跟失智的中間體。那失憶越來越嚴重，就會變成失智。各位知道失智有很多種嘛，那阿茲海默症大概佔，台灣佔六成，世界佔六成到八成。阿茲海默症就是以失憶為最開始的表現。我嚴重到什麼程度後來，我每天睡覺前要看30分鐘書，這固定的習慣，從小。看完書放床頭我就睡著了。我後來拿起書來，忘了昨天看的30分鐘是什麼東西。沒辦法，我接不下去。完全接不下去。接不下去怎麼辦呢？所以我從那時候就開始不看床頭書了。我就看歡樂的連續劇，追劇。看了歡樂，看半小時我就睡著。更可怕是我從小花很大精神去背唐詩宋詞。我上節目時候常可以把唐詩宋詞給它變起來，變得很好笑的，你知道嗎？我看那個《慶餘年》，我亂看那個張若昀。他是穿越到另外一個時代，那要做詩比賽，他用了杜甫的《登高》。我小時候那個《登高》啊，背得滾瓜爛熟，然後他一背杜甫的《登高》，我居然背不出來。我只記得「無邊落木蕭蕭下，不盡長江滾滾來」。其他我什麼「竹亭新酒」啊，我背不起來。我就開始把唐詩拿出來，看名字，看我可不可以背，考考我自己。幾乎都背不出來。就只能背《床前明月光》。真的，我自己考試，都發覺嚴重了。嚴重了。所以然後我們家人曾經在我剛開始的時候，很喜歡玩一個遊戲。我兒子女兒跟我老婆說，老爸，去大賣場了。然後我一定會說，走，去萬客隆。他們就哈哈大笑。因為奇怪了，大潤發什麼都跳不進來。我永遠只記得萬客隆。那最早的大賣場，最早的。我奇怪，我大賣場就只記得一個萬客隆。那其他的呢？其他就不記得。所以每次我都說去萬客隆，他們就哈哈大笑。可是現在沒有萬客隆了。早就沒有萬客隆。就所以我越來越嚴重。因此呢，我就做決定第一個去看醫生。那看了醫生當然就做了一些檢查，我等下都會慢慢講。然後第二個我就做了很多研究，看研究報告，世界級的。第三個我就開始自我療癒，自我治療。所以我各位一定要聽我講，為什麼？我是有醫生的講法，有世界期刊研究報告講法，還有我自身十年來對抗失憶，不要走上失智的心得，這邊今天要提供給大家。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>😥 壓力與情緒的危害</h5>
+            <p>第二個就是壓力跟情緒。我的那個，都劉寶傑給我的壓力啦，都他害我失智了。壓力太大。我有的時候，我最紅的時候，最紅，一天上七個節目。我從早上上大陸電視台，一直上上上上到晚上《關鍵時刻》，上七個。給自己壓力太大。壓力太大之後，我就變成有一點恐慌症。恐慌症。你還有恐慌症。恐慌症，壓力太大。各位要知道憂鬱症跟恐慌症，都是造成失智的重要原因之一。所以我會吃，偶爾上節目前我就會吃半顆贊安諾。可是現在吃贊安諾是有有影響的。我今天忘了吃贊安諾了，壓力好大。所以我自己的變化，我就去觀察。所以我剛剛已經講了幾個重點，但是我要系統跟大家講。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>🇹🇼 台灣失智國安危機</h5>
+            <p>我嚴重失憶之後，我就讀了很，剛看了很多醫生，也讀了很多。我先要這邊講一下，我特別感謝恩主公，名譽副院長這個陳昌明醫師。我給他偷學了很多。這個我先講一下，芬蘭做了一個兩年的研究，證明人的失智是可以用多重生活干預。哇，這個一下引爆世界，現在所有研究都知道它的意思，台大研究也跟他講。你說可以改善的。用多重生活來干預你的失智。這是經典的一個研究，我等下會拿來跟你講，就是你改善你的原因，改善你生活方式，你的失智是會延緩的，多少延緩，數字都有出來。第二個就是世界上最頂尖的雜誌《刺胳針》。《刺胳針》在芬蘭的研究出來之後，在2017年弄了九項，就是說你如果做這九項你就會失智。真的，九項。《刺胳針》的醫學委員會他自己本身做的。結果2017，2020年他有更新，變12項。現在最新的《刺胳針》向全世界發布，14項。你如果做這14項，你會失智。你把這14項去除，你的延緩或是預防失智達到多少？45%。一半可以預防。</p>
+            <p style="margin-top:8px;">另外就是世界最大研究是哈佛跟麻省理工學院在做了43年的研究，43年呢，都不可思議啊。他們研究了13萬1121人。然後這在43年裡面這13萬多人，總共有11033人變成失智。那他就很簡單，你這你為什麼這13萬人這1萬1千人會變失智？他研究他生活習慣，他作息，他的原因。</p>
+            <p style="margin-top:8px;">失智是國安危機。台灣在1993年進入高齡化社會。結果在2018年進入高齡社會。2025年12月，我們進入超高齡社會。各位這世界紀錄，台灣人老化速度世界第一。我們從高齡社會變成超高齡社會，只用了七年。全世界沒有一個國家從高齡到超高齡，人家都超過十年以上。台灣現在65歲以上人口，失智佔8%了。而且十年後翻倍。女性比男性多——台灣失智人口女性65歲以上佔9.35%，男性6.36%。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>⏳ 失智潛伏期與預防</h5>
+            <p>你一定要聽我仔細講。你要如何像我一樣預防失智。當你輕度失智到死亡，現在有研究報告，三年到十年。但是呢，當你腦袋出現壞東西，所謂壞東西就是β-澱粉樣蛋白。β-澱粉樣蛋白出現到你出現輕微失智，20年。所以這20年才是你的關鍵期。不要說，哎呀，我不會失智啦。我是給這20年期間你可以預防的，你可以延緩的，你可以阻止的。我是給這些年輕中壯年人聽的。</p>
+            <p style="margin-top:8px;">遺傳是會造成失智的。外傷——郝柏村有一段時間出現失智狀況，因為他拉鐵門撞到頭。許信良有一陣子出現失智狀況，雞蛋打到頭。最新的那個網紅叫博恩，他老爸是老學管頂尖專家。他就滑雪撞頭，他說他現在出現失憶狀況。所以就不要撞到頭，頭要保護好。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>👂 聽力、視力、牙齒與失智</h5>
+            <p>眼睛不好，耳朵不好，牙齒不好——失智。因為他們跟頭最接近。我們看《刺胳針》14項，排第一名是什麼？聽力下降。聽力下降是失智危險因子第一名。所以現在年輕人每天拿個耳機放這邊，打電腦遊戲，然後跑步，重金屬，我告訴你，都是失智的高危險群。</p>
+            <p style="margin-top:8px;">第二個，眼睛。視力不好會造成失智。因為眼睛的神經跟腦神經最近。</p>
+            <p style="margin-top:8px;">再來一個牙齒。牙齒不能少於20顆，少於20顆你失智。這是日本厚生省的研究。厚生省是全世界第一個為失智症訂法律的。做了一個研究，發覺人的牙齒少於20顆，失智增加五倍以上。所以現在日本是全世界第一個訂了8020計畫——全日本80歲以上的老人不准有一個牙齒低於20顆。假牙算。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>🩸 三高與壞膽固醇</h5>
+            <p>除了牙齒、眼睛、耳朵，三高、糖尿病，這是必然的。在三高糖尿病裡面，最重要的就是壞膽固醇——低密度膽固醇。在《刺胳針》的研究裡面，低密度膽固醇跟聽力下降合都是第一名。我一看這個之後，我就把膽固醇下降了。我的總膽固醇從200多變90。我的三酸甘油酯從160變80。我的LDL壞膽固醇從141.1變成39，降了100多。</p>
+            <p style="margin-top:8px;">憂鬱症、躁鬱症、情緒、壓力。老細胞都靠這些在活藥的。缺乏維生素B12、缺乏D、缺乏鋰，現在已經世界的研究發現，都會造成失智。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>🌍 環境因素</h5>
+            <p>第一個講重金屬，這很重要。第二個，空氣污染。我們都說PM2.5是跑到肺部——錯，它跑到腦子。現在失智人的腦袋裡面發現PM2.5，而且已經證明它對失智是有關的。殺蟲劑、老鼠藥都會是。塑膠微粒——美國的研究發覺塑膠微粒是失智症的超級殺手。千萬不要用塑膠袋去裝熱湯。紙杯的熱咖啡，七萬塑膠微粒。瓶裝水，十萬塑膠微粒。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>💪 九大生活干預自救法</h5>
+            <p>我把醫生的綜合起來，看了很多研究報告，再加上《刺胳針》的14項、哈佛的、芬蘭的多重生活干預，綜合成九個綜合生活干預。你如果做這九個，你的失智會延緩或者預防超過45%。</p>
+            <p style="margin-top:8px;"><strong>① 動腦</strong>——讓老細胞活化。打麻將、打橋牌、下圍棋。</p>
+            <p><strong>② 運動</strong>——日行3000步延緩失智三年，4000步四年，5000步五年⋯⋯到7500步就是七年，走一萬步也是七年。15分鐘連續走，一天累積。</p>
+            <p><strong>③ 健康飲食</strong>——地中海飲食 number one。好油很重要。</p>
+            <p><strong>④ 社交互動</strong>——孤獨老人失智第一名。要社交、要活動。川普每天都在 talk talk talk，老細胞就在活化。</p>
+            <p><strong>⑤ 持續學習</strong>——《刺胳針》三次調查中，「不學習」都排在前兩名。到失智門診，醫生都會問你最近有沒有學習。</p>
+            <p><strong>⑥ 晚退休</strong>——60歲退休跟65歲退休，延緩失智程度差43%。</p>
+            <p><strong>⑦ 戒菸少酒</strong>——對失智有影響。</p>
+            <p><strong>⑧ 喝茶喝咖啡</strong>——喝咖啡延緩18%失智，喝茶延緩14%，兩個都喝延緩34%。咖啡不超過三杯。</p>
+            <p><strong>⑨ 改善睡眠</strong>——失眠是失智的殺手，安眠藥吃多也是。失眠要先解決，安眠藥之後盡量減掉。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>🔬 檢查與治療新進展</h5>
+            <p>檢查方面——核磁共振、電腦斷層要中度或重度才照得出來。輕度的要正子攝影，六萬多。最新發展——衛福部剛核准可以抽血檢測，美國價格兩萬。</p>
+            <p style="margin-top:8px;">治療方面——單株抗體可以把壞的澱粉類蛋白去除（「洗腦」）。衛福部今年年底一種單株抗體，明年第二種要進台灣。FDA已通過。但問題：一個療程150萬、會造成腦出血跟腦水腫、適合做的只有14%、上游的發炎問題仍在。</p>
+            <p style="margin-top:8px;">中藥方面——銀杏萃取物已獲FDA藥證。衛福部國家中藥研究中心做出「國家清腦一號」，在小老鼠跟猴子上面已把β-澱粉樣蛋白清除。現在找廠商技術移轉，做人體實驗。</p>
+          </div>
+
+          <div class="transcript-section">
+            <h5>⚠️ 失智症的家庭與社會衝擊</h5>
+            <p>失智不只是個人悲劇，更是家庭與社會的沉重負擔。記憶完全抹去型——像路坑，每天早上要看影片才找回自己。額顳葉失智——性格180度轉變，溫和的人變暴力。台灣人最害怕的疾病，第一名癌症，第二名就是失智。將來台灣會變成1:1，一個中壯年養活一個老年人。十年後失智人口65歲以上會翻倍到16%。這將成為台灣國安危機最大的一個難題。</p>
+            <p style="margin-top:8px;">我嚴重失憶十年，比健忘嚴重，還不到失智。但是我拒絕，勇敢拒絕踏入失智這一步。我不願走入失智。預防失智，預防失智海嘯，大家一起來。不只老年人，現在失智越來越年輕化。不要再戴耳機聽重金屬音樂，打電動玩具了。年輕人當心。</p>
+          </div>
+        </div>
+      </details>
 
       <h4 style="color:var(--accent);font-size:0.95rem;margin:18px 0 10px;">🔬 影片中提及的研究與出處</h4>
       <div class="info-card" id="src-list"></div>
@@ -963,6 +1362,20 @@ function fullReport(){
 
 /* ══════════ 動作：下載 / 複製 / 分享 ══════════ */
 function toastMsg(m){ const t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2200); }
+function copyTranscript(id){
+  var el=document.getElementById(id);
+  if(!el) return;
+  var body=el.querySelector('.transcript-body');
+  if(!body) return;
+  var text=body.innerText.replace(/📋 複製全文\n?/g,'').replace(/\n{3,}/g,'\n\n').trim();
+  navigator.clipboard.writeText(text).then(function(){toastMsg('✅ 已複製文字稿內容');}).catch(function(){toastMsg('❌ 複製失敗');});
+}
+function copyComparison(){
+  var el=document.getElementById('comparison-content');
+  if(!el) return;
+  var text=el.innerText.replace(/📋 複製全文\n?/g,'').replace(/\n{3,}/g,'\n\n').trim();
+  navigator.clipboard.writeText(text).then(function(){toastMsg('✅ 已複製比較分析內容');}).catch(function(){toastMsg('❌ 複製失敗');});
+}
 function downloadReport(){
   const blob=new Blob([fullReport()],{type:'text/markdown'});
   const url=URL.createObjectURL(blob); const a=document.createElement('a');
@@ -1374,6 +1787,12 @@ load();
     if(h4s[2]) h4s[2].innerHTML=L.sources.casesLabel;
     var casesCard=p.querySelectorAll('.info-card')[2];
     if(casesCard){var cp=casesCard.querySelector('p');if(cp)cp.textContent=L.sources.casesBody;}
+    var tSummary=document.querySelector('#transcript-toggle summary');
+    if(tSummary && L.sources.transcriptLabel) tSummary.textContent=L.sources.transcriptLabel;
+    var tSummary1=document.querySelector('#transcript-toggle-1 summary');
+    if(tSummary1 && L.sources.transcriptLabel) tSummary1.textContent=L.sources.transcriptLabel;
+    var tSummary2=document.querySelector('#transcript-toggle-2 summary');
+    if(tSummary2 && L.sources.transcriptLabel) tSummary2.textContent=L.sources.transcriptLabel;
     var expBtn=document.getElementById('btn-export'); if(expBtn) expBtn.textContent=L.sources.exportBtn;
     var backLink=p.querySelector('.btn.ghost'); if(backLink) backLink.textContent=L.sources.backHome;
   }
@@ -1563,26 +1982,27 @@ load();
       mp.querySelector('.section-sub').textContent=L.media.sub;
       var cards=mp.querySelectorAll('.media-card');
       if(cards[0]){cards[0].querySelector('h3').textContent=L.media.videoTitle;cards[0].querySelector('.media-sub').textContent=L.media.videoSub;}
-      if(cards[1]){cards[1].querySelector('h3').textContent=L.media.aiVideoTitle;cards[1].querySelector('.media-sub').textContent=L.media.aiVideoSub;var dlV=cards[1].querySelector('.dl-btn');if(dlV)dlV.textContent=L.media.dlVideo;}
-      if(cards[2]){
-        var h3=cards[2].querySelector('h3');var badge=h3?h3.querySelector('.must-badge'):null;
+      if(cards[1]){cards[1].querySelector('h3').textContent=L.media.video2Title;cards[1].querySelector('.media-sub').textContent=L.media.video2Sub;}
+      if(cards[2]){cards[2].querySelector('h3').textContent=L.media.aiVideoTitle;cards[2].querySelector('.media-sub').textContent=L.media.aiVideoSub;var dlV=cards[2].querySelector('.dl-btn');if(dlV)dlV.textContent=L.media.dlVideo;}
+      if(cards[3]){
+        var h3=cards[3].querySelector('h3');var badge=h3?h3.querySelector('.must-badge'):null;
         if(h3){h3.childNodes[0].textContent=L.media.audioTitle;if(badge)badge.textContent=L.media.audioMust;}
-        cards[2].querySelector('.media-sub').textContent=L.media.audioSub;
-        var ll=cards[2].querySelector('.ts-langlabel');if(ll)ll.textContent=L.media.langLabel;
+        cards[3].querySelector('.media-sub').textContent=L.media.audioSub;
+        var ll=cards[3].querySelector('.ts-langlabel');if(ll)ll.textContent=L.media.langLabel;
         var sh=mp.querySelector('div[style*="font-size:0.74rem"]');if(sh)sh.textContent=L.media.clickToSeek;
       }
-      if(cards[3]){cards[3].querySelector('h3').textContent=L.media.slidesTitle;cards[3].querySelector('.media-sub').textContent=L.media.slidesSub;}
-      if(cards[4]){
-        cards[4].querySelector('h3').textContent=L.media.infoTitle;cards[4].querySelector('.media-sub').textContent=L.media.infoSub;
-        var ih4s=cards[4].querySelectorAll('h4');if(ih4s[0])ih4s[0].textContent=L.media.info1;if(ih4s[1])ih4s[1].textContent=L.media.info2;
-      }
+      if(cards[4]){cards[4].querySelector('h3').textContent=L.media.slidesTitle;cards[4].querySelector('.media-sub').textContent=L.media.slidesSub;}
       if(cards[5]){
-        cards[5].querySelector('h3').textContent=L.media.fcTitle;cards[5].querySelector('.media-sub').textContent=L.media.fcSub;
+        cards[5].querySelector('h3').textContent=L.media.infoTitle;cards[5].querySelector('.media-sub').textContent=L.media.infoSub;
+        var ih4s=cards[5].querySelectorAll('h4');if(ih4s[0])ih4s[0].textContent=L.media.info1;if(ih4s[1])ih4s[1].textContent=L.media.info2;
+      }
+      if(cards[6]){
+        cards[6].querySelector('h3').textContent=L.media.fcTitle;cards[6].querySelector('.media-sub').textContent=L.media.fcSub;
         var fcP=document.getElementById('fc-prev');if(fcP)fcP.textContent=L.media.fcPrev;
         var fcN=document.getElementById('fc-next');if(fcN)fcN.textContent=L.media.fcNext;
-        var fft=cards[5].querySelector('.fc-front .fc-tag');if(fft)fft.textContent=L.media.fcQuestion;
-        var fbt=cards[5].querySelector('.fc-back .fc-tag');if(fbt)fbt.textContent=L.media.fcAnswer;
-        var fh=cards[5].querySelector('.fc-flip-hint');if(fh)fh.textContent=L.media.fcHint;
+        var fft=cards[6].querySelector('.fc-front .fc-tag');if(fft)fft.textContent=L.media.fcQuestion;
+        var fbt=cards[6].querySelector('.fc-back .fc-tag');if(fbt)fbt.textContent=L.media.fcAnswer;
+        var fh=cards[6].querySelector('.fc-flip-hint');if(fh)fh.textContent=L.media.fcHint;
       }
     }
     renderMM(); renderTX(); renderSRC();
@@ -1629,7 +2049,7 @@ load();
 
   fetch('assets/i18n/zh-Hant.json').then(function(r){return r.json();}).then(function(d){
     window.I18N=d;
-    renderEdu(); renderMM(); renderTX();
+    renderEdu(); renderMM(); renderTX(); renderSRC();
   }).catch(function(e){console.error('Initial i18n:',e);});
 })();
 </script>

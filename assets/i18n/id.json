@@ -6,8 +6,8 @@
   "hero": {
     "badge": "DEMENTIA RISK CHECK",
     "title": "Tes Risiko Demensia",
-    "desc": "Menggabungkan pengalaman pribadi komentator senior <strong>Ma Hsi-ping</strong> selama 10 tahun melawan demensia, serta penelitian internasional dari <strong>The Lancet</strong>, Harvard, dan Finlandia. Evaluasi mandiri 3 menit, disertai 10 resep gaya hidup.",
-    "src": "Sumber data: \"Pao-chieh Health Talk\" 2026.05.23 · Disusun oleh NotebookLM",
+    "desc": "Menggabungkan pengalaman pribadi komentator senior <strong>Ma Hsi-ping</strong> selama 10 tahun melawan demensia, analisis ilmu saraf dari neurolog <strong>Dr. Wen-Yi Tseng</strong> di <strong>\"Bo-Yin\"</strong>, serta penelitian internasional dari <strong>The Lancet</strong>, Harvard, dan Finlandia. Evaluasi mandiri 3 menit, disertai 10 resep gaya hidup.",
+    "src": "Sumber data: \"Pao-chieh Health Talk\" 2026.05.23 · \"Bo-Yin\" Brian Tseng × Dr. Wen-Yi Tseng · Disusun oleh NotebookLM",
     "disclaimer": "⚠️ Tes ini merupakan alat evaluasi mandiri untuk edukasi kesehatan, <strong>tidak dapat menggantikan diagnosis medis</strong>. Jika ada kekhawatiran, silakan kunjungi dokter spesialis neurologi / klinik memori. Hasil skala AD8 hanya sebagai referensi."
   },
 
@@ -204,6 +204,8 @@
     "sub": "Video, audio, presentasi, infografis, kartu belajar, peta pikiran, dan transkrip — semuanya dihasilkan dari buku catatan NotebookLM \"Mengubah Pemahaman Anda · Demensia\".",
     "videoTitle": "🎬 Video Sumber Asli",
     "videoSub": "Ma Hsi-ping × Liu Pao-chieh \"Pao-chieh Health Talk\" 2026.05.23 — Wawancara lengkap 10 tahun melawan demensia",
+    "video2Title": "🎬 Video Sumber ②",
+    "video2Sub": "Dr. Wen-Yi Cheng × Brian Tseng \"Bo-Yin\" — Kabut Otak, Demensia & AI: Masa Depan Otak",
     "aiVideoTitle": "🎞️ Ringkasan Video AI",
     "aiVideoSub": "Peta Neurologis: Mendekode Pertempuran Memori Ma Hsi-ping (Dihasilkan oleh NotebookLM)",
     "dlVideo": "⬇️ Unduh Video (MP4)",
@@ -296,6 +298,7 @@
     ],
     "casesLabel": "👤 Kasus Demensia yang Disebutkan dalam Video",
     "casesBody": "Kasus tokoh publik seperti Reagan (mantan Presiden AS), Bruce Willis (demensia frontotemporal), Lin Fang-yu (mantan Direktur RS Universitas Nasional Taiwan), Ma Ying-jeou, Lu Keng (jurnalis senior) dan lainnya, semuanya disebutkan dalam video sebagai ilustrasi.",
+    "transcriptLabel": "📝 Transkrip Video Lengkap (klik untuk buka/tutup)",
     "exportBtn": "📄 Ekspor Laporan Lengkap",
     "backHome": "← Kembali ke Pusat Tes",
     "note": "※ Video merupakan acara talk show, beberapa detail penelitian disusun dari konten wawancara; untuk keputusan medis resmi, silakan merujuk pada jurnal asli dan diagnosis dokter."

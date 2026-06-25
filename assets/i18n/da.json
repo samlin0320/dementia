@@ -6,8 +6,8 @@
   "hero": {
     "badge": "DEMENTIA RISK CHECK",
     "title": "Demensrisikovurdering",
-    "desc": "Baseret på den erfarne kommentator <strong>Ma Hsi-ping</strong>s 10 års personlige kamp mod demens, samt international forskning fra <strong>The Lancet</strong>, Harvard og Finland. 3 minutters selvvurdering med 10 livsstilsanbefalinger.",
-    "src": "Kilde: Pao-chieh Health Talk 2026.05.23 · Sammenfattet af NotebookLM",
+    "desc": "Baseret på den erfarne kommentator <strong>Ma Hsi-ping</strong>s 10 års personlige kamp mod demens, neurovidenskabelig analyse fra neurolog <strong>Dr. Wen-Yi Tseng</strong> på <strong>\"Bo-Yin\"</strong>, samt international forskning fra <strong>The Lancet</strong>, Harvard og Finland. 3 minutters selvvurdering med 10 livsstilsanbefalinger.",
+    "src": "Kilde: Pao-chieh Health Talk 2026.05.23 · \"Bo-Yin\" Brian Tseng × Dr. Wen-Yi Tseng · Sammenfattet af NotebookLM",
     "disclaimer": "⚠️ Denne test er et sundhedsoplysende selvvurderingsværktøj og <strong>kan ikke erstatte en medicinsk diagnose</strong>. Ved bekymring bedes du henvende dig til en neurolog eller hukommelsesklinik. AD8-resultater er kun vejledende."
   },
 
@@ -204,6 +204,8 @@
     "sub": "Video, lyd, præsentationer, infografik, flashcards, mindmaps og transskriptioner – alt produceret af NotebookLM-notesbogen \"Omvælt din forståelse – Demens\".",
     "videoTitle": "🎬 Originalvideo",
     "videoSub": "Ma Hsi-ping × Liu Pao-chieh, Pao-chieh Health Talk 2026.05.23 – Komplet interview om 10 års kamp mod demens",
+    "video2Title": "🎬 Kildevideo ②",
+    "video2Sub": "Dr. Wen-Yi Cheng × Brian Tseng \"Bo-Yin\" — Hjernetåge, demens & AI: Hjernens fremtid",
     "aiVideoTitle": "🎞️ AI-videooversigt",
     "aiVideoSub": "Neurologisk blueprint: Afkodning af Ma Hsi-pings kamp mod hukommelsestab (genereret af NotebookLM)",
     "dlVideo": "⬇️ Download video (MP4)",
@@ -296,6 +298,7 @@
     ],
     "casesLabel": "👤 Demenstilfælde nævnt i videoen",
     "casesBody": "Offentlige personers tilfælde nævnt i videoen som illustration: Reagan (tidligere amerikansk præsident), Bruce Willis (frontotemporal demens), Lin Fang-yuh (tidligere direktør for National Taiwan University Hospital), Ma Ying-jeou, Lu Keng (erfaren journalist) m.fl.",
+    "transcriptLabel": "📝 Komplet videoudskrift (klik for at udvide/skjule)",
     "exportBtn": "📄 Eksportér fuld rapport",
     "backHome": "← Tilbage til testcenter",
     "note": "※ Videoen er et talkshow, og nogle forskningsdetaljer er sammenfattet fra interviewindholdet; formelle medicinske beslutninger bør baseres på originale tidsskrifter og lægediagnoser."
