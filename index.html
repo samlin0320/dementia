@@ -362,8 +362,17 @@
   .lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; }
   .lightbox .close { position: absolute; top: 18px; right: 22px; color: #fff; font-size: 2rem; cursor: pointer; }
   .global-langbar { display:flex; align-items:center; gap:4px; }
-  @media(max-width:600px){ .global-langbar { display:none; } .topbar .home.mob-lang { display:inline-flex; } }
-  @media(min-width:601px){ .topbar .home.mob-lang { display:none; } }
+  /* 手機版語言選單 */
+  .mob-lang-wrap { position: relative; display: none; }
+  .mob-lang-btn { font-size: 0.8rem; color: var(--text); background: var(--surface); cursor: pointer; padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; }
+  .mob-lang-btn:hover { border-color: var(--accent); }
+  .mob-lang-menu { position: absolute; right: 0; top: calc(100% + 6px); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 6px; display: flex; flex-direction: column; gap: 2px; min-width: 132px; box-shadow: 0 10px 28px rgba(0,0,0,0.45); z-index: 300; }
+  .mob-lang-menu[hidden] { display: none; }
+  .mob-lang-opt { text-align: left; background: none; border: none; color: var(--muted); font-family: inherit; font-size: 0.88rem; font-weight: 700; padding: 9px 12px; border-radius: 7px; cursor: pointer; }
+  .mob-lang-opt:hover { background: var(--card); color: var(--text); }
+  .mob-lang-opt.on { color: var(--accent); background: var(--card); }
+  @media(max-width:600px){ .global-langbar { display:none; } .mob-lang-wrap { display:inline-block; } }
+  @media(min-width:601px){ .mob-lang-wrap { display:none; } }
 </style>
 </head>
 <body>
@@ -376,6 +385,17 @@
       <button class="ts-lang global-lang" data-lang="da">DA</button>
       <button class="ts-lang global-lang" data-lang="id">ID</button>
       <button class="ts-lang global-lang" data-lang="th">TH</button>
+    </div>
+    <div class="mob-lang-wrap">
+      <button class="mob-lang-btn" id="mob-lang-btn" aria-haspopup="true" aria-expanded="false">🌐 <span id="mob-lang-cur">繁中</span> ▾</button>
+      <div class="mob-lang-menu" id="mob-lang-menu" hidden>
+        <button class="mob-lang-opt on" data-lang="zh-Hant">繁體中文</button>
+        <button class="mob-lang-opt" data-lang="zh-Hans">简体中文</button>
+        <button class="mob-lang-opt" data-lang="en">English</button>
+        <button class="mob-lang-opt" data-lang="da">Dansk</button>
+        <button class="mob-lang-opt" data-lang="id">Indonesia</button>
+        <button class="mob-lang-opt" data-lang="th">ไทย</button>
+      </div>
     </div>
     <a class="home" href="https://questions.3minstest.com" id="i18n-home">← 測驗中心</a>
     <a class="home" href="https://t.me/sam00may" target="_blank" id="i18n-channel">📡 頻道</a>
@@ -2045,6 +2065,9 @@ load();
     fetch('assets/i18n/'+code+'.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
       window.I18N=d; currentLang=code;
       document.querySelectorAll('.global-lang').forEach(function(b){b.classList.toggle('on',b.dataset.lang===code);});
+      document.querySelectorAll('.mob-lang-opt').forEach(function(b){b.classList.toggle('on',b.dataset.lang===code);});
+      var mobCur=document.getElementById('mob-lang-cur');
+      if(mobCur){var sl={'zh-Hant':'繁中','zh-Hans':'简中','en':'EN','da':'DA','id':'ID','th':'TH'};mobCur.textContent=sl[code]||code;}
       var langMap={'zh-Hant':'zh-TW','zh-Hans':'zh-CN'};
       document.documentElement.lang=langMap[code]||code;
       if(d.hero) document.title=d.hero.title+' · '+d.ad8.title;
@@ -2056,6 +2079,24 @@ load();
   document.querySelectorAll('.global-lang').forEach(function(b){
     b.addEventListener('click',function(){setLang(b.dataset.lang);});
   });
+
+  /* 手機版語言選單 */
+  (function(){
+    var mb=document.getElementById('mob-lang-btn'), mm=document.getElementById('mob-lang-menu');
+    if(!mb||!mm) return;
+    function close(){mm.setAttribute('hidden','');mb.setAttribute('aria-expanded','false');}
+    mb.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(mm.hasAttribute('hidden')){mm.removeAttribute('hidden');mb.setAttribute('aria-expanded','true');}
+      else{close();}
+    });
+    mm.querySelectorAll('.mob-lang-opt').forEach(function(b){
+      b.addEventListener('click',function(){setLang(b.dataset.lang);close();});
+    });
+    document.addEventListener('click',function(e){
+      if(e.target!==mb && !mb.contains(e.target) && !mm.contains(e.target)) close();
+    });
+  })();
 
   fetch('assets/i18n/zh-Hant.json').then(function(r){return r.json();}).then(function(d){
     window.I18N=d;
