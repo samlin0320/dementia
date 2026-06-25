@@ -190,7 +190,14 @@
   .transcript-copy-bar { display: flex; justify-content: flex-end; padding: 10px 16px 0; }
   .transcript-copy-btn { background: var(--surface); color: var(--accent); border: 1px solid var(--border); border-radius: 8px; padding: 6px 14px; font-size: 0.82rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 5px; }
   .transcript-copy-btn:hover { background: var(--card); border-color: var(--accent); }
-  .comparison-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px 20px; margin-top: 20px; }
+  .comparison-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; margin-top: 20px; }
+  .comparison-card > .comparison-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px; cursor: pointer; list-style: none; }
+  .comparison-card > .comparison-toggle::-webkit-details-marker { display: none; }
+  .comparison-card .comparison-toggle .ct-title { font-size: 1.12rem; color: var(--text); font-weight: 700; }
+  .comparison-card .comparison-toggle .ct-arrow { font-size: 0.75rem; color: var(--accent); transition: transform 0.25s; flex-shrink: 0; }
+  .comparison-card[open] > .comparison-toggle { border-bottom: 1px solid var(--border); }
+  .comparison-card[open] .ct-arrow { transform: rotate(90deg); }
+  .comparison-card .comparison-body { padding: 20px; }
   .comparison-card h3 { font-size: 1.12rem; color: var(--text); margin-bottom: 6px; }
   .comparison-card .media-sub { font-size: 0.88rem; color: var(--muted); margin-bottom: 18px; }
   .comparison-card h4 { color: var(--accent); font-size: 1rem; margin: 20px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
@@ -672,8 +679,9 @@
       </div>
 
       <!-- 兩部影片比較分析 -->
-      <div class="comparison-card" id="comparison-content">
-        <h3>🔬 兩部影片深度比較分析</h3>
+      <details class="comparison-card" id="comparison-toggle">
+        <summary class="comparison-toggle"><span class="ct-title">🔬 兩部影片深度比較分析</span><span class="ct-arrow">▶</span></summary>
+        <div class="comparison-body" id="comparison-content">
         <div class="media-sub">馬西屏《寶傑說健康》 × 曾文毅《博音》— 交集與相異點完整對照</div>
         <div class="transcript-copy-bar"><button class="transcript-copy-btn" onclick="copyComparison()">📋 複製全文</button></div>
         <p>兩部影片分別由<strong>🧬 神經醫學專家曾文毅醫師</strong>（於《博音》節目）與<strong>🎙️ 資深媒體人馬西屏</strong>（於《寶傑說健康》節目）主講。雖然兩者都高度關注失智症的預防與成因，但切入的視角截然不同：曾醫師從腦科學、神經病理學與臨床醫療出發；馬西屏則是以自身對抗輕度失憶十年的「病患視角」，統整國際頂尖醫學期刊的數據來做衛教。</p>
@@ -745,7 +753,8 @@
           <p><strong>🧪 曾文毅醫師</strong>的內容適合想要了解「大腦生理機制、神經病理學及如何透過科學重訓抵抗失智」的人；而<strong>🎙️ 馬西屏</strong>的內容則像是一本「行動實戰手冊」📖，為一般大眾提供了如何透過規避生活毒素、改變步數與飲食來防堵失智的精確法則。</p>
           <p>🌟 <strong>兩者結合，能為預防失智症提供極為完整的立體視野。</strong></p>
         </div>
-      </div>
+        </div>
+      </details>
 
       <!-- NotebookLM 影片摘要 -->
       <div class="media-card">
