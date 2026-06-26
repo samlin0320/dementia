@@ -1,8 +1,13 @@
 {
-  "meta": { "code": "id", "name": "Bahasa Indonesia" },
-
-  "topbar": { "logo": "🧠 Tes Risiko<span> Demensia</span>", "home": "← Pusat Tes", "channel": "📡 Kanal" },
-
+  "meta": {
+    "code": "id",
+    "name": "Bahasa Indonesia"
+  },
+  "topbar": {
+    "logo": "🧠 Tes Risiko<span> Demensia</span>",
+    "home": "← Pusat Tes",
+    "channel": "📡 Kanal"
+  },
   "hero": {
     "badge": "DEMENTIA RISK CHECK",
     "title": "Tes Risiko Demensia",
@@ -10,7 +15,6 @@
     "src": "Sumber data: \"Pao-chieh Health Talk\" 2026.05.23 · \"Bo-Yin\" Brian Tseng × Dr. Wen-Yi Tseng · Disusun oleh NotebookLM",
     "disclaimer": "⚠️ Tes ini merupakan alat evaluasi mandiri untuk edukasi kesehatan, <strong>tidak dapat menggantikan diagnosis medis</strong>. Jika ada kekhawatiran, silakan kunjungi dokter spesialis neurologi / klinik memori. Hasil skala AD8 hanya sebagai referensi."
   },
-
   "tabs": {
     "ad8": "① Skrining AD8",
     "selfcheck": "①-1 Skrining AD8 Lanjutan",
@@ -22,7 +26,6 @@
     "src": "⑦ Sumber Data",
     "mustRead": "Wajib Baca"
   },
-
   "ad8": {
     "title": "Skrining Demensia Sangat Dini AD8",
     "sub": "Ingat kembali <strong>dibandingkan dengan masa lalu (perubahan selama beberapa tahun)</strong>, apakah situasi berikut \"mengalami perubahan\". Dapat dijawab sendiri atau oleh anggota keluarga yang mengenal Anda.",
@@ -44,25 +47,66 @@
     "ok": "Saat ini tidak ada kekhawatiran",
     "advice": "AD8 adalah alat skrining sangat dini yang digunakan secara internasional. <strong>Jika ada 2 item atau lebih yang berubah</strong>, fungsi kognitif mungkin sudah terpengaruh, disarankan untuk segera berkonsultasi ke dokter."
   },
-
   "risk": {
     "title": "14 Faktor Risiko yang Dapat Dikendalikan dari The Lancet",
     "sub": "Komisi Pencegahan Demensia The Lancet 2024 menunjukkan: menghilangkan 14 faktor risiko ini dapat <strong>mencegah atau menunda sekitar 45% demensia</strong>. Centang item yang saat ini \"sesuai\" dengan kondisi Anda.",
     "factors": [
-      ["Penurunan pendengaran", "Faktor risiko nomor satu; penggunaan earphone jangka panjang, gangguan pendengaran tanpa alat bantu dengar"],
-      ["Kolesterol jahat (LDL) tinggi", "Ditambahkan 2024; tahun ini sama-sama menempati posisi pertama"],
-      ["Kurangnya pendidikan / stimulasi kognitif", "Kurang belajar dan melatih otak setelah paruh baya"],
-      ["Gangguan penglihatan yang tidak dikoreksi", "Ditambahkan 2024; katarak dll. yang tidak ditangani"],
-      ["Cedera kepala", "Pernah mengalami benturan kepala, gegar otak"],
-      ["Kurang olahraga", "Kurang berjalan kaki secara terus-menerus setiap hari"],
-      ["Diabetes / sindrom metabolik", "Kontrol gula darah dan tekanan darah buruk"],
-      ["Merokok", "Perokok aktif atau terpapar asap rokok jangka panjang"],
-      ["Tekanan darah tinggi", "Tekanan darah tinggi di usia paruh baya yang tidak terkontrol"],
-      ["Obesitas", "BMI berlebihan, lingkar pinggang melebihi standar"],
-      ["Konsumsi alkohol berlebihan", "Minum alkohol jangka panjang atau dalam jumlah besar"],
-      ["Depresi / stres kronis", "Gangguan depresi, gangguan panik, tekanan tinggi kronis"],
-      ["Isolasi sosial", "Tinggal sendiri, jarang berinteraksi dengan orang lain"],
-      ["Polusi udara / racun lingkungan", "Paparan PM2.5, logam berat, mikroplastik"]
+      [
+        "Penurunan pendengaran",
+        "Faktor risiko nomor satu; penggunaan earphone jangka panjang, gangguan pendengaran tanpa alat bantu dengar"
+      ],
+      [
+        "Kolesterol jahat (LDL) tinggi",
+        "Ditambahkan 2024; tahun ini sama-sama menempati posisi pertama"
+      ],
+      [
+        "Kurangnya pendidikan / stimulasi kognitif",
+        "Kurang belajar dan melatih otak setelah paruh baya"
+      ],
+      [
+        "Gangguan penglihatan yang tidak dikoreksi",
+        "Ditambahkan 2024; katarak dll. yang tidak ditangani"
+      ],
+      [
+        "Cedera kepala",
+        "Pernah mengalami benturan kepala, gegar otak"
+      ],
+      [
+        "Kurang olahraga",
+        "Kurang berjalan kaki secara terus-menerus setiap hari"
+      ],
+      [
+        "Diabetes / sindrom metabolik",
+        "Kontrol gula darah dan tekanan darah buruk"
+      ],
+      [
+        "Merokok",
+        "Perokok aktif atau terpapar asap rokok jangka panjang"
+      ],
+      [
+        "Tekanan darah tinggi",
+        "Tekanan darah tinggi di usia paruh baya yang tidak terkontrol"
+      ],
+      [
+        "Obesitas",
+        "BMI berlebihan, lingkar pinggang melebihi standar"
+      ],
+      [
+        "Konsumsi alkohol berlebihan",
+        "Minum alkohol jangka panjang atau dalam jumlah besar"
+      ],
+      [
+        "Depresi / stres kronis",
+        "Gangguan depresi, gangguan panik, tekanan tinggi kronis"
+      ],
+      [
+        "Isolasi sosial",
+        "Tinggal sendiri, jarang berinteraksi dengan orang lain"
+      ],
+      [
+        "Polusi udara / racun lingkungan",
+        "Paparan PM2.5, logam berat, mikroplastik"
+      ]
     ],
     "btnYes": "Sesuai",
     "btnNo": "Tidak",
@@ -73,21 +117,50 @@
     "ok": "Terkontrol dengan baik",
     "advice": "Setiap item dapat diperbaiki. Semakin banyak yang sesuai, semakin perlu memulai penyesuaian dari \"③ Resep Gaya Hidup\"."
   },
-
   "rx": {
     "title": "10 Resep Gaya Hidup Ma Hsi-ping",
     "sub": "Menggabungkan 14 item The Lancet, penelitian pelacakan Harvard selama 43 tahun, dan penelitian intervensi gaya hidup multipel Finlandia. <strong>Jika semua dilakukan, dapat menunda / mencegah demensia lebih dari 45%</strong>. Centang item yang \"sudah Anda lakukan\".",
     "items": [
-      ["🧩 Latih otak", "Bermain catur, bridge, belajar hal baru, mengaktifkan sel otak dan hipokampus"],
-      ["🚶 Olahraga teratur", "Berjalan kaki terus-menerus ≥15 menit per hari, akumulasi 3000–7500 langkah (3000 langkah menunda 3 tahun, 7500 langkah maksimum 7 tahun)"],
-      ["🥗 Pola makan sehat", "Diet Mediterania: banyak ikan, banyak sayuran, gunakan minyak baik (minyak zaitun)"],
-      ["🗣️ Interaksi sosial", "Sering mengobrol dan bersosialisasi, hindari menjadi lansia yang kesepian"],
-      ["📖 Terus belajar", "Jangan berhenti belajar; ikut universitas lanjut usia, bergabung dengan komunitas (terutama penting bagi perempuan)"],
-      ["🚭 Berhenti merokok, kurangi alkohol", "Berhenti merokok, kurangi konsumsi alkohol"],
-      ["☕ Teh dan kopi secukupnya", "Kopi menunda 18%, teh 14%, keduanya 34%; kopi ≤3 cangkir/hari, hindari minuman panas dalam gelas plastik"],
-      ["💼 Tunda pensiun", "Menunda pensiun 1 tahun mengurangi risiko demensia 3,2%; pensiun usia 60 vs 65 tahun berselisih sekitar 43%"],
-      ["😴 Tidur berkualitas + kontrol berat badan", "Tidur nyenyak \"mencuci otak\" membersihkan limbah; hati-hati dengan obat tidur, kontrol obesitas"],
-      ["💕 Dopamin kebahagiaan", "Lakukan hal-hal yang membuat Anda bahagia (olahraga lari, jatuh cinta, interaksi emosional) — ledakan dopamin dapat mencegah penyakit Parkinson. Ayah Ma Hsi-ping menjalin hubungan asmara dari usia 90→100 tahun, otaknya tetap jernih tanpa demensia"]
+      [
+        "🧩 Latih otak",
+        "Bermain catur, bridge, belajar hal baru, mengaktifkan sel otak dan hipokampus"
+      ],
+      [
+        "🚶 Olahraga teratur",
+        "Berjalan kaki terus-menerus ≥15 menit per hari, akumulasi 3000–7500 langkah (3000 langkah menunda 3 tahun, 7500 langkah maksimum 7 tahun)"
+      ],
+      [
+        "🥗 Pola makan sehat",
+        "Diet Mediterania: banyak ikan, banyak sayuran, gunakan minyak baik (minyak zaitun)"
+      ],
+      [
+        "🗣️ Interaksi sosial",
+        "Sering mengobrol dan bersosialisasi, hindari menjadi lansia yang kesepian"
+      ],
+      [
+        "📖 Terus belajar",
+        "Jangan berhenti belajar; ikut universitas lanjut usia, bergabung dengan komunitas (terutama penting bagi perempuan)"
+      ],
+      [
+        "🚭 Berhenti merokok, kurangi alkohol",
+        "Berhenti merokok, kurangi konsumsi alkohol"
+      ],
+      [
+        "☕ Teh dan kopi secukupnya",
+        "Kopi menunda 18%, teh 14%, keduanya 34%; kopi ≤3 cangkir/hari, hindari minuman panas dalam gelas plastik"
+      ],
+      [
+        "💼 Tunda pensiun",
+        "Menunda pensiun 1 tahun mengurangi risiko demensia 3,2%; pensiun usia 60 vs 65 tahun berselisih sekitar 43%"
+      ],
+      [
+        "😴 Tidur berkualitas + kontrol berat badan",
+        "Tidur nyenyak \"mencuci otak\" membersihkan limbah; hati-hati dengan obat tidur, kontrol obesitas"
+      ],
+      [
+        "💕 Dopamin kebahagiaan",
+        "Lakukan hal-hal yang membuat Anda bahagia (olahraga lari, jatuh cinta, interaksi emosional) — ledakan dopamin dapat mencegah penyakit Parkinson. Ayah Ma Hsi-ping menjalin hubungan asmara dari usia 90→100 tahun, otaknya tetap jernih tanpa demensia"
+      ]
     ],
     "btnYes": "Sudah dilakukan",
     "btnNo": "Belum",
@@ -98,7 +171,6 @@
     "low": "Mulailah dari hari ini",
     "advice": "Semakin banyak yang dilakukan, semakin kuat perlindungan otak. Yang belum dilakukan adalah langkah selanjutnya."
   },
-
   "result": {
     "title": "Hasil Tes",
     "sub": "Berikut rangkuman jawaban Anda dari tiga bagian sebelumnya. Dapat diekspor sekaligus atau dibagikan kepada keluarga / dokter sebagai referensi.",
@@ -116,10 +188,9 @@
     "shareNote": "📡 Konten yang dibagikan akan otomatis menyertakan tautan situs ini dan",
     "resultDisclaimer": "⚠️ Hasil ini merupakan evaluasi mandiri untuk edukasi kesehatan, <strong>tidak dapat menggantikan diagnosis medis</strong>. Jika AD8 menunjukkan 2 item atau lebih berubah, atau faktor risiko cukup banyak, silakan kunjungi dokter spesialis neurologi / klinik memori untuk evaluasi."
   },
-
   "edu": {
     "title": "Edukasi Kesehatan · Fakta Demensia yang Belum Anda Ketahui",
-    "sub": "Disarikan dari wawancara Ma Hsi-ping di \"Pao-chieh Health Talk\" dan penelitian internasional.",
+    "sub": "Dikutip dari \"Pao-chieh Health Talk\" Ma Hsi-ping dan wawancara \"Bo-Yin\" Dr. Wen-Yi Tseng, serta penelitian internasional dari The Lancet, Harvard, dan Finlandia.",
     "copyMd": "📋 Salin Seluruh Halaman (Md)",
     "copyTxt": "📋 Salin Seluruh Halaman",
     "cards": [
@@ -127,9 +198,18 @@
         "title": "⏳ Garis Waktu Demensia",
         "body": "Dari munculnya \"zat buruk\" di otak (penumpukan protein β-amiloid) hingga munculnya <strong>demensia ringan, masa inkubasi mencapai sekitar 20 tahun</strong>. 20 tahun inilah periode emas pencegahan.",
         "stats": [
-          ["20 tahun", "Penumpukan amiloid → demensia ringan"],
-          ["3–10 tahun", "Demensia ringan → kematian"],
-          ["60–80%", "Demensia termasuk Alzheimer"]
+          [
+            "20 tahun",
+            "Penumpukan amiloid → demensia ringan"
+          ],
+          [
+            "3–10 tahun",
+            "Demensia ringan → kematian"
+          ],
+          [
+            "60–80%",
+            "Demensia termasuk Alzheimer"
+          ]
         ],
         "note": "Penuaan → (gangguan memori / gangguan kognitif ringan MCI, merupakan tahap antara penuaan dan demensia) → demensia. Ma Hsi-ping menggambarkan dirinya sebagai \"gangguan memori sedang, parah tapi belum memasuki demensia\"."
       },
@@ -149,9 +229,21 @@
         "title": "👂 Tiga Tanda Peringatan \"Panca Indra\" (Paling Sering Diabaikan)",
         "note": "Karena mata, telinga, dan gigi paling dekat dengan otak, penurunannya langsung berdampak pada kognitif.",
         "ranks": [
-          ["Penurunan pendengaran", "Faktor risiko nomor satu", "Anak muda yang menggunakan earphone berjam-jam untuk mendengarkan musik keras termasuk kelompok berisiko tinggi."],
-          ["Penglihatan buruk", "Ditambahkan 2024", "Saraf mata dan saraf otak sangat berdekatan."],
-          ["Gigi kurang dari 20 buah", "", "Penelitian Jepang: gigi kurang dari 20 buah meningkatkan risiko demensia 5 kali lipat. Jepang menggalakkan \"Program 8020\" (memiliki 20 gigi di usia 80, gigi palsu juga dihitung)."]
+          [
+            "Penurunan pendengaran",
+            "Faktor risiko nomor satu",
+            "Anak muda yang menggunakan earphone berjam-jam untuk mendengarkan musik keras termasuk kelompok berisiko tinggi."
+          ],
+          [
+            "Penglihatan buruk",
+            "Ditambahkan 2024",
+            "Saraf mata dan saraf otak sangat berdekatan."
+          ],
+          [
+            "Gigi kurang dari 20 buah",
+            "",
+            "Penelitian Jepang: gigi kurang dari 20 buah meningkatkan risiko demensia 5 kali lipat. Jepang menggalakkan \"Program 8020\" (memiliki 20 gigi di usia 80, gigi palsu juga dihitung)."
+          ]
         ]
       },
       {
@@ -173,9 +265,18 @@
       {
         "title": "📊 Gelombang Demensia di Taiwan",
         "stats": [
-          ["2025", "Desember memasuki masyarakat super-lansia (tercepat di dunia, hanya 7 tahun)"],
-          ["8%→dua kali lipat", "Proporsi demensia usia 65+ akan berlipat ganda dalam 10 tahun"],
-          ["Wanita > Pria", "Wanita 9,35% / Pria 6,36%"]
+          [
+            "2025",
+            "Desember memasuki masyarakat super-lansia (tercepat di dunia, hanya 7 tahun)"
+          ],
+          [
+            "8%→dua kali lipat",
+            "Proporsi demensia usia 65+ akan berlipat ganda dalam 10 tahun"
+          ],
+          [
+            "Wanita > Pria",
+            "Wanita 9,35% / Pria 6,36%"
+          ]
         ],
         "note": "Risiko pada wanita lebih tinggi, salah satu penyebabnya adalah kurangnya sosialisasi dan belajar di luar rumah — oleh karena itu \"terus belajar dan berinteraksi sosial\" sangat penting bagi perempuan."
       },
@@ -190,15 +291,96 @@
         "caseTitle": "🧓 Kisah Nyata: Ayah Ma Hsi-ping",
         "caseBody": "Ayah Ma Hsi-ping mulai <strong>menjalin hubungan asmara dari usia 90 tahun, dan terus berlanjut hingga usia 100 tahun</strong>. Jatuh cinta membuat dopamin di otaknya \"meledak\", otaknya tetap sangat jernih, berhasil mencegah demensia.",
         "stats": [
-          ["90 → 100", "tahun · terus menjalin cinta"],
-          ["Dopamin", "meledak · otak tetap jernih"],
-          ["0 demensia", "Berhasil mencegah demensia"]
+          [
+            "90 → 100",
+            "tahun · terus menjalin cinta"
+          ],
+          [
+            "Dopamin",
+            "meledak · otak tetap jernih"
+          ],
+          [
+            "0 demensia",
+            "Berhasil mencegah demensia"
+          ]
         ],
         "note": "💡 Bagi penderita penyakit Parkinson, konsep terpenting adalah mendorong mereka untuk mencari dan berpartisipasi dalam aktivitas yang membuat mereka bahagia dan gembira, mengisi kekurangan dopamin di otak secara alami melalui emosi kebahagiaan."
+      },
+      {
+        "title": "🧠 Dr. Tseng di \"Bo-Yin\": Anda Ada di Tahap Mana dari Tsunami Demensia?",
+        "body": "<strong>Dr. Wen-Yi Tseng</strong> (profesor NTU dan pendiri AcroViz, yang mengembangkan teknologi deteksi \"usia otak\" pertama di dunia) menjelaskan di acara <strong>\"Bo-Yin\"</strong> milik Brian Tseng: di antara orang berusia di atas 65 tahun, hanya sekitar <strong>25%</strong> yang benar-benar sehat dan mungkin tidak pernah terkena demensia — 75% sisanya sudah berada di suatu titik pada spektrum demensia.",
+        "stats": [
+          [
+            "25%",
+            "Sepenuhnya sehat · ketahanan otak kuat"
+          ],
+          [
+            "50%",
+            "Penurunan Kognitif Subjektif (SCD)"
+          ],
+          [
+            "18%",
+            "Gangguan Kognitif Ringan (MCI)"
+          ],
+          [
+            "8%",
+            "Demensia terdiagnosis"
+          ]
+        ],
+        "note": "Di antara orang dengan SCD (skor tes normal tetapi merasa lebih lambat dibanding tahun lalu), rata-rata <strong>30% kelak akan berkembang menjadi demensia</strong>. 50＋18＋8＝76%, jadi deteksi dini dan tindakan dini itulah yang benar-benar penting."
+      },
+      {
+        "title": "⚠️ Jebakan \"Jurang\" pada Kecerdasan Tinggi",
+        "body": "Orang cerdas memiliki <strong>cadangan kognitif</strong> yang melimpah, sehingga tetap tampak tajam saat teman sebaya sudah melambat dan banyak melakukan kesalahan. Namun cadangan kognitif ada batasnya — begitu otak menua melewati titik kritis, terjadi <strong>\"penurunan seperti jatuh dari jurang\"</strong>, dan kemampuan merosot tajam dalam waktu singkat.",
+        "note": "💡 <strong>Kecerdasan tinggi bukan jaminan bebas.</strong> Mungkin di awal Anda tampak baik, tetapi tanpa memahami kunci menjauhi demensia, pada akhirnya Anda tetap akan runtuh."
+      },
+      {
+        "title": "🧬 Mengapa Sebagian Orang Tak Pernah Demensia? Gen 55% × Gaya Hidup 45%",
+        "body": "Di antara 25% yang tidak pernah terkena demensia, <strong>55% karena gen dan 45% karena gaya hidup</strong>. Orang bergen baik memiliki dua perlindungan bawaan: <strong>ketahanan</strong> (kognisi tetap bertahan meski protein β-amiloid atau tau merusak sel otak) dan <strong>daya tahan</strong> (otak memang tetap bersih, bebas dari protein beracun ini).",
+        "subTitle": "Faktor buruk yang bisa diperbaiki",
+        "subList": [
+          "<strong>Peradangan</strong>: peradangan kronis akibat usus bocor, alergi, dll.",
+          "<strong>Racun udara & lingkungan</strong>: PM2.5, mikroplastik, logam berat seperti merkuri",
+          "<strong>Metabolisme</strong>: \"tiga tinggi\" dan zat berbahaya dalam makanan"
+        ],
+        "note": "💡 Meski membawa gen risiko tinggi ApoE4/E4, mengendalikan faktor gaya hidup dengan baik tetap memberi peluang untuk terhindar dari demensia."
+      },
+      {
+        "title": "🧪 Amiloid Bukan Satu-satunya Penyebab (Hipotesis Multi-penyebab)",
+        "body": "Setelah obat antibodi monoklonal membersihkan amiloid, penurunan kognitif pasien hanya melambat sekitar <strong>30%</strong> — menunjukkan hipotesis yang berpusat pada amiloid mungkin tidak lengkap. Semakin banyak pakar percaya demensia muncul dari <strong>kombinasi berbagai penyebab</strong> (mis. gen Alzheimer plus demensia vaskular sekaligus), dan protein beracun itu mungkin hanya \"penonton\" yang muncul dalam prosesnya.",
+        "subTitle": "Tiap jenis demensia tampak sangat berbeda",
+        "subList": [
+          "<strong>Alzheimer</strong>: terutama kehilangan memori",
+          "<strong>Demensia frontotemporal</strong>: tanda awal adalah bicara tidak jelas (mis. Bruce Willis)",
+          "<strong>Demensia badan Lewy</strong>: terutama halusinasi (mis. Robin Williams)"
+        ]
+      },
+      {
+        "title": "💪 Demensia sebagai \"Diabetes Tipe 3\": Sains Otak di Balik Latihan Beban & Aerobik",
+        "body": "Demensia sering disebut <strong>diabetes tipe 3</strong> — <strong>resistensi insulin</strong> otak adalah penyebab penting. Sel menjadi tidak peka terhadap insulin, gula darah tidak dimetabolisme, dan otak pun dirugikan.",
+        "subTitle": "Mengapa olahraga melindungi otak",
+        "subList": [
+          "<strong>Latihan beban</strong>: makin banyak otot, makin banyak gula dimetabolisme di jaringan otot, secara mendasar menurunkan resistensi insulin",
+          "<strong>Otot adalah organ endokrin terbesar tubuh</strong>: mengeluarkan miokin seperti irisin dan IL-6 yang langsung melindungi otak",
+          "<strong>Olahraga aerobik</strong>: meningkatkan BDNF (faktor neurotrofik); penelitian membuktikan hipokampus membesar dan terbentuk neuron baru setelah berolahraga"
+        ],
+        "note": "🗓️ Pedoman: 2–3 kali seminggu, sekitar 30 menit tiap sesi, dengan protein sebelum dan sesudah serta istirahat cukup — \"respons pemulihan\" setelah tekanan olahraga itulah yang benar-benar membantu otak."
+      },
+      {
+        "title": "🛡️ Lima Pilar Pencegahan Demensia ＋ Tanda Peringatan Dini",
+        "subTitle": "Lima pilar pencegahan",
+        "subList": [
+          "🏃 <strong>Latihan beban ＋ aerobik</strong> bersamaan (meningkatkan miokin, menaikkan BDNF untuk menutrisi hipokampus)",
+          "😴 <strong>Tidur = \"fase pembuangan limbah\" otak</strong>: tidur dalam membersihkan protein amiloid dan tau",
+          "🥗 <strong>Pola makan anti-inflamasi & metabolik</strong>: diet Mediterania untuk menghindari peradangan dan resistensi insulin",
+          "🧩 <strong>Tantangan kognitif & sosialisasi berkelanjutan</strong>: belajar hal baru, berinteraksi, menebalkan cadangan kognitif",
+          "🧘 <strong>Kepribadian positif & manajemen stres</strong>: neurotisisme dan stres tinggi kronis membuat hormon stres merusak otak"
+        ],
+        "caseTitle": "🔍 Deteksi dini: perubahan perilaku sering mendahului hilangnya memori",
+        "caseBody": "Selain pelupa, <strong>perubahan mendadak suasana hati dan kepribadian</strong> (orang yang tadinya lembut menjadi mudah marah; kebiasaan keuangan yang hati-hati menjadi impulsif), bicara tidak jelas, kehilangan arah, dan tak mampu berkonsentrasi semuanya bisa menjadi tanda awal berbagai jenis demensia. Hilangnya \"minat/motivasi\" di lobus frontal otak juga merupakan tanda peringatan demensia."
       }
     ]
   },
-
   "media": {
     "title": "Sumber Belajar · Studio NotebookLM",
     "sub": "Video, audio, presentasi, infografis, kartu belajar, peta pikiran, dan transkrip — semuanya dihasilkan dari buku catatan NotebookLM \"Mengubah Pemahaman Anda · Demensia\".",
@@ -247,30 +429,151 @@
     "mmSub": "Pembunuh Tersembunyi: Panduan Faktor Risiko Tinggi dan Tanda Awal Demensia",
     "mmRoot": "Pembunuh Tersembunyi · Faktor Risiko Tinggi dan Tanda Awal Demensia",
     "mmBranches": [
-      { "icon": "🚨", "title": "Tanda Awal", "leaves": ["Lupa film yang sudah ditonton", "Tidak bisa menyebut kata benda (hanya bilang \"itu\")", "Tidak bisa mengingat puisi yang dihafal", "Hanya ingat \"Makro\" yang sudah tutup", "Tidak mengenali nama orang yang familiar", "Kepribadian berubah 180°"] },
-      { "icon": "👂", "title": "Peringatan Panca Indra", "leaves": ["Penurunan pendengaran (nomor satu)", "Gangguan penglihatan", "Gigi kurang dari 20 buah (risiko ×5)"] },
-      { "icon": "🩸", "title": "Penyakit & Metabolisme", "leaves": ["Kolesterol jahat LDL tinggi", "Sindrom metabolik / diabetes", "Penyakit kardiovaskular", "Kekurangan B12 / litium"] },
-      { "icon": "😰", "title": "Emosi & Obat", "leaves": ["Depresi / gangguan panik", "Stres kronis", "Obat tidur berlebihan", "Anestesi umum"] },
-      { "icon": "🏭", "title": "Racun Lingkungan", "leaves": ["Logam berat", "Polusi udara PM2.5", "Mikroplastik"] },
-      { "icon": "⚠️", "title": "Lainnya", "leaves": ["Cedera kepala", "Genetika", "Isolasi sosial", "Obesitas"] },
-      { "icon": "💕", "title": "Dopamin & Parkinson", "leaves": ["Kekurangan dopamin → Parkinson", "Olahraga lari merangsang dopamin", "Jatuh cinta = ledakan dopamin", "Lakukan hal yang membahagiakan", "Ayah Ma menjalin cinta usia 90→100 cegah demensia"] }
+      {
+        "icon": "🚨",
+        "title": "Tanda Awal",
+        "leaves": [
+          "Lupa film yang sudah ditonton",
+          "Tidak bisa menyebut kata benda (hanya bilang \"itu\")",
+          "Tidak bisa mengingat puisi yang dihafal",
+          "Hanya ingat \"Makro\" yang sudah tutup",
+          "Tidak mengenali nama orang yang familiar",
+          "Kepribadian berubah 180°"
+        ]
+      },
+      {
+        "icon": "👂",
+        "title": "Peringatan Panca Indra",
+        "leaves": [
+          "Penurunan pendengaran (nomor satu)",
+          "Gangguan penglihatan",
+          "Gigi kurang dari 20 buah (risiko ×5)"
+        ]
+      },
+      {
+        "icon": "🩸",
+        "title": "Penyakit & Metabolisme",
+        "leaves": [
+          "Kolesterol jahat LDL tinggi",
+          "Sindrom metabolik / diabetes",
+          "Penyakit kardiovaskular",
+          "Kekurangan B12 / litium"
+        ]
+      },
+      {
+        "icon": "😰",
+        "title": "Emosi & Obat",
+        "leaves": [
+          "Depresi / gangguan panik",
+          "Stres kronis",
+          "Obat tidur berlebihan",
+          "Anestesi umum"
+        ]
+      },
+      {
+        "icon": "🏭",
+        "title": "Racun Lingkungan",
+        "leaves": [
+          "Logam berat",
+          "Polusi udara PM2.5",
+          "Mikroplastik"
+        ]
+      },
+      {
+        "icon": "⚠️",
+        "title": "Lainnya",
+        "leaves": [
+          "Cedera kepala",
+          "Genetika",
+          "Isolasi sosial",
+          "Obesitas"
+        ]
+      },
+      {
+        "icon": "💕",
+        "title": "Dopamin & Parkinson",
+        "leaves": [
+          "Kekurangan dopamin → Parkinson",
+          "Olahraga lari merangsang dopamin",
+          "Jatuh cinta = ledakan dopamin",
+          "Lakukan hal yang membahagiakan",
+          "Ayah Ma menjalin cinta usia 90→100 cegah demensia"
+        ]
+      }
     ],
     "transcriptTitle": "📝 Transkrip / Ringkasan Poin Penting",
     "transcriptCopy": "📋 Salin Seluruh Teks",
     "transcriptSub": "Disusun oleh NotebookLM dari wawancara menjadi poin-poin terstruktur yang rapi (data medis dipertahankan)",
     "transcriptToggle": "Perluas / Ciutkan transkrip",
     "transcriptSections": [
-      { "title": "I. Krisis Lansia dan Gelombang Demensia di Taiwan", "body": "Kecepatan penuaan populasi Taiwan nomor satu di dunia: memasuki masyarakat menua pada 1993, beralih ke masyarakat lansia pada 2018, dan pada akhir 2025 memasuki \"masyarakat super-lansia\" dengan proporsi usia 65+ melebihi 20%, dari masyarakat lansia ke super-lansia hanya dalam 7 tahun. Pemerintah memperkirakan total populasi pada 2065 bisa berkurang setengah menjadi 12 juta. Saat ini sekitar 8% usia 60+ menderita demensia, diperkirakan berlipat ganda dalam sepuluh tahun; proporsi wanita (9,35%) lebih tinggi dari pria (6,36%)." },
-      { "title": "II. Garis Waktu Demensia dan Masa Inkubasi Emas 20 Tahun", "body": "Dari demensia ringan hingga kematian sekitar 3–10 tahun. Namun dari saat otak mulai menumpuk \"protein β-amiloid\" hingga munculnya demensia ringan, terdapat masa inkubasi selama <strong>20 tahun</strong> — ini adalah periode emas untuk mencegah, menunda, bahkan menghentikan timbulnya penyakit. Gangguan memori (MCI - gangguan kognitif ringan) merupakan tahap antara penuaan dan demensia." },
-      { "title": "III. Tanda Peringatan Dini: Fenomena \"Blank Otak\"", "list": ["<strong>Memori jangka pendek tidak dapat tersimpan</strong>: Film yang baru ditonton di bioskop, sampai di rumah sama sekali tidak ingat; buku yang dibaca sebelum tidur, keesokan harinya tidak bisa melanjutkan.", "<strong>Lupa kata-kata yang familiar</strong>: Tahu bentuk benda tapi tidak bisa menyebut namanya (egg tart hanya bisa bilang \"itu\"); di supermarket besar hanya ingat \"Makro\" yang sudah lama tutup.", "<strong>Kesulitan memori jangka panjang dan mengenali orang</strong>: Puisi yang sudah dihafal tiba-tiba tidak bisa diingat; melihat orang yang dikenal tidak bisa menyebut namanya, hanya bisa berbasa-basi untuk mengonfirmasi identitas."] },
-      { "title": "IV. Peringatan Panca Indra: Pendengaran, Penglihatan, dan Gigi", "list": ["<strong>Penurunan pendengaran</strong>: The Lancet menempatkannya sebagai faktor risiko demensia nomor satu. Mendengarkan musik keras dengan earphone dalam jangka panjang berisiko tinggi.", "<strong>Gigi kurang dari 20 buah</strong>: Penelitian Kementerian Kesehatan Jepang menunjukkan risiko demensia melonjak lebih dari 5 kali lipat, sehingga menggalakkan \"Program 8020\" (termasuk gigi palsu).", "<strong>Penurunan penglihatan</strong>: Saraf penglihatan dekat dengan saraf otak, gangguan penglihatan juga merupakan faktor risiko penting."] },
-      { "title": "V. Pembunuh Tersembunyi yang Dapat Dikendalikan Sehari-hari", "list": ["<strong>Racun lingkungan</strong>: Logam berat dan PM2.5 dapat masuk ke otak; mikroplastik disebut pembunuh super (kopi panas di gelas kertas, makanan panas di kantong plastik, air minum kemasan).", "<strong>Kolesterol jahat (LDL) berlebihan</strong>: Penelitian terbaru menempatkannya setara dengan penurunan pendengaran di posisi pertama.", "<strong>Emosi dan obat-obatan</strong>: Stres kronis, panik, depresi, obat tidur berlebihan, dan anestesi umum semuanya merusak sel otak.", "<strong>Kekurangan unsur mikro</strong>: Kekurangan B12 dan \"litium\" dapat menyebabkan demensia.", "<strong>Cedera kepala</strong>: Benturan di kepala memiliki kasus nyata yang memicu gangguan kognitif."] },
-      { "title": "VI. 10 Intervensi Gaya Hidup untuk Mengubah Nasib (Dapat Menunda / Mencegah > 45%)", "list": ["<strong>Terus belajar</strong>: Tidak belajar berulang kali masuk sebagai faktor risiko pertama/kedua.", "<strong>Tunda pensiun</strong>: Sel otak mulai menyusut sekitar usia 60; pensiun usia 60 risikonya 43% lebih tinggi dari usia 65, menunda 1 tahun mengurangi risiko demensia 3,2%.", "<strong>Berjalan kaki terus-menerus</strong>: Akumulasi 3000 langkah/hari menunda 3 tahun, 7500 langkah menunda 7 tahun (batas atas), tapi setiap kali harus berjalan terus-menerus minimal 15 menit.", "<strong>Interaksi sosial</strong>: Otak lansia yang kesepian dalam keadaan diam jangka panjang, risiko demensia sangat tinggi.", "<strong>Minum teh dan kopi</strong>: Kopi menunda 18%, teh 14%, keduanya 34%; kopi ≤ 3 cangkir/hari.", "<strong>Terus melatih otak</strong>: Catur, bridge, mahjong menjaga aktivitas neuron.", "<strong>Pola makan sehat + kontrol berat badan</strong>: Diet Mediterania, minyak baik (minyak zaitun), hindari obesitas.", "<strong>Atasi gangguan tidur</strong>: Tidur nyenyak mengaktifkan mekanisme pembersihan otomatis otak.", "<strong>Berhenti merokok, kurangi alkohol</strong>: Mengurangi peradangan saraf otak."] },
-      { "title": "VII. Metode Pemeriksaan dan Perkembangan Pengobatan Terbaru", "list": ["<strong>Pemeriksaan</strong>: MRI / PET Scan (sekitar 60.000 NT$) → Tes darah terbaru (sekitar 20.000 NT$, disetujui FDA AS) dapat mendeteksi secara dini.", "<strong>Mekanisme \"pencucian otak\"</strong>: Saat tidur nyenyak, sel otak menyusut menciptakan celah, cairan serebrospinal menyapu protein β-amiloid; insomnia menyebabkan gagalnya detoksifikasi.", "<strong>Obat baru antibodi monoklonal</strong>: Dapat membersihkan protein β-amiloid, satu siklus 12–18 bulan, sekitar 1,5 juta NT$, hanya sekitar 14% yang cocok (mencegah perdarahan otak / edema otak).", "<strong>\"National Brain Cleanser No.1\"</strong>: Dikembangkan oleh Lembaga Penelitian Obat Tradisional Tiongkok Taiwan, percobaan hewan telah membuktikan pembersihan protein β-amiloid, sedang mempersiapkan transfer teknologi dan pengajuan izin obat."] },
-      { "title": "VIII. Hubungan Dopamin dan Penyakit Parkinson", "body": "Penyakit Parkinson disebabkan oleh <strong>kekurangan dopamin</strong> di otak, yang selanjutnya dapat menyebabkan gejala demensia. Ma Hsi-ping menunjukkan bahwa \"resep harian\" terbaik adalah aktif melakukan hal-hal yang membuat diri sendiri bahagia dan memicu \"ledakan\" dopamin.", "list": ["<strong>Olahraga dan lari</strong>: Menstimulasi produksi dopamin di otak secara alami melalui aktivitas fisik.", "<strong>Jatuh cinta dan interaksi emosional</strong>: Menjaga emosi tetap aktif dapat menstimulasi otak secara efektif. Ayah Ma Hsi-ping mulai menjalin hubungan asmara dari usia 90 tahun, hingga usia 100 tahun masih berlanjut, dopamin di otaknya meledak, otaknya tetap jernih, berhasil mencegah demensia."], "conclusion": "Kesimpulan: Dorong penderita penyakit Parkinson untuk mencari dan berpartisipasi dalam aktivitas yang membuat mereka bahagia, mengisi kekurangan dopamin di otak secara alami melalui emosi kebahagiaan." }
+      {
+        "title": "I. Krisis Lansia dan Gelombang Demensia di Taiwan",
+        "body": "Kecepatan penuaan populasi Taiwan nomor satu di dunia: memasuki masyarakat menua pada 1993, beralih ke masyarakat lansia pada 2018, dan pada akhir 2025 memasuki \"masyarakat super-lansia\" dengan proporsi usia 65+ melebihi 20%, dari masyarakat lansia ke super-lansia hanya dalam 7 tahun. Pemerintah memperkirakan total populasi pada 2065 bisa berkurang setengah menjadi 12 juta. Saat ini sekitar 8% usia 60+ menderita demensia, diperkirakan berlipat ganda dalam sepuluh tahun; proporsi wanita (9,35%) lebih tinggi dari pria (6,36%)."
+      },
+      {
+        "title": "II. Garis Waktu Demensia dan Masa Inkubasi Emas 20 Tahun",
+        "body": "Dari demensia ringan hingga kematian sekitar 3–10 tahun. Namun dari saat otak mulai menumpuk \"protein β-amiloid\" hingga munculnya demensia ringan, terdapat masa inkubasi selama <strong>20 tahun</strong> — ini adalah periode emas untuk mencegah, menunda, bahkan menghentikan timbulnya penyakit. Gangguan memori (MCI - gangguan kognitif ringan) merupakan tahap antara penuaan dan demensia."
+      },
+      {
+        "title": "III. Tanda Peringatan Dini: Fenomena \"Blank Otak\"",
+        "list": [
+          "<strong>Memori jangka pendek tidak dapat tersimpan</strong>: Film yang baru ditonton di bioskop, sampai di rumah sama sekali tidak ingat; buku yang dibaca sebelum tidur, keesokan harinya tidak bisa melanjutkan.",
+          "<strong>Lupa kata-kata yang familiar</strong>: Tahu bentuk benda tapi tidak bisa menyebut namanya (egg tart hanya bisa bilang \"itu\"); di supermarket besar hanya ingat \"Makro\" yang sudah lama tutup.",
+          "<strong>Kesulitan memori jangka panjang dan mengenali orang</strong>: Puisi yang sudah dihafal tiba-tiba tidak bisa diingat; melihat orang yang dikenal tidak bisa menyebut namanya, hanya bisa berbasa-basi untuk mengonfirmasi identitas."
+        ]
+      },
+      {
+        "title": "IV. Peringatan Panca Indra: Pendengaran, Penglihatan, dan Gigi",
+        "list": [
+          "<strong>Penurunan pendengaran</strong>: The Lancet menempatkannya sebagai faktor risiko demensia nomor satu. Mendengarkan musik keras dengan earphone dalam jangka panjang berisiko tinggi.",
+          "<strong>Gigi kurang dari 20 buah</strong>: Penelitian Kementerian Kesehatan Jepang menunjukkan risiko demensia melonjak lebih dari 5 kali lipat, sehingga menggalakkan \"Program 8020\" (termasuk gigi palsu).",
+          "<strong>Penurunan penglihatan</strong>: Saraf penglihatan dekat dengan saraf otak, gangguan penglihatan juga merupakan faktor risiko penting."
+        ]
+      },
+      {
+        "title": "V. Pembunuh Tersembunyi yang Dapat Dikendalikan Sehari-hari",
+        "list": [
+          "<strong>Racun lingkungan</strong>: Logam berat dan PM2.5 dapat masuk ke otak; mikroplastik disebut pembunuh super (kopi panas di gelas kertas, makanan panas di kantong plastik, air minum kemasan).",
+          "<strong>Kolesterol jahat (LDL) berlebihan</strong>: Penelitian terbaru menempatkannya setara dengan penurunan pendengaran di posisi pertama.",
+          "<strong>Emosi dan obat-obatan</strong>: Stres kronis, panik, depresi, obat tidur berlebihan, dan anestesi umum semuanya merusak sel otak.",
+          "<strong>Kekurangan unsur mikro</strong>: Kekurangan B12 dan \"litium\" dapat menyebabkan demensia.",
+          "<strong>Cedera kepala</strong>: Benturan di kepala memiliki kasus nyata yang memicu gangguan kognitif."
+        ]
+      },
+      {
+        "title": "VI. 10 Intervensi Gaya Hidup untuk Mengubah Nasib (Dapat Menunda / Mencegah > 45%)",
+        "list": [
+          "<strong>Terus belajar</strong>: Tidak belajar berulang kali masuk sebagai faktor risiko pertama/kedua.",
+          "<strong>Tunda pensiun</strong>: Sel otak mulai menyusut sekitar usia 60; pensiun usia 60 risikonya 43% lebih tinggi dari usia 65, menunda 1 tahun mengurangi risiko demensia 3,2%.",
+          "<strong>Berjalan kaki terus-menerus</strong>: Akumulasi 3000 langkah/hari menunda 3 tahun, 7500 langkah menunda 7 tahun (batas atas), tapi setiap kali harus berjalan terus-menerus minimal 15 menit.",
+          "<strong>Interaksi sosial</strong>: Otak lansia yang kesepian dalam keadaan diam jangka panjang, risiko demensia sangat tinggi.",
+          "<strong>Minum teh dan kopi</strong>: Kopi menunda 18%, teh 14%, keduanya 34%; kopi ≤ 3 cangkir/hari.",
+          "<strong>Terus melatih otak</strong>: Catur, bridge, mahjong menjaga aktivitas neuron.",
+          "<strong>Pola makan sehat + kontrol berat badan</strong>: Diet Mediterania, minyak baik (minyak zaitun), hindari obesitas.",
+          "<strong>Atasi gangguan tidur</strong>: Tidur nyenyak mengaktifkan mekanisme pembersihan otomatis otak.",
+          "<strong>Berhenti merokok, kurangi alkohol</strong>: Mengurangi peradangan saraf otak."
+        ]
+      },
+      {
+        "title": "VII. Metode Pemeriksaan dan Perkembangan Pengobatan Terbaru",
+        "list": [
+          "<strong>Pemeriksaan</strong>: MRI / PET Scan (sekitar 60.000 NT$) → Tes darah terbaru (sekitar 20.000 NT$, disetujui FDA AS) dapat mendeteksi secara dini.",
+          "<strong>Mekanisme \"pencucian otak\"</strong>: Saat tidur nyenyak, sel otak menyusut menciptakan celah, cairan serebrospinal menyapu protein β-amiloid; insomnia menyebabkan gagalnya detoksifikasi.",
+          "<strong>Obat baru antibodi monoklonal</strong>: Dapat membersihkan protein β-amiloid, satu siklus 12–18 bulan, sekitar 1,5 juta NT$, hanya sekitar 14% yang cocok (mencegah perdarahan otak / edema otak).",
+          "<strong>\"National Brain Cleanser No.1\"</strong>: Dikembangkan oleh Lembaga Penelitian Obat Tradisional Tiongkok Taiwan, percobaan hewan telah membuktikan pembersihan protein β-amiloid, sedang mempersiapkan transfer teknologi dan pengajuan izin obat."
+        ]
+      },
+      {
+        "title": "VIII. Hubungan Dopamin dan Penyakit Parkinson",
+        "body": "Penyakit Parkinson disebabkan oleh <strong>kekurangan dopamin</strong> di otak, yang selanjutnya dapat menyebabkan gejala demensia. Ma Hsi-ping menunjukkan bahwa \"resep harian\" terbaik adalah aktif melakukan hal-hal yang membuat diri sendiri bahagia dan memicu \"ledakan\" dopamin.",
+        "list": [
+          "<strong>Olahraga dan lari</strong>: Menstimulasi produksi dopamin di otak secara alami melalui aktivitas fisik.",
+          "<strong>Jatuh cinta dan interaksi emosional</strong>: Menjaga emosi tetap aktif dapat menstimulasi otak secara efektif. Ayah Ma Hsi-ping mulai menjalin hubungan asmara dari usia 90 tahun, hingga usia 100 tahun masih berlanjut, dopamin di otaknya meledak, otaknya tetap jernih, berhasil mencegah demensia."
+        ],
+        "conclusion": "Kesimpulan: Dorong penderita penyakit Parkinson untuk mencari dan berpartisipasi dalam aktivitas yang membuat mereka bahagia, mengisi kekurangan dopamin di otak secara alami melalui emosi kebahagiaan."
+      }
     ]
   },
-
   "sources": {
     "title": "Sumber Data",
     "sub": "Video sumber utama, serta semua penelitian, institusi, dan referensi yang disebutkan dalam video.",
@@ -281,20 +584,76 @@
     "mainNbSub": "Transkrip dan ringkasan poin penting (memerlukan login akun Google yang memiliki akses)",
     "researchLabel": "🔬 Penelitian dan Referensi yang Disebutkan dalam Video",
     "items": [
-      ["🔬","Komisi Pencegahan Demensia The Lancet","Laporan faktor risiko: 2017 9 item → 2020 12 item → 2024 14 item; menghilangkannya dapat mencegah/menunda sekitar 45% demensia"],
-      ["🇫🇮","Penelitian Intervensi Gaya Hidup Multipel FINGER Finlandia","Membuktikan bahwa intervensi multipel seperti diet, olahraga, latihan kognitif, dan manajemen risiko vaskular dapat menunda penurunan kognitif"],
-      ["🎓","Penelitian Pelacakan 43 Tahun Harvard × MIT","Analisis pelacakan berskala besar tentang hubungan kebiasaan hidup dan risiko demensia"],
-      ["🇯🇵","Penelitian Kementerian Kesehatan Jepang","Gigi kurang dari 20 buah meningkatkan risiko demensia lebih dari 5 kali lipat; menggalakkan \"Program 8020\" dan \"Undang-Undang Dasar Demensia\""],
-      ["🇺🇸","FDA Amerika Serikat","Menyetujui \"tes darah\" demensia; menyetujui obat baru antibodi monoklonal yang membersihkan protein β-amiloid"],
-      ["💉","Obat baru antibodi monoklonal (tipe lecanemab / donanemab)","Membersihkan protein β-amiloid di otak; siklus pengobatan 12–18 bulan, sekitar 1,5 juta NT$, sekitar 14% yang cocok"],
-      ["🌿","Lembaga Penelitian Obat Tradisional Tiongkok, Kementerian Kesehatan Taiwan | \"National Brain Cleanser No.1\"","Obat herbal ilmiah, percobaan hewan telah membuktikan pembersihan protein β-amiloid, sedang mempersiapkan transfer teknologi dan pengajuan izin obat"],
-      ["🍵","Penelitian kopi / teh menunda demensia","Kopi menunda 18%, teh 14%, keduanya 34%; kopi disarankan ≤ 3 cangkir/hari"],
-      ["🚶","Penelitian jumlah langkah berjalan","3000 langkah/hari menunda 3 tahun … 7500 langkah menunda 7 tahun (batas atas), setiap kali harus terus-menerus 15 menit"],
-      ["💼","Penelitian usia pensiun","Menunda pensiun 1 tahun mengurangi risiko demensia 3,2%; pensiun usia 60 risikonya sekitar 43% lebih tinggi dari usia 65"],
-      ["🧪","Penelitian unsur mikro","Kekurangan vitamin B12 dan unsur mikro \"litium (Li)\" terkait dengan demensia"],
-      ["🏭","Penelitian racun lingkungan","Hubungan logam berat, PM2.5, dan mikroplastik dengan demensia"],
-      ["🩺","Pandangan dokter klinis","Saran klinis dari dokter spesialis termasuk Dr. Chen Chang-ming, Wakil Direktur RS Enchu Kong dll."],
-      ["💡","Charlie Munger","Kutipan pemikiran terbalik \"menghindari kegagalan\""]
+      [
+        "🔬",
+        "Komisi Pencegahan Demensia The Lancet",
+        "Laporan faktor risiko: 2017 9 item → 2020 12 item → 2024 14 item; menghilangkannya dapat mencegah/menunda sekitar 45% demensia"
+      ],
+      [
+        "🇫🇮",
+        "Penelitian Intervensi Gaya Hidup Multipel FINGER Finlandia",
+        "Membuktikan bahwa intervensi multipel seperti diet, olahraga, latihan kognitif, dan manajemen risiko vaskular dapat menunda penurunan kognitif"
+      ],
+      [
+        "🎓",
+        "Penelitian Pelacakan 43 Tahun Harvard × MIT",
+        "Analisis pelacakan berskala besar tentang hubungan kebiasaan hidup dan risiko demensia"
+      ],
+      [
+        "🇯🇵",
+        "Penelitian Kementerian Kesehatan Jepang",
+        "Gigi kurang dari 20 buah meningkatkan risiko demensia lebih dari 5 kali lipat; menggalakkan \"Program 8020\" dan \"Undang-Undang Dasar Demensia\""
+      ],
+      [
+        "🇺🇸",
+        "FDA Amerika Serikat",
+        "Menyetujui \"tes darah\" demensia; menyetujui obat baru antibodi monoklonal yang membersihkan protein β-amiloid"
+      ],
+      [
+        "💉",
+        "Obat baru antibodi monoklonal (tipe lecanemab / donanemab)",
+        "Membersihkan protein β-amiloid di otak; siklus pengobatan 12–18 bulan, sekitar 1,5 juta NT$, sekitar 14% yang cocok"
+      ],
+      [
+        "🌿",
+        "Lembaga Penelitian Obat Tradisional Tiongkok, Kementerian Kesehatan Taiwan | \"National Brain Cleanser No.1\"",
+        "Obat herbal ilmiah, percobaan hewan telah membuktikan pembersihan protein β-amiloid, sedang mempersiapkan transfer teknologi dan pengajuan izin obat"
+      ],
+      [
+        "🍵",
+        "Penelitian kopi / teh menunda demensia",
+        "Kopi menunda 18%, teh 14%, keduanya 34%; kopi disarankan ≤ 3 cangkir/hari"
+      ],
+      [
+        "🚶",
+        "Penelitian jumlah langkah berjalan",
+        "3000 langkah/hari menunda 3 tahun … 7500 langkah menunda 7 tahun (batas atas), setiap kali harus terus-menerus 15 menit"
+      ],
+      [
+        "💼",
+        "Penelitian usia pensiun",
+        "Menunda pensiun 1 tahun mengurangi risiko demensia 3,2%; pensiun usia 60 risikonya sekitar 43% lebih tinggi dari usia 65"
+      ],
+      [
+        "🧪",
+        "Penelitian unsur mikro",
+        "Kekurangan vitamin B12 dan unsur mikro \"litium (Li)\" terkait dengan demensia"
+      ],
+      [
+        "🏭",
+        "Penelitian racun lingkungan",
+        "Hubungan logam berat, PM2.5, dan mikroplastik dengan demensia"
+      ],
+      [
+        "🩺",
+        "Pandangan dokter klinis",
+        "Saran klinis dari dokter spesialis termasuk Dr. Chen Chang-ming, Wakil Direktur RS Enchu Kong dll."
+      ],
+      [
+        "💡",
+        "Charlie Munger",
+        "Kutipan pemikiran terbalik \"menghindari kegagalan\""
+      ]
     ],
     "casesLabel": "👤 Kasus Demensia yang Disebutkan dalam Video",
     "casesBody": "Kasus tokoh publik seperti Reagan (mantan Presiden AS), Bruce Willis (demensia frontotemporal), Lin Fang-yu (mantan Direktur RS Universitas Nasional Taiwan), Ma Ying-jeou, Lu Keng (jurnalis senior) dan lainnya, semuanya disebutkan dalam video sebagai ilustrasi.",
@@ -303,7 +662,6 @@
     "backHome": "← Kembali ke Pusat Tes",
     "note": "※ Video merupakan acara talk show, beberapa detail penelitian disusun dari konten wawancara; untuk keputusan medis resmi, silakan merujuk pada jurnal asli dan diagnosis dokter."
   },
-
   "selfcheck": {
     "title": "Skrining AD8 Lanjutan",
     "sub": "Memisahkan \"tanda peringatan gejala\" dan \"faktor risiko\" untuk interpretasi terpisah, lebih akurat dari skor tunggal. Jika sesuai pilih \"Ya\", jika tidak pilih \"Tidak\".",
@@ -332,31 +690,109 @@
     "bandHigh": "🔴 9–16 poin: Disarankan evaluasi lebih lanjut",
     "bandHighDesc": "Disarankan untuk segera menjadwalkan evaluasi formal, terutama jika jumlah pertanyaan tanda peringatan gejala cukup tinggi.",
     "questions": [
-      { "id": "w1", "group": "warning", "text": "Belakangan ini sering lupa hal yang baru terjadi, misalnya konten yang baru dibaca, hal yang baru dikatakan, dan lebih jelas dari sebelumnya.", "help": "Fokusnya adalah \"belakangan ini menjadi jelas\" dan terjadi berulang." },
-      { "id": "w2", "group": "warning", "text": "Situasi mencari kata atau tidak bisa menyebutkan nama benda umum, belakangan ini lebih sering dari sebelumnya.", "help": "Sesekali lupa sangat umum; jika semakin sering dan memengaruhi percakapan, perlu diperhatikan." },
-      { "id": "w3", "group": "warning", "text": "Saat bertemu orang yang dikenal, sering tidak bisa mengingat namanya, atau menjadi bingung terhadap wajah dan hubungan yang familiar.", "help": "Sekadar sesaat blank belum tentu abnormal, fokusnya adalah apakah meningkat dan memengaruhi interaksi." },
-      { "id": "w4", "group": "warning", "text": "Lebih mudah bingung saat melakukan hal-hal yang biasa, misalnya pembayaran, mengatur dokumen, mengoperasikan proses yang familiar.", "help": "Perubahan fungsi seperti ini secara klinis lebih signifikan daripada tidak bisa mengingat informasi lama." },
-      { "id": "w5", "group": "warning", "text": "Orang lain juga memperhatikan bahwa memori, penilaian, percakapan, atau efisiensi kerja Anda belakangan ini memburuk.", "help": "Pengamatan orang sekitar sering menjadi petunjuk penting." },
-      { "id": "w6", "group": "warning", "text": "Situasi di atas sudah mulai memengaruhi pekerjaan, keuangan, pengobatan, navigasi saat bepergian, atau pengaturan sehari-hari.", "help": "Jika ya, disarankan langsung berkonsultasi ke dokter untuk evaluasi." },
-      { "id": "r1", "group": "risk", "text": "Anda mengalami penurunan pendengaran, tinnitus parah, atau sering tidak bisa mendengar jelas tapi belum ditangani.", "help": "Masalah pendengaran adalah salah satu faktor risiko yang dapat disesuaikan yang penting." },
-      { "id": "r2", "group": "risk", "text": "Anda mengalami penurunan penglihatan atau penyakit mata, dan saat ini koreksi atau pengobatannya tidak memadai.", "help": "Masalah penglihatan yang tidak ditangani juga terkait dengan peningkatan risiko demensia." },
-      { "id": "r3", "group": "risk", "text": "Anda memiliki LDL tinggi, trigliserida tinggi, diabetes, hipertensi, atau penyakit kardiovaskular.", "help": "Kontrol kardiometabolik sangat terkait dengan kesehatan otak." },
-      { "id": "r4", "group": "risk", "text": "Anda biasanya kurang berolahraga, misalnya sebagian besar hari tidak berjalan cepat terus-menerus selama 15 menit.", "help": "Aktivitas teratur terkait dengan perlindungan kognitif." },
-      { "id": "r5", "group": "risk", "text": "Anda mengalami gangguan tidur jangka panjang, atau mungkin memiliki sleep apnea, kantuk berat di siang hari.", "help": "Masalah tidur bisa menjadi faktor risiko sekaligus memengaruhi performa kognitif saat ini." },
-      { "id": "r6", "group": "risk", "text": "Anda mengalami tekanan tinggi jangka panjang, depresi, kecemasan, atau gangguan emosi yang jelas.", "help": "Kondisi emosi dan performa kognitif sering saling memengaruhi." },
-      { "id": "r7", "group": "risk", "text": "Anda merokok, obesitas, atau pola makan jangka panjang cenderung tinggi lemak jenuh dan kurang sayur buah.", "help": "Bisa mulai dari satu atau dua kebiasaan yang bisa dilakukan untuk penyesuaian." },
-      { "id": "r8", "group": "risk", "text": "Interaksi Anda dengan orang lain cukup sedikit, aktivitas sosial dalam setahun terakhir jelas tidak cukup.", "help": "Kurangnya stimulasi sosial terkait dengan risiko penurunan kognitif." },
-      { "id": "r9", "group": "risk", "text": "Anda pernah mengalami cedera kepala, terutama pernah gegar otak atau mengalami gejala setelah benturan.", "help": "Cedera kepala merupakan salah satu faktor risiko yang diketahui." },
-      { "id": "r10", "group": "risk", "text": "Obat yang saat ini Anda konsumsi, kekurangan B12, tiroid, atau masalah fisik lainnya mungkin menyebabkan penurunan memori atau perhatian.", "help": "Kondisi seperti ini sering termasuk penyebab yang dapat dipulihkan, layak untuk disampaikan secara proaktif saat berkonsultasi ke dokter." }
+      {
+        "id": "w1",
+        "group": "warning",
+        "text": "Belakangan ini sering lupa hal yang baru terjadi, misalnya konten yang baru dibaca, hal yang baru dikatakan, dan lebih jelas dari sebelumnya.",
+        "help": "Fokusnya adalah \"belakangan ini menjadi jelas\" dan terjadi berulang."
+      },
+      {
+        "id": "w2",
+        "group": "warning",
+        "text": "Situasi mencari kata atau tidak bisa menyebutkan nama benda umum, belakangan ini lebih sering dari sebelumnya.",
+        "help": "Sesekali lupa sangat umum; jika semakin sering dan memengaruhi percakapan, perlu diperhatikan."
+      },
+      {
+        "id": "w3",
+        "group": "warning",
+        "text": "Saat bertemu orang yang dikenal, sering tidak bisa mengingat namanya, atau menjadi bingung terhadap wajah dan hubungan yang familiar.",
+        "help": "Sekadar sesaat blank belum tentu abnormal, fokusnya adalah apakah meningkat dan memengaruhi interaksi."
+      },
+      {
+        "id": "w4",
+        "group": "warning",
+        "text": "Lebih mudah bingung saat melakukan hal-hal yang biasa, misalnya pembayaran, mengatur dokumen, mengoperasikan proses yang familiar.",
+        "help": "Perubahan fungsi seperti ini secara klinis lebih signifikan daripada tidak bisa mengingat informasi lama."
+      },
+      {
+        "id": "w5",
+        "group": "warning",
+        "text": "Orang lain juga memperhatikan bahwa memori, penilaian, percakapan, atau efisiensi kerja Anda belakangan ini memburuk.",
+        "help": "Pengamatan orang sekitar sering menjadi petunjuk penting."
+      },
+      {
+        "id": "w6",
+        "group": "warning",
+        "text": "Situasi di atas sudah mulai memengaruhi pekerjaan, keuangan, pengobatan, navigasi saat bepergian, atau pengaturan sehari-hari.",
+        "help": "Jika ya, disarankan langsung berkonsultasi ke dokter untuk evaluasi."
+      },
+      {
+        "id": "r1",
+        "group": "risk",
+        "text": "Anda mengalami penurunan pendengaran, tinnitus parah, atau sering tidak bisa mendengar jelas tapi belum ditangani.",
+        "help": "Masalah pendengaran adalah salah satu faktor risiko yang dapat disesuaikan yang penting."
+      },
+      {
+        "id": "r2",
+        "group": "risk",
+        "text": "Anda mengalami penurunan penglihatan atau penyakit mata, dan saat ini koreksi atau pengobatannya tidak memadai.",
+        "help": "Masalah penglihatan yang tidak ditangani juga terkait dengan peningkatan risiko demensia."
+      },
+      {
+        "id": "r3",
+        "group": "risk",
+        "text": "Anda memiliki LDL tinggi, trigliserida tinggi, diabetes, hipertensi, atau penyakit kardiovaskular.",
+        "help": "Kontrol kardiometabolik sangat terkait dengan kesehatan otak."
+      },
+      {
+        "id": "r4",
+        "group": "risk",
+        "text": "Anda biasanya kurang berolahraga, misalnya sebagian besar hari tidak berjalan cepat terus-menerus selama 15 menit.",
+        "help": "Aktivitas teratur terkait dengan perlindungan kognitif."
+      },
+      {
+        "id": "r5",
+        "group": "risk",
+        "text": "Anda mengalami gangguan tidur jangka panjang, atau mungkin memiliki sleep apnea, kantuk berat di siang hari.",
+        "help": "Masalah tidur bisa menjadi faktor risiko sekaligus memengaruhi performa kognitif saat ini."
+      },
+      {
+        "id": "r6",
+        "group": "risk",
+        "text": "Anda mengalami tekanan tinggi jangka panjang, depresi, kecemasan, atau gangguan emosi yang jelas.",
+        "help": "Kondisi emosi dan performa kognitif sering saling memengaruhi."
+      },
+      {
+        "id": "r7",
+        "group": "risk",
+        "text": "Anda merokok, obesitas, atau pola makan jangka panjang cenderung tinggi lemak jenuh dan kurang sayur buah.",
+        "help": "Bisa mulai dari satu atau dua kebiasaan yang bisa dilakukan untuk penyesuaian."
+      },
+      {
+        "id": "r8",
+        "group": "risk",
+        "text": "Interaksi Anda dengan orang lain cukup sedikit, aktivitas sosial dalam setahun terakhir jelas tidak cukup.",
+        "help": "Kurangnya stimulasi sosial terkait dengan risiko penurunan kognitif."
+      },
+      {
+        "id": "r9",
+        "group": "risk",
+        "text": "Anda pernah mengalami cedera kepala, terutama pernah gegar otak atau mengalami gejala setelah benturan.",
+        "help": "Cedera kepala merupakan salah satu faktor risiko yang diketahui."
+      },
+      {
+        "id": "r10",
+        "group": "risk",
+        "text": "Obat yang saat ini Anda konsumsi, kekurangan B12, tiroid, atau masalah fisik lainnya mungkin menyebabkan penurunan memori atau perhatian.",
+        "help": "Kondisi seperti ini sering termasuk penyebab yang dapat dipulihkan, layak untuk disampaikan secara proaktif saat berkonsultasi ke dokter."
+      }
     ],
     "disclaimer": "⚠️ Disusun berdasarkan data medis publik: tanda peringatan dini mengacu pada Alzheimer's Association dan CDC; faktor risiko mengacu pada Lancet 2024; evaluasi klinis mengacu pada panduan MCI Mayo Clinic. Alat ini hanya untuk penilaian mandiri, <strong>tidak menggantikan diagnosis</strong>."
   },
-
   "footer": {
     "line1": "Tes Risiko Demensia · Untuk tujuan edukasi kesehatan, bukan diagnosis medis",
     "line2": "📡 Berlangganan kanal untuk mendapatkan lebih banyak konten kesehatan:"
   },
-
   "ui": {
     "loading": "Memuat…",
     "copied": "Tersalin",

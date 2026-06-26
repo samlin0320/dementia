@@ -1,8 +1,13 @@
 {
-  "meta": { "code": "da", "name": "Dansk" },
-
-  "topbar": { "logo": "🧠 Demens<span>risikovurdering</span>", "home": "← Testcenter", "channel": "📡 Kanal" },
-
+  "meta": {
+    "code": "da",
+    "name": "Dansk"
+  },
+  "topbar": {
+    "logo": "🧠 Demens<span>risikovurdering</span>",
+    "home": "← Testcenter",
+    "channel": "📡 Kanal"
+  },
   "hero": {
     "badge": "DEMENTIA RISK CHECK",
     "title": "Demensrisikovurdering",
@@ -10,7 +15,6 @@
     "src": "Kilde: Pao-chieh Health Talk 2026.05.23 · \"Bo-Yin\" Brian Tseng × Dr. Wen-Yi Tseng · Sammenfattet af NotebookLM",
     "disclaimer": "⚠️ Denne test er et sundhedsoplysende selvvurderingsværktøj og <strong>kan ikke erstatte en medicinsk diagnose</strong>. Ved bekymring bedes du henvende dig til en neurolog eller hukommelsesklinik. AD8-resultater er kun vejledende."
   },
-
   "tabs": {
     "ad8": "① AD8-screening",
     "selfcheck": "①-1 AD8-screening Avanceret",
@@ -22,7 +26,6 @@
     "src": "⑦ Kilder",
     "mustRead": "Skal læses"
   },
-
   "ad8": {
     "title": "AD8 – Screening for meget tidlig demens",
     "sub": "Tænk tilbage og sammenlign <strong>med tidligere (ændringer over de seneste år)</strong> – er følgende situationer \"ændret\"? Kan besvares af personen selv eller af et nærtstående familiemedlem.",
@@ -44,25 +47,66 @@
     "ok": "Ingen aktuelle bekymringer",
     "advice": "AD8 er et internationalt anerkendt screeningværktøj for meget tidlig demens. <strong>2 eller flere ændringer</strong> tyder på, at den kognitive funktion kan være påvirket, og det anbefales at søge læge snarest."
   },
-
   "risk": {
     "title": "The Lancets 14 modificerbare risikofaktorer",
     "sub": "I 2024 påpegede The Lancets kommission for demensforebyggelse, at eliminering af disse 14 risikofaktorer kan <strong>forebygge eller forsinke ca. 45 % af alle demenstilfælde</strong>. Markér de punkter, der \"gælder\" for dig.",
     "factors": [
-      ["Nedsat hørelse", "Risikofaktor nr. 1; langvarig brug af høretelefoner, nedsat hørelse uden høreapparat"],
-      ["Forhøjet LDL-kolesterol", "Tilføjet i 2024; deler førstepladsen i år"],
-      ["Utilstrækkelig uddannelse / kognitiv stimulering", "Manglende læring og mental udfordring i den senere del af livet"],
-      ["Ukorrigeret synsnedsættelse", "Tilføjet i 2024; ubehandlet grå stær mv."],
-      ["Hovedtraume", "Tidligere slag mod hovedet, hjernerystelse"],
-      ["Mangel på motion", "Utilstrækkelig daglig sammenhængende gang"],
-      ["Diabetes / metabolisk syndrom", "Dårlig kontrol af blodsukker og blodtryk"],
-      ["Rygning", "Aktiv rygning eller langvarig udsættelse for passiv rygning"],
-      ["Forhøjet blodtryk", "Ukontrolleret forhøjet blodtryk i midten af livet"],
-      ["Fedme", "For højt BMI, for stor livvidde"],
-      ["Overdrevent alkoholforbrug", "Langvarigt eller stort alkoholindtag"],
-      ["Depression / kronisk stress", "Depression, panikangst, kronisk højt stressniveau"],
-      ["Social isolation", "Bor alene, sjælden kontakt med andre"],
-      ["Luftforurening / miljøgifte", "Eksponering for PM2,5, tungmetaller, mikroplast"]
+      [
+        "Nedsat hørelse",
+        "Risikofaktor nr. 1; langvarig brug af høretelefoner, nedsat hørelse uden høreapparat"
+      ],
+      [
+        "Forhøjet LDL-kolesterol",
+        "Tilføjet i 2024; deler førstepladsen i år"
+      ],
+      [
+        "Utilstrækkelig uddannelse / kognitiv stimulering",
+        "Manglende læring og mental udfordring i den senere del af livet"
+      ],
+      [
+        "Ukorrigeret synsnedsættelse",
+        "Tilføjet i 2024; ubehandlet grå stær mv."
+      ],
+      [
+        "Hovedtraume",
+        "Tidligere slag mod hovedet, hjernerystelse"
+      ],
+      [
+        "Mangel på motion",
+        "Utilstrækkelig daglig sammenhængende gang"
+      ],
+      [
+        "Diabetes / metabolisk syndrom",
+        "Dårlig kontrol af blodsukker og blodtryk"
+      ],
+      [
+        "Rygning",
+        "Aktiv rygning eller langvarig udsættelse for passiv rygning"
+      ],
+      [
+        "Forhøjet blodtryk",
+        "Ukontrolleret forhøjet blodtryk i midten af livet"
+      ],
+      [
+        "Fedme",
+        "For højt BMI, for stor livvidde"
+      ],
+      [
+        "Overdrevent alkoholforbrug",
+        "Langvarigt eller stort alkoholindtag"
+      ],
+      [
+        "Depression / kronisk stress",
+        "Depression, panikangst, kronisk højt stressniveau"
+      ],
+      [
+        "Social isolation",
+        "Bor alene, sjælden kontakt med andre"
+      ],
+      [
+        "Luftforurening / miljøgifte",
+        "Eksponering for PM2,5, tungmetaller, mikroplast"
+      ]
     ],
     "btnYes": "Gælder",
     "btnNo": "Gælder ikke",
@@ -73,21 +117,50 @@
     "ok": "God kontrol",
     "advice": "Hver enkelt faktor kan forbedres. Jo flere der gælder, desto mere relevant er det at starte med \"③ Livsstilsanbefalinger\"."
   },
-
   "rx": {
     "title": "Ma Hsi-pings 10 livsstilsanbefalinger",
     "sub": "Baseret på The Lancets 14 faktorer, Harvards 43-årige opfølgningsstudie og finske multimodale livsstilsinterventionsstudier. <strong>Følges alle, kan demens forsinkes/forebygges med over 45 %</strong>. Markér de punkter, du \"allerede gør\".",
     "items": [
-      ["🧩 Mental stimulering", "Skak, bridge, lær noget nyt – aktiverer hjerneceller og hippocampus"],
-      ["🚶 Regelmæssig motion", "Mindst 15 minutters sammenhængende gang dagligt, akkumuleret 3.000–7.500 skridt (3.000 skridt forsinker 3 år, 7.500 skridt maksimalt 7 år)"],
-      ["🥗 Sund kost", "Middelhavskost: Meget fisk, mange grøntsager, gode olier (olivenolie)"],
-      ["🗣️ Social interaktion", "Hyppig kontakt og samtale med andre – undgå isolation"],
-      ["📖 Livslang læring", "Hold aldrig op med at lære; deltag i senioruniversitet, foreninger (især vigtigt for kvinder)"],
-      ["🚭 Stop rygning, reducer alkohol", "Rygestop, reducer alkoholindtag"],
-      ["☕ Moderat te og kaffe", "Kaffe forsinker 18 %, te 14 %, begge dele 34 %; kaffe maks. 3 kopper dagligt, undgå varme drikke i plastikkopper"],
-      ["💼 Gå sent på pension", "1 års senere pension reducerer demensrisiko med 3,2 %; pension ved 60 vs. 65 år – ca. 43 % forskel"],
-      ["😴 God søvn + vægtkontrol", "Dyb søvn \"renser hjernen\" for affaldsstoffer; vær forsigtig med sovemedicin, hold vægten"],
-      ["💕 Glædesdopamin", "Gør ting, der gør dig glad (motion, løb, forelskelse, følelsesmæssig kontakt) – en dopamineksplosion kan forebygge Parkinsons sygdom. Ma Hsi-pings far var forelsket fra 90 til 100 år og forblev mentalt klar"]
+      [
+        "🧩 Mental stimulering",
+        "Skak, bridge, lær noget nyt – aktiverer hjerneceller og hippocampus"
+      ],
+      [
+        "🚶 Regelmæssig motion",
+        "Mindst 15 minutters sammenhængende gang dagligt, akkumuleret 3.000–7.500 skridt (3.000 skridt forsinker 3 år, 7.500 skridt maksimalt 7 år)"
+      ],
+      [
+        "🥗 Sund kost",
+        "Middelhavskost: Meget fisk, mange grøntsager, gode olier (olivenolie)"
+      ],
+      [
+        "🗣️ Social interaktion",
+        "Hyppig kontakt og samtale med andre – undgå isolation"
+      ],
+      [
+        "📖 Livslang læring",
+        "Hold aldrig op med at lære; deltag i senioruniversitet, foreninger (især vigtigt for kvinder)"
+      ],
+      [
+        "🚭 Stop rygning, reducer alkohol",
+        "Rygestop, reducer alkoholindtag"
+      ],
+      [
+        "☕ Moderat te og kaffe",
+        "Kaffe forsinker 18 %, te 14 %, begge dele 34 %; kaffe maks. 3 kopper dagligt, undgå varme drikke i plastikkopper"
+      ],
+      [
+        "💼 Gå sent på pension",
+        "1 års senere pension reducerer demensrisiko med 3,2 %; pension ved 60 vs. 65 år – ca. 43 % forskel"
+      ],
+      [
+        "😴 God søvn + vægtkontrol",
+        "Dyb søvn \"renser hjernen\" for affaldsstoffer; vær forsigtig med sovemedicin, hold vægten"
+      ],
+      [
+        "💕 Glædesdopamin",
+        "Gør ting, der gør dig glad (motion, løb, forelskelse, følelsesmæssig kontakt) – en dopamineksplosion kan forebygge Parkinsons sygdom. Ma Hsi-pings far var forelsket fra 90 til 100 år og forblev mentalt klar"
+      ]
     ],
     "btnYes": "Gør jeg allerede",
     "btnNo": "Ikke endnu",
@@ -98,7 +171,6 @@
     "low": "Start i dag",
     "advice": "Jo mere du gør, desto stærkere er din hjernebeskyttelse. Det du endnu ikke gør, er dit næste skridt."
   },
-
   "result": {
     "title": "Testresultater",
     "sub": "Herunder er en sammenfatning af dine svar fra de tre foregående dele. Du kan eksportere alt samlet eller dele det med familie/læge.",
@@ -116,10 +188,9 @@
     "shareNote": "📡 Delt indhold inkluderer automatisk link til denne side og",
     "resultDisclaimer": "⚠️ Dette resultat er kun sundhedsoplysende og <strong>kan ikke erstatte en medicinsk diagnose</strong>. Ved 2 eller flere AD8-ændringer eller mange risikofaktorer bedes du kontakte en neurolog/hukommelsesklinik."
   },
-
   "edu": {
     "title": "Sundhedsoplysning · Fakta om demens du ikke kendte",
-    "sub": "Uddrag fra Ma Hsi-pings interview i Pao-chieh Health Talk og international forskning.",
+    "sub": "Uddrag fra Ma Hsi-pings \"Pao-chieh Health Talk\" og Dr. Wen-Yi Tsengs \"Bo-Yin\"-interviews samt international forskning fra The Lancet, Harvard og Finland.",
     "copyMd": "📋 Kopiér hele siden (Md)",
     "copyTxt": "📋 Kopiér hele siden",
     "cards": [
@@ -127,9 +198,18 @@
         "title": "⏳ Demensens tidslinje",
         "body": "Fra hjernen begynder at ophobe \"skadelige stoffer\" (β-amyloidprotein-aflejringer) til der opstår <strong>let demens, er der ca. 20 års inkubationstid</strong>. Disse 20 år er den gyldne periode for forebyggelse.",
         "stats": [
-          ["20 år", "Amyloidaflejring → let demens"],
-          ["3–10 år", "Let demens → død"],
-          ["60–80 %", "Demens er Alzheimers sygdom"]
+          [
+            "20 år",
+            "Amyloidaflejring → let demens"
+          ],
+          [
+            "3–10 år",
+            "Let demens → død"
+          ],
+          [
+            "60–80 %",
+            "Demens er Alzheimers sygdom"
+          ]
         ],
         "note": "Aldring → (hukommelsestab / let kognitiv svækkelse MCI, et mellemstadie mellem aldring og demens) → demens. Ma Hsi-ping beskriver sig selv som \"moderat hukommelsestab, alvorligt men endnu ikke demens\"."
       },
@@ -149,9 +229,21 @@
         "title": "👂 Tre store \"sanseadvarsler\" (de mest oversete)",
         "note": "Fordi øjne, ører og tænder er tættest på hjernen, påvirker deres forringelse kognition direkte.",
         "ranks": [
-          ["Nedsat hørelse", "Risikofaktor nr. 1", "Unge der lytter til høj musik i høretelefoner over lang tid er i højrisikogruppen."],
-          ["Dårligt syn", "Tilføjet i 2024", "Synsnerverne er tættest på hjernenerverne."],
-          ["Færre end 20 tænder", "", "Japansk forskning: Færre end 20 tænder øger demensrisikoen 5 gange. Japan lancerede \"8020-planen\" (20 tænder ved 80 år, proteser tæller med)."]
+          [
+            "Nedsat hørelse",
+            "Risikofaktor nr. 1",
+            "Unge der lytter til høj musik i høretelefoner over lang tid er i højrisikogruppen."
+          ],
+          [
+            "Dårligt syn",
+            "Tilføjet i 2024",
+            "Synsnerverne er tættest på hjernenerverne."
+          ],
+          [
+            "Færre end 20 tænder",
+            "",
+            "Japansk forskning: Færre end 20 tænder øger demensrisikoen 5 gange. Japan lancerede \"8020-planen\" (20 tænder ved 80 år, proteser tæller med)."
+          ]
         ]
       },
       {
@@ -173,9 +265,18 @@
       {
         "title": "📊 Taiwans demensbølge",
         "stats": [
-          ["2025", "Bliver et superaldret samfund i december (verdens hurtigste, kun 7 år)"],
-          ["8 % → fordobling", "Demensandel blandt 65+ fordobles inden for 10 år"],
-          ["Kvinder > Mænd", "Kvinder 9,35 % / Mænd 6,36 %"]
+          [
+            "2025",
+            "Bliver et superaldret samfund i december (verdens hurtigste, kun 7 år)"
+          ],
+          [
+            "8 % → fordobling",
+            "Demensandel blandt 65+ fordobles inden for 10 år"
+          ],
+          [
+            "Kvinder > Mænd",
+            "Kvinder 9,35 % / Mænd 6,36 %"
+          ]
         ],
         "note": "Kvinder har højere risiko, bl.a. fordi de har mindre social kontakt og færre læringsaktiviteter – derfor er \"livslang læring og social interaktion\" især vigtigt for kvinder."
       },
@@ -190,15 +291,96 @@
         "caseTitle": "🧓 Virkelig case: Ma Hsi-pings far",
         "caseBody": "Ma Hsi-pings far <strong>begyndte at være forelsket som 90-årig og fortsatte helt til han var 100</strong>. Forelskelsen udløste en dopamineksplosion i hans hjerne, han forblev mentalt klar, og demens blev effektivt forebygget.",
         "stats": [
-          ["90 → 100", "år · vedvarende forelskelse"],
-          ["Dopamin", "eksplosion · mentalt klar"],
-          ["0 demens", "Demens forebygget succesfuldt"]
+          [
+            "90 → 100",
+            "år · vedvarende forelskelse"
+          ],
+          [
+            "Dopamin",
+            "eksplosion · mentalt klar"
+          ],
+          [
+            "0 demens",
+            "Demens forebygget succesfuldt"
+          ]
         ],
         "note": "💡 For patienter med Parkinsons sygdom er det vigtigste at opmuntre dem til at finde og deltage i aktiviteter, der gør dem glade, og derved naturligt genopfylde hjernens dopaminmangel gennem positive følelser."
+      },
+      {
+        "title": "🧠 Dr. Tseng i \"Bo-Yin\": Hvilket stadie af demens-tsunamien er du i?",
+        "body": "<strong>Dr. Wen-Yi Tseng</strong> (professor ved NTU og grundlægger af AcroViz, der udviklede verdens første \"hjernealder\"-detektionsteknologi) forklarede i Brian Tsengs <strong>\"Bo-Yin\"</strong>: blandt personer over 65 er kun ca. <strong>25%</strong> virkelig raske og udvikler måske aldrig demens — de øvrige 75% befinder sig allerede et sted på demensspektret.",
+        "stats": [
+          [
+            "25%",
+            "Helt rask · stærk hjerne-resiliens"
+          ],
+          [
+            "50%",
+            "Subjektiv kognitiv svækkelse (SCD)"
+          ],
+          [
+            "18%",
+            "Let kognitiv svækkelse (MCI)"
+          ],
+          [
+            "8%",
+            "Diagnosticeret demens"
+          ]
+        ],
+        "note": "Blandt personer med SCD (normale testresultater, men en fornemmelse af at være langsommere end sidste år) vil i gennemsnit <strong>30% senere udvikle demens</strong>. 50＋18＋8＝76%, så tidlig opdagelse og tidlig handling er det, der virkelig betyder noget."
+      },
+      {
+        "title": "⚠️ Den \"afgrunds\"-fælde ved høj intelligens",
+        "body": "Kloge mennesker har rigelig <strong>kognitiv reserve</strong>, som lader dem fremstå skarpe, mens jævnaldrende allerede er blevet langsomme og fejlbehæftede. Men kognitiv reserve har en grænse — når hjernen ældes forbi et vendepunkt, sker der et <strong>\"styrt ud over afgrunden\"</strong>, og evnerne falder kraftigt på kort tid.",
+        "note": "💡 <strong>Høj intelligens er ingen frisedel.</strong> Du klarer dig måske godt i starten, men uden at have fat i nøglerne til at holde demens på afstand vil du alligevel bryde sammen til sidst."
+      },
+      {
+        "title": "🧬 Hvorfor får nogle aldrig demens? Gener 55% × livsstil 45%",
+        "body": "Blandt de 25%, der aldrig udvikler demens, skyldes <strong>55% generne og 45% livsstilen</strong>. Personer med gode gener har to medfødte beskyttelser: <strong>resiliens</strong> (kognitionen holder, selv når β-amyloid eller tau-proteiner skader hjerneceller) og <strong>modstandskraft</strong> (hjernen forbliver simpelthen ren, fri for disse giftige proteiner).",
+        "subTitle": "Negative faktorer, der kan ændres",
+        "subList": [
+          "<strong>Inflammation</strong>: kronisk inflammation fra utæt tarm, allergier osv.",
+          "<strong>Luft- og miljøgifte</strong>: PM2.5, mikroplast, tungmetaller som kviksølv",
+          "<strong>Stofskifte</strong>: de \"tre høje\" og skadelige stoffer i kosten"
+        ],
+        "note": "💡 Selv med den højrisiko-genvariant ApoE4/E4 giver god kontrol med livsstilsfaktorerne stadig en chance for at undgå demens."
+      },
+      {
+        "title": "🧪 Amyloid er ikke den eneste skyldige (hypotesen om flere årsager)",
+        "body": "Efter at monoklonale antistof-lægemidler fjernede amyloid, blev patienternes kognitive tilbagegang kun bremset med ca. <strong>30%</strong> — hvilket tyder på, at den amyloid-centrerede hypotese kan være ufuldstændig. Flere og flere mener, at demens opstår af en <strong>kombination af flere årsager</strong> (f.eks. Alzheimer-gener plus vaskulær demens samtidig), og at de giftige proteiner måske blot er \"tilskuere\", der opstår undervejs.",
+        "subTitle": "Forskellige demensformer ser meget forskellige ud",
+        "subList": [
+          "<strong>Alzheimers</strong>: primært hukommelsestab",
+          "<strong>Frontotemporal demens</strong>: første tegn er utydelig tale (f.eks. Bruce Willis)",
+          "<strong>Lewy body-demens</strong>: primært hallucinationer (f.eks. Robin Williams)"
+        ]
+      },
+      {
+        "title": "💪 Demens som \"type 3-diabetes\": hjernevidenskaben bag styrke- og konditionstræning",
+        "body": "Demens beskrives ofte som <strong>type 3-diabetes</strong> — hjernens <strong>insulinresistens</strong> er en vigtig årsag. Cellerne bliver ufølsomme over for insulin, blodsukkeret omsættes ikke, og hjernen tager skade.",
+        "subTitle": "Hvorfor motion beskytter hjernen",
+        "subList": [
+          "<strong>Styrketræning</strong>: jo mere muskel, jo mere sukker omsættes i muskelvævet, hvilket grundlæggende sænker insulinresistensen",
+          "<strong>Muskler er kroppens største endokrine organ</strong>: de udskiller myokiner som irisin og IL-6, der direkte beskytter hjernen",
+          "<strong>Konditionstræning</strong>: øger BDNF (brain-derived neurotrophic factor); studier bekræfter, at hippocampus vokser, og at der dannes nye neuroner efter motion"
+        ],
+        "note": "🗓️ Retningslinje: 2–3 gange om ugen, ca. 30 minutter hver gang, med protein før og efter og tilstrækkelig hvile — det er \"restitutionsreaktionen\" efter motionens belastning, der virkelig hjælper hjernen."
+      },
+      {
+        "title": "🛡️ Fem søjler i demensforebyggelse ＋ tidlige advarselstegn",
+        "subTitle": "Fem søjler i forebyggelsen",
+        "subList": [
+          "🏃 <strong>Styrke- ＋ konditionstræning</strong> sammen (øger myokiner, hæver BDNF, der nærer hippocampus)",
+          "😴 <strong>Søvn = hjernens \"affaldsudskillelsesfase\"</strong>: dyb søvn fjerner amyloid og tau-proteiner",
+          "🥗 <strong>Anti-inflammatorisk stofskiftekost</strong>: middelhavskost for at undgå inflammation og insulinresistens",
+          "🧩 <strong>Vedvarende kognitiv udfordring & socialt samvær</strong>: lær nyt, vær sammen med andre, opbyg kognitiv reserve",
+          "🧘 <strong>Positiv personlighed & stresshåndtering</strong>: neuroticisme og kronisk høj stress lader stresshormoner skade hjernen"
+        ],
+        "caseTitle": "🔍 Tidlig opdagelse: adfærdsændringer kommer ofte før hukommelsestab",
+        "caseBody": "Ud over glemsomhed kan <strong>pludselige ændringer i humør og personlighed</strong> (en tidligere mild person bliver irritabel; forsigtige pengevaner bliver impulsive), utydelig tale, tab af retningssans og manglende koncentration alle være tidlige tegn på forskellige typer demens. Tab af \"interesse/motivation\" i hjernens pandelap er også et advarselstegn på demens."
       }
     ]
   },
-
   "media": {
     "title": "Læringsressourcer · NotebookLM Studio",
     "sub": "Video, lyd, præsentationer, infografik, flashcards, mindmaps og transskriptioner – alt produceret af NotebookLM-notesbogen \"Omvælt din forståelse – Demens\".",
@@ -247,30 +429,151 @@
     "mmSub": "Den usynlige dræber: Guide til demens-risikofaktorer og tidlige tegn",
     "mmRoot": "Usynlig dræber · Demens-risikofaktorer og tidlige tegn",
     "mmBranches": [
-      { "icon": "🚨", "title": "Tidlige tegn", "leaves": ["Glemmer film man har set", "Kan ikke sige navneord (siger bare \"den der\")", "Kan ikke huske digte lært udenad", "Husker kun et lukket supermarked (\"Makro\")", "Genkender ikke bekendte", "180° personlighedsændring"] },
-      { "icon": "👂", "title": "Sanseadvarsler", "leaves": ["Nedsat hørelse (nr. 1)", "Synsnedsættelse", "Færre end 20 tænder (risiko ×5)"] },
-      { "icon": "🩸", "title": "Sygdom og stofskifte", "leaves": ["Forhøjet LDL-kolesterol", "Metabolisk syndrom / diabetes", "Hjerte-kar-sygdom", "B12- / lithiummangel"] },
-      { "icon": "😰", "title": "Følelser og medicin", "leaves": ["Depression / panikangst", "Kronisk stress", "For meget sovemedicin", "Generel anæstesi"] },
-      { "icon": "🏭", "title": "Miljøgifte", "leaves": ["Tungmetaller", "PM2,5 luftforurening", "Mikroplast"] },
-      { "icon": "⚠️", "title": "Andet", "leaves": ["Hovedtraume", "Genetisk disposition", "Social isolation", "Fedme"] },
-      { "icon": "💕", "title": "Dopamin og Parkinsons", "leaves": ["Dopaminmangel → Parkinsons", "Motion/løb stimulerer dopamin", "Forelskelse = dopamineksplosion", "Gør ting der gør dig glad", "Ma Hsi-pings far: Forelsket fra 90 til 100 – forebyggede demens"] }
+      {
+        "icon": "🚨",
+        "title": "Tidlige tegn",
+        "leaves": [
+          "Glemmer film man har set",
+          "Kan ikke sige navneord (siger bare \"den der\")",
+          "Kan ikke huske digte lært udenad",
+          "Husker kun et lukket supermarked (\"Makro\")",
+          "Genkender ikke bekendte",
+          "180° personlighedsændring"
+        ]
+      },
+      {
+        "icon": "👂",
+        "title": "Sanseadvarsler",
+        "leaves": [
+          "Nedsat hørelse (nr. 1)",
+          "Synsnedsættelse",
+          "Færre end 20 tænder (risiko ×5)"
+        ]
+      },
+      {
+        "icon": "🩸",
+        "title": "Sygdom og stofskifte",
+        "leaves": [
+          "Forhøjet LDL-kolesterol",
+          "Metabolisk syndrom / diabetes",
+          "Hjerte-kar-sygdom",
+          "B12- / lithiummangel"
+        ]
+      },
+      {
+        "icon": "😰",
+        "title": "Følelser og medicin",
+        "leaves": [
+          "Depression / panikangst",
+          "Kronisk stress",
+          "For meget sovemedicin",
+          "Generel anæstesi"
+        ]
+      },
+      {
+        "icon": "🏭",
+        "title": "Miljøgifte",
+        "leaves": [
+          "Tungmetaller",
+          "PM2,5 luftforurening",
+          "Mikroplast"
+        ]
+      },
+      {
+        "icon": "⚠️",
+        "title": "Andet",
+        "leaves": [
+          "Hovedtraume",
+          "Genetisk disposition",
+          "Social isolation",
+          "Fedme"
+        ]
+      },
+      {
+        "icon": "💕",
+        "title": "Dopamin og Parkinsons",
+        "leaves": [
+          "Dopaminmangel → Parkinsons",
+          "Motion/løb stimulerer dopamin",
+          "Forelskelse = dopamineksplosion",
+          "Gør ting der gør dig glad",
+          "Ma Hsi-pings far: Forelsket fra 90 til 100 – forebyggede demens"
+        ]
+      }
     ],
     "transcriptTitle": "📝 Transskription / Nøglepunkter",
     "transcriptCopy": "📋 Kopiér alt",
     "transcriptSub": "NotebookLM har organiseret interviewet i strukturerede nøglepunkter (medicinske data bevaret)",
     "transcriptToggle": "Udvid / Fold sammen transskription",
     "transcriptSections": [
-      { "title": "1. Taiwans aldringskrise og demensbølgen", "body": "Taiwan ældes hurtigst i verden: 1993 blev et aldrende samfund, 2018 et ældresamfund, og i slutningen af 2025 træder landet ind i et \"superældresamfund\" med over 20 % af befolkningen over 65 – kun 7 år fra ældresamfund til superældresamfund. Regeringen anslår, at den samlede befolkning kan halveres til 12 mio. i 2065. I dag har ca. 8 % af de over 60-årige demens, og det forventes at fordobles inden for ti år; kvinder (9,35 %) er mere berørte end mænd (6,36 %)." },
-      { "title": "2. Demensens tidslinje og de gyldne 20 års inkubationstid", "body": "Fra let demens til død er der ca. 3–10 år. Men fra hjernen begynder at ophobe \"β-amyloidprotein\" til der opstår let demens, er der en <strong>inkubationstid på op til 20 år</strong> – det er den gyldne periode til at forebygge, forsinke eller endda forhindre sygdommen. Hukommelsestab (MCI, let kognitiv svækkelse) er et mellemstadie mellem normal aldring og demens." },
-      { "title": "3. Tidlige advarselstegn: \"Hjerneblackout\"-fænomenet", "list": ["<strong>Korttidshukommelsen kan ikke fastholdes</strong>: Kan ikke huske en film set i biografen; kan ikke huske bogen læst før sengetid.", "<strong>Glemmer velkendte ord</strong>: Kender genstanden men kan ikke sige navnet (kan kun sige \"den der\" i stedet for \"æbletærte\"); husker kun et for længst lukket supermarked (\"Makro\").", "<strong>Langtidshukommelse og genkendelse svigter</strong>: Digte lært udenad kan pludselig ikke huskes; kan ikke huske bekendte navne og må bruge omveje for at bekræfte identiteten."] },
-      { "title": "4. Sanseadvarsler: Hørelse, syn og tænder", "list": ["<strong>Nedsat hørelse</strong>: The Lancet rangerer det som risikofaktor nr. 1 for demens. Langvarig brug af høretelefoner med høj musik er en høj risiko.", "<strong>Færre end 20 tænder</strong>: Japansk forskning viser, at demensrisikoen stiger mere end 5 gange; derfor \"8020-planen\" (inkl. proteser).", "<strong>Synssvækkelse</strong>: Synsnerverne ligger tæt på hjernenerverne, og synsnedsættelse er en vigtig risikofaktor."] },
-      { "title": "5. Daglige kontrollerbare usynlige dræbere", "list": ["<strong>Miljøgifte</strong>: Tungmetaller og PM2,5 kan trænge ind i hjernen; mikroplast kaldes en superdræber (papirkopper med varm kaffe, plastikposer med varm mad, flaskevand).", "<strong>Forhøjet LDL-kolesterol</strong>: Nyeste forskning sidestiller det med nedsat hørelse som nr. 1.", "<strong>Følelser og medicin</strong>: Kronisk stress, panik, depression, for meget sovemedicin og generel anæstesi skader alle hjerneceller.", "<strong>Mangel på mikronæringsstoffer</strong>: B12- og lithiummangel kan begge forårsage demens.", "<strong>Hovedtraume</strong>: Slag mod hovedet har dokumenterede tilfælde af kognitiv svækkelse."] },
-      { "title": "6. De 10 livsstilsinterventioner der vender skæbnen (kan forsinke/forebygge > 45 %)", "list": ["<strong>Livslang læring</strong>: Mangel på læring er gentagne gange udpeget som den 1./2. største risikofaktor.", "<strong>Sen pensionering</strong>: Hjerneceller begynder at skrumpe omkring 60-årsalderen; pensionering ved 60 giver ca. 43 % højere risiko end ved 65; hvert år senere pension reducerer demens med 3,2 %.", "<strong>Sammenhængende gang</strong>: 3.000 skridt dagligt forsinker 3 år, 7.500 skridt forsinker 7 år (øvre grænse), men hver gang skal man gå mindst 15 minutter i træk.", "<strong>Social interaktion</strong>: Ensomme ældres hjerner er langvarigt inaktive, og demensrisikoen er ekstremt høj.", "<strong>Te og kaffe</strong>: Kaffe forsinker 18 %, te 14 %, begge dele 34 %; kaffe maks. 3 kopper dagligt.", "<strong>Vedvarende mental stimulering</strong>: Skak, bridge, mahjong opretholder neuronernes aktivitet.", "<strong>Sund kost + vægtkontrol</strong>: Middelhavskost, gode olier (olivenolie), undgå fedme.", "<strong>Løs søvnproblemer</strong>: Dyb søvn aktiverer hjernens selvrensningsmekanisme.", "<strong>Stop rygning, reducer alkohol</strong>: Reducerer inflammation i hjernenerverne."] },
-      { "title": "7. Diagnostiske metoder og nye behandlinger", "list": ["<strong>Diagnostik</strong>: MRI / PET-scanning (ca. 60.000 NTD) → nyeste blodprøve (ca. 20.000 NTD, godkendt af amerikanske FDA) muliggør tidlig opdagelse.", "<strong>\"Hjernevask\"-mekanismen</strong>: Under dyb søvn skrumper hjernecellerne og skaber plads, så cerebrospinalvæsken kan skylle β-amyloidprotein ud; søvnløshed betyder, at afgiftningen svigter.", "<strong>Nye monoklonale antistof-lægemidler</strong>: Kan fjerne β-amyloidprotein; ét behandlingsforløb varer 12–18 måneder og koster ca. 1,5 mio. NTD; kun ca. 14 % er egnede (forebygger hjerneblødning/hjerneødem).", "<strong>National Brain Cleansing Formula No. 1</strong>: Udviklet af Taiwans National Research Institute of Chinese Medicine; dyreforsøg har bekræftet fjernelse af β-amyloidprotein; teknologioverførsel og ansøgning om lægemiddelgodkendelse er i gang."] },
-      { "title": "8. Sammenhængen mellem dopamin og Parkinsons sygdom", "body": "Parkinsons sygdom skyldes <strong>dopaminmangel</strong> i hjernen og kan føre til demenssymptomer. Ma Hsi-ping påpeger, at den bedste \"daglige recept\" er aktivt at deltage i ting, der gør én glad og udløser en \"dopamineksplosion\".", "list": ["<strong>Motion og løb</strong>: Stimulerer naturligt hjernens dopaminproduktion gennem fysisk aktivitet.", "<strong>Forelskelse og følelsesmæssig kontakt</strong>: At holde følelseslivet aktivt stimulerer hjernen effektivt. Ma Hsi-pings far begyndte at være forelsket som 90-årig og fortsatte til 100 – dopamineksplosionen holdt hans hjerne klar og forebyggede demens."], "conclusion": "Konklusion: Opmuntr patienter med Parkinsons sygdom til at finde og deltage i aktiviteter, der gør dem glade, og derved naturligt genopfylde hjernens dopaminmangel gennem positive følelser." }
+      {
+        "title": "1. Taiwans aldringskrise og demensbølgen",
+        "body": "Taiwan ældes hurtigst i verden: 1993 blev et aldrende samfund, 2018 et ældresamfund, og i slutningen af 2025 træder landet ind i et \"superældresamfund\" med over 20 % af befolkningen over 65 – kun 7 år fra ældresamfund til superældresamfund. Regeringen anslår, at den samlede befolkning kan halveres til 12 mio. i 2065. I dag har ca. 8 % af de over 60-årige demens, og det forventes at fordobles inden for ti år; kvinder (9,35 %) er mere berørte end mænd (6,36 %)."
+      },
+      {
+        "title": "2. Demensens tidslinje og de gyldne 20 års inkubationstid",
+        "body": "Fra let demens til død er der ca. 3–10 år. Men fra hjernen begynder at ophobe \"β-amyloidprotein\" til der opstår let demens, er der en <strong>inkubationstid på op til 20 år</strong> – det er den gyldne periode til at forebygge, forsinke eller endda forhindre sygdommen. Hukommelsestab (MCI, let kognitiv svækkelse) er et mellemstadie mellem normal aldring og demens."
+      },
+      {
+        "title": "3. Tidlige advarselstegn: \"Hjerneblackout\"-fænomenet",
+        "list": [
+          "<strong>Korttidshukommelsen kan ikke fastholdes</strong>: Kan ikke huske en film set i biografen; kan ikke huske bogen læst før sengetid.",
+          "<strong>Glemmer velkendte ord</strong>: Kender genstanden men kan ikke sige navnet (kan kun sige \"den der\" i stedet for \"æbletærte\"); husker kun et for længst lukket supermarked (\"Makro\").",
+          "<strong>Langtidshukommelse og genkendelse svigter</strong>: Digte lært udenad kan pludselig ikke huskes; kan ikke huske bekendte navne og må bruge omveje for at bekræfte identiteten."
+        ]
+      },
+      {
+        "title": "4. Sanseadvarsler: Hørelse, syn og tænder",
+        "list": [
+          "<strong>Nedsat hørelse</strong>: The Lancet rangerer det som risikofaktor nr. 1 for demens. Langvarig brug af høretelefoner med høj musik er en høj risiko.",
+          "<strong>Færre end 20 tænder</strong>: Japansk forskning viser, at demensrisikoen stiger mere end 5 gange; derfor \"8020-planen\" (inkl. proteser).",
+          "<strong>Synssvækkelse</strong>: Synsnerverne ligger tæt på hjernenerverne, og synsnedsættelse er en vigtig risikofaktor."
+        ]
+      },
+      {
+        "title": "5. Daglige kontrollerbare usynlige dræbere",
+        "list": [
+          "<strong>Miljøgifte</strong>: Tungmetaller og PM2,5 kan trænge ind i hjernen; mikroplast kaldes en superdræber (papirkopper med varm kaffe, plastikposer med varm mad, flaskevand).",
+          "<strong>Forhøjet LDL-kolesterol</strong>: Nyeste forskning sidestiller det med nedsat hørelse som nr. 1.",
+          "<strong>Følelser og medicin</strong>: Kronisk stress, panik, depression, for meget sovemedicin og generel anæstesi skader alle hjerneceller.",
+          "<strong>Mangel på mikronæringsstoffer</strong>: B12- og lithiummangel kan begge forårsage demens.",
+          "<strong>Hovedtraume</strong>: Slag mod hovedet har dokumenterede tilfælde af kognitiv svækkelse."
+        ]
+      },
+      {
+        "title": "6. De 10 livsstilsinterventioner der vender skæbnen (kan forsinke/forebygge > 45 %)",
+        "list": [
+          "<strong>Livslang læring</strong>: Mangel på læring er gentagne gange udpeget som den 1./2. største risikofaktor.",
+          "<strong>Sen pensionering</strong>: Hjerneceller begynder at skrumpe omkring 60-årsalderen; pensionering ved 60 giver ca. 43 % højere risiko end ved 65; hvert år senere pension reducerer demens med 3,2 %.",
+          "<strong>Sammenhængende gang</strong>: 3.000 skridt dagligt forsinker 3 år, 7.500 skridt forsinker 7 år (øvre grænse), men hver gang skal man gå mindst 15 minutter i træk.",
+          "<strong>Social interaktion</strong>: Ensomme ældres hjerner er langvarigt inaktive, og demensrisikoen er ekstremt høj.",
+          "<strong>Te og kaffe</strong>: Kaffe forsinker 18 %, te 14 %, begge dele 34 %; kaffe maks. 3 kopper dagligt.",
+          "<strong>Vedvarende mental stimulering</strong>: Skak, bridge, mahjong opretholder neuronernes aktivitet.",
+          "<strong>Sund kost + vægtkontrol</strong>: Middelhavskost, gode olier (olivenolie), undgå fedme.",
+          "<strong>Løs søvnproblemer</strong>: Dyb søvn aktiverer hjernens selvrensningsmekanisme.",
+          "<strong>Stop rygning, reducer alkohol</strong>: Reducerer inflammation i hjernenerverne."
+        ]
+      },
+      {
+        "title": "7. Diagnostiske metoder og nye behandlinger",
+        "list": [
+          "<strong>Diagnostik</strong>: MRI / PET-scanning (ca. 60.000 NTD) → nyeste blodprøve (ca. 20.000 NTD, godkendt af amerikanske FDA) muliggør tidlig opdagelse.",
+          "<strong>\"Hjernevask\"-mekanismen</strong>: Under dyb søvn skrumper hjernecellerne og skaber plads, så cerebrospinalvæsken kan skylle β-amyloidprotein ud; søvnløshed betyder, at afgiftningen svigter.",
+          "<strong>Nye monoklonale antistof-lægemidler</strong>: Kan fjerne β-amyloidprotein; ét behandlingsforløb varer 12–18 måneder og koster ca. 1,5 mio. NTD; kun ca. 14 % er egnede (forebygger hjerneblødning/hjerneødem).",
+          "<strong>National Brain Cleansing Formula No. 1</strong>: Udviklet af Taiwans National Research Institute of Chinese Medicine; dyreforsøg har bekræftet fjernelse af β-amyloidprotein; teknologioverførsel og ansøgning om lægemiddelgodkendelse er i gang."
+        ]
+      },
+      {
+        "title": "8. Sammenhængen mellem dopamin og Parkinsons sygdom",
+        "body": "Parkinsons sygdom skyldes <strong>dopaminmangel</strong> i hjernen og kan føre til demenssymptomer. Ma Hsi-ping påpeger, at den bedste \"daglige recept\" er aktivt at deltage i ting, der gør én glad og udløser en \"dopamineksplosion\".",
+        "list": [
+          "<strong>Motion og løb</strong>: Stimulerer naturligt hjernens dopaminproduktion gennem fysisk aktivitet.",
+          "<strong>Forelskelse og følelsesmæssig kontakt</strong>: At holde følelseslivet aktivt stimulerer hjernen effektivt. Ma Hsi-pings far begyndte at være forelsket som 90-årig og fortsatte til 100 – dopamineksplosionen holdt hans hjerne klar og forebyggede demens."
+        ],
+        "conclusion": "Konklusion: Opmuntr patienter med Parkinsons sygdom til at finde og deltage i aktiviteter, der gør dem glade, og derved naturligt genopfylde hjernens dopaminmangel gennem positive følelser."
+      }
     ]
   },
-
   "sources": {
     "title": "Kilder",
     "sub": "Hovedkildevideo samt al forskning, institutioner og referencer nævnt i videoen.",
@@ -281,20 +584,76 @@
     "mainNbSub": "Transskription og nøglepunkter (kræver login med autoriseret Google-konto)",
     "researchLabel": "🔬 Forskning og referencer nævnt i videoen",
     "items": [
-      ["🔬","The Lancet – Kommission for demensforebyggelse","Risikofaktorrapport: 2017: 9 faktorer → 2020: 12 faktorer → 2024: 14 faktorer; eliminering kan forebygge/forsinke ca. 45 % af demens"],
-      ["🇫🇮","Finlands FINGER multimodal livsstilsinterventionsstudie","Beviser at kost, motion, kognitiv træning, vaskulær risikostyring mv. kan forsinke kognitiv svækkelse"],
-      ["🎓","Harvard University × MIT 43-årigt opfølgningsstudie","Storstilet opfølgningsanalyse af sammenhængen mellem livsstilsvaner og demensrisiko"],
-      ["🇯🇵","Japans Ministerium for Sundhed og Velfærd","Færre end 20 tænder øger demensrisikoen mere end 5 gange; lancerede \"8020-planen\" og \"Grundloven om demens\""],
-      ["🇺🇸","Amerikanske FDA","Godkendte demens-\"blodprøvetest\"; godkendte nye monoklonale antistof-lægemidler der fjerner β-amyloidprotein"],
-      ["💉","Nye monoklonale antistof-lægemidler (lecanemab / donanemab-typen)","Fjerner β-amyloidprotein fra hjernen; behandlingsforløb 12–18 måneder, ca. 1,5 mio. NTD, ca. 14 % er egnede"],
-      ["🌿","Taiwans Ministry of Health and Welfare, National Research Institute of Chinese Medicine | \"National Brain Cleansing Formula No. 1\"","Videnskabelig kinesisk medicin; dyreforsøg har bekræftet fjernelse af β-amyloidprotein; teknologioverførsel og lægemiddelgodkendelse er i gang"],
-      ["🍵","Kaffe/te og demensforebyggelse – forskning","Kaffe forsinker 18 %, te 14 %, begge dele 34 %; anbefalet kaffe dagligt ≤ 3 kopper"],
-      ["🚶","Gangskridt-forskning","3.000 skridt dagligt forsinker 3 år … 7.500 skridt forsinker 7 år (øvre grænse), mindst 15 minutter ad gangen"],
-      ["💼","Pensionsalder-forskning","1 års senere pension reducerer demens med 3,2 %; pension ved 60 vs. 65 giver ca. 43 % højere risiko"],
-      ["🧪","Forskning i mikronæringsstoffer","Mangel på vitamin B12 og mikronæringsstoffet \"lithium (Li)\" er forbundet med demens"],
-      ["🏭","Forskning i miljøgifte","Sammenhæng mellem tungmetaller, PM2,5, mikroplast og demens"],
-      ["🩺","Kliniske lægers indsigt","Kliniske anbefalinger fra speciallæger, herunder vicedirektør Chen Chang-ming, En Chu Kong Hospital"],
-      ["💡","Charlie Munger","Reference til \"undgå fiasko\" – omvendt tænkning"]
+      [
+        "🔬",
+        "The Lancet – Kommission for demensforebyggelse",
+        "Risikofaktorrapport: 2017: 9 faktorer → 2020: 12 faktorer → 2024: 14 faktorer; eliminering kan forebygge/forsinke ca. 45 % af demens"
+      ],
+      [
+        "🇫🇮",
+        "Finlands FINGER multimodal livsstilsinterventionsstudie",
+        "Beviser at kost, motion, kognitiv træning, vaskulær risikostyring mv. kan forsinke kognitiv svækkelse"
+      ],
+      [
+        "🎓",
+        "Harvard University × MIT 43-årigt opfølgningsstudie",
+        "Storstilet opfølgningsanalyse af sammenhængen mellem livsstilsvaner og demensrisiko"
+      ],
+      [
+        "🇯🇵",
+        "Japans Ministerium for Sundhed og Velfærd",
+        "Færre end 20 tænder øger demensrisikoen mere end 5 gange; lancerede \"8020-planen\" og \"Grundloven om demens\""
+      ],
+      [
+        "🇺🇸",
+        "Amerikanske FDA",
+        "Godkendte demens-\"blodprøvetest\"; godkendte nye monoklonale antistof-lægemidler der fjerner β-amyloidprotein"
+      ],
+      [
+        "💉",
+        "Nye monoklonale antistof-lægemidler (lecanemab / donanemab-typen)",
+        "Fjerner β-amyloidprotein fra hjernen; behandlingsforløb 12–18 måneder, ca. 1,5 mio. NTD, ca. 14 % er egnede"
+      ],
+      [
+        "🌿",
+        "Taiwans Ministry of Health and Welfare, National Research Institute of Chinese Medicine | \"National Brain Cleansing Formula No. 1\"",
+        "Videnskabelig kinesisk medicin; dyreforsøg har bekræftet fjernelse af β-amyloidprotein; teknologioverførsel og lægemiddelgodkendelse er i gang"
+      ],
+      [
+        "🍵",
+        "Kaffe/te og demensforebyggelse – forskning",
+        "Kaffe forsinker 18 %, te 14 %, begge dele 34 %; anbefalet kaffe dagligt ≤ 3 kopper"
+      ],
+      [
+        "🚶",
+        "Gangskridt-forskning",
+        "3.000 skridt dagligt forsinker 3 år … 7.500 skridt forsinker 7 år (øvre grænse), mindst 15 minutter ad gangen"
+      ],
+      [
+        "💼",
+        "Pensionsalder-forskning",
+        "1 års senere pension reducerer demens med 3,2 %; pension ved 60 vs. 65 giver ca. 43 % højere risiko"
+      ],
+      [
+        "🧪",
+        "Forskning i mikronæringsstoffer",
+        "Mangel på vitamin B12 og mikronæringsstoffet \"lithium (Li)\" er forbundet med demens"
+      ],
+      [
+        "🏭",
+        "Forskning i miljøgifte",
+        "Sammenhæng mellem tungmetaller, PM2,5, mikroplast og demens"
+      ],
+      [
+        "🩺",
+        "Kliniske lægers indsigt",
+        "Kliniske anbefalinger fra speciallæger, herunder vicedirektør Chen Chang-ming, En Chu Kong Hospital"
+      ],
+      [
+        "💡",
+        "Charlie Munger",
+        "Reference til \"undgå fiasko\" – omvendt tænkning"
+      ]
     ],
     "casesLabel": "👤 Demenstilfælde nævnt i videoen",
     "casesBody": "Offentlige personers tilfælde nævnt i videoen som illustration: Reagan (tidligere amerikansk præsident), Bruce Willis (frontotemporal demens), Lin Fang-yuh (tidligere direktør for National Taiwan University Hospital), Ma Ying-jeou, Lu Keng (erfaren journalist) m.fl.",
@@ -303,7 +662,6 @@
     "backHome": "← Tilbage til testcenter",
     "note": "※ Videoen er et talkshow, og nogle forskningsdetaljer er sammenfattet fra interviewindholdet; formelle medicinske beslutninger bør baseres på originale tidsskrifter og lægediagnoser."
   },
-
   "selfcheck": {
     "title": "AD8-screening Avanceret",
     "sub": "Adskiller \"symptomadvarsler\" og \"risikofaktorer\" for mere præcis vurdering end en enkelt samlet score. Vælg \"Ja\" hvis det passer, \"Nej\" hvis ikke.",
@@ -332,31 +690,109 @@
     "bandHigh": "🔴 9–16 point: Yderligere vurdering anbefales",
     "bandHighDesc": "Bestil en formel vurdering snarest, især hvis antallet af symptomadvarsler er højt.",
     "questions": [
-      { "id": "w1", "group": "warning", "text": "Du glemmer for nylig ofte ting, der lige er sket, f.eks. noget du lige har læst eller sagt, og det er tydeligt værre end før.", "help": "Det vigtige er, at det \"for nylig er blevet tydeligt\" og gentagne gange forekommer." },
-      { "id": "w2", "group": "warning", "text": "Det sker oftere end før, at du ikke kan finde ord eller navngive velkendte genstande.", "help": "At glemme et ord nu og da er normalt; det er bekymrende, hvis det bliver hyppigere og påvirker samtaler." },
-      { "id": "w3", "group": "warning", "text": "Når du ser bekendte, kan du ofte ikke huske deres navne, eller du bliver forvirret over velkendte ansigter og relationer.", "help": "Et midlertidigt ordtab er ikke nødvendigvis unormalt; det afgørende er, om det tiltager og påvirker interaktioner." },
-      { "id": "w4", "group": "warning", "text": "Du bliver lettere forvirret, når du udfører velkendte opgaver, f.eks. betaling, arkivering eller betjening af velkendte processer.", "help": "Denne type funktionsændring har større klinisk betydning end at glemme gamle oplysninger." },
-      { "id": "w5", "group": "warning", "text": "Andre har også bemærket, at din hukommelse, dømmekraft, samtaleevne eller effektivitet er blevet dårligere for nylig.", "help": "Andres observationer er ofte et vigtigt fingerpeg." },
-      { "id": "w6", "group": "warning", "text": "Ovenstående situationer er begyndt at påvirke dit arbejde, økonomi, medicinering, navigation eller daglig planlægning.", "help": "Hvis ja, anbefales det at søge lægelig vurdering med det samme." },
-      { "id": "r1", "group": "risk", "text": "Du har nedsat hørelse, alvorlig tinnitus, eller du hører ofte dårligt uden at have fået det behandlet.", "help": "Høreproblemer er en af de vigtigste modificerbare risikofaktorer." },
-      { "id": "r2", "group": "risk", "text": "Du har synsforringelse eller øjensygdomme, og den nuværende korrektion eller behandling er utilstrækkelig.", "help": "Ubehandlede synsproblemer er også forbundet med øget demensrisiko." },
-      { "id": "r3", "group": "risk", "text": "Du har forhøjet LDL, forhøjede triglycerider, diabetes, forhøjet blodtryk eller hjerte-kar-sygdom.", "help": "Kardiometabolisk kontrol er tæt forbundet med hjernens sundhed." },
-      { "id": "r4", "group": "risk", "text": "Du motionerer for lidt, f.eks. går du de fleste dage ikke sammenhængende i rask gang i mindst 15 minutter.", "help": "Regelmæssig fysisk aktivitet er forbundet med kognitiv beskyttelse." },
-      { "id": "r5", "group": "risk", "text": "Du sover dårligt over længere tid, eller du kan have søvnapnø eller udtalt træthed om dagen.", "help": "Søvnproblemer kan både være en risikofaktor og påvirke den aktuelle kognitive præstation." },
-      { "id": "r6", "group": "risk", "text": "Du har langvarigt oplevet højt stressniveau, depression, angst eller tydelige følelsesmæssige problemer.", "help": "Følelsesmæssig tilstand og kognitiv præstation påvirker ofte hinanden." },
-      { "id": "r7", "group": "risk", "text": "Du ryger, er overvægtig, eller din kost er langvarigt præget af mættet fedt og få grøntsager og frugter.", "help": "Start med en eller to vaner, der kan ændres." },
-      { "id": "r8", "group": "risk", "text": "Du har lidt social kontakt, og dine sociale aktiviteter det seneste år har været klart utilstrækkelige.", "help": "Utilstrækkelig social stimulering er forbundet med risiko for kognitiv svækkelse." },
-      { "id": "r9", "group": "risk", "text": "Du har haft hovedtraumer, især hjernerystelse eller symptomer efter et slag.", "help": "Hovedtraumer er en kendt risikofaktor." },
-      { "id": "r10", "group": "risk", "text": "Din nuværende medicin, B12-mangel, skjoldbruskkirtlen eller andre fysiske problemer kan forårsage nedsat hukommelse eller opmærksomhed.", "help": "Disse tilstande er ofte reversible årsager, som er værd at nævne ved lægebesøg." }
+      {
+        "id": "w1",
+        "group": "warning",
+        "text": "Du glemmer for nylig ofte ting, der lige er sket, f.eks. noget du lige har læst eller sagt, og det er tydeligt værre end før.",
+        "help": "Det vigtige er, at det \"for nylig er blevet tydeligt\" og gentagne gange forekommer."
+      },
+      {
+        "id": "w2",
+        "group": "warning",
+        "text": "Det sker oftere end før, at du ikke kan finde ord eller navngive velkendte genstande.",
+        "help": "At glemme et ord nu og da er normalt; det er bekymrende, hvis det bliver hyppigere og påvirker samtaler."
+      },
+      {
+        "id": "w3",
+        "group": "warning",
+        "text": "Når du ser bekendte, kan du ofte ikke huske deres navne, eller du bliver forvirret over velkendte ansigter og relationer.",
+        "help": "Et midlertidigt ordtab er ikke nødvendigvis unormalt; det afgørende er, om det tiltager og påvirker interaktioner."
+      },
+      {
+        "id": "w4",
+        "group": "warning",
+        "text": "Du bliver lettere forvirret, når du udfører velkendte opgaver, f.eks. betaling, arkivering eller betjening af velkendte processer.",
+        "help": "Denne type funktionsændring har større klinisk betydning end at glemme gamle oplysninger."
+      },
+      {
+        "id": "w5",
+        "group": "warning",
+        "text": "Andre har også bemærket, at din hukommelse, dømmekraft, samtaleevne eller effektivitet er blevet dårligere for nylig.",
+        "help": "Andres observationer er ofte et vigtigt fingerpeg."
+      },
+      {
+        "id": "w6",
+        "group": "warning",
+        "text": "Ovenstående situationer er begyndt at påvirke dit arbejde, økonomi, medicinering, navigation eller daglig planlægning.",
+        "help": "Hvis ja, anbefales det at søge lægelig vurdering med det samme."
+      },
+      {
+        "id": "r1",
+        "group": "risk",
+        "text": "Du har nedsat hørelse, alvorlig tinnitus, eller du hører ofte dårligt uden at have fået det behandlet.",
+        "help": "Høreproblemer er en af de vigtigste modificerbare risikofaktorer."
+      },
+      {
+        "id": "r2",
+        "group": "risk",
+        "text": "Du har synsforringelse eller øjensygdomme, og den nuværende korrektion eller behandling er utilstrækkelig.",
+        "help": "Ubehandlede synsproblemer er også forbundet med øget demensrisiko."
+      },
+      {
+        "id": "r3",
+        "group": "risk",
+        "text": "Du har forhøjet LDL, forhøjede triglycerider, diabetes, forhøjet blodtryk eller hjerte-kar-sygdom.",
+        "help": "Kardiometabolisk kontrol er tæt forbundet med hjernens sundhed."
+      },
+      {
+        "id": "r4",
+        "group": "risk",
+        "text": "Du motionerer for lidt, f.eks. går du de fleste dage ikke sammenhængende i rask gang i mindst 15 minutter.",
+        "help": "Regelmæssig fysisk aktivitet er forbundet med kognitiv beskyttelse."
+      },
+      {
+        "id": "r5",
+        "group": "risk",
+        "text": "Du sover dårligt over længere tid, eller du kan have søvnapnø eller udtalt træthed om dagen.",
+        "help": "Søvnproblemer kan både være en risikofaktor og påvirke den aktuelle kognitive præstation."
+      },
+      {
+        "id": "r6",
+        "group": "risk",
+        "text": "Du har langvarigt oplevet højt stressniveau, depression, angst eller tydelige følelsesmæssige problemer.",
+        "help": "Følelsesmæssig tilstand og kognitiv præstation påvirker ofte hinanden."
+      },
+      {
+        "id": "r7",
+        "group": "risk",
+        "text": "Du ryger, er overvægtig, eller din kost er langvarigt præget af mættet fedt og få grøntsager og frugter.",
+        "help": "Start med en eller to vaner, der kan ændres."
+      },
+      {
+        "id": "r8",
+        "group": "risk",
+        "text": "Du har lidt social kontakt, og dine sociale aktiviteter det seneste år har været klart utilstrækkelige.",
+        "help": "Utilstrækkelig social stimulering er forbundet med risiko for kognitiv svækkelse."
+      },
+      {
+        "id": "r9",
+        "group": "risk",
+        "text": "Du har haft hovedtraumer, især hjernerystelse eller symptomer efter et slag.",
+        "help": "Hovedtraumer er en kendt risikofaktor."
+      },
+      {
+        "id": "r10",
+        "group": "risk",
+        "text": "Din nuværende medicin, B12-mangel, skjoldbruskkirtlen eller andre fysiske problemer kan forårsage nedsat hukommelse eller opmærksomhed.",
+        "help": "Disse tilstande er ofte reversible årsager, som er værd at nævne ved lægebesøg."
+      }
     ],
     "disclaimer": "⚠️ Baseret på offentligt tilgængelig medicinsk litteratur: Tidlige advarselstegn refererer til Alzheimer's Association og CDC; risikofaktorer refererer til Lancet 2024; klinisk vurdering refererer til Mayo Clinic MCI-retningslinjer. Dette værktøj er kun til selvvurdering og <strong>erstatter ikke en diagnose</strong>."
   },
-
   "footer": {
     "line1": "Demensrisikovurdering · Sundhedsoplysning, ikke medicinsk diagnose",
     "line2": "📡 Abonnér på kanalen for mere sundhedsindhold:"
   },
-
   "ui": {
     "loading": "Indlæser…",
     "copied": "Kopieret",
