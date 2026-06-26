@@ -231,14 +231,24 @@
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
   /* ── MEDIA / LEARNING RESOURCES ── */
-  .media-card {
+  .media-card, .media-card2 {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 16px; padding: 20px; margin-bottom: 20px;
   }
-  .media-card > h3 {
+  .media-card > h3, .media-card2 > h3 {
     font-size: 1.12rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; color: var(--text);
   }
-  .media-card .media-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 14px; }
+  .media-card .media-sub, .media-card2 .media-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 14px; }
+  .media-card2 h4 { font-size: 0.92rem; color: var(--text); }
+  /* AI 影片摘要收折式 */
+  .media-card.mc-collapse { padding: 0; }
+  .media-card.mc-collapse > summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px 20px; cursor: pointer; list-style: none; }
+  .media-card.mc-collapse > summary::-webkit-details-marker { display: none; }
+  .media-card.mc-collapse > summary h3 { margin: 0; font-size: 1.12rem; display: flex; align-items: center; gap: 8px; color: var(--text); }
+  .media-card.mc-collapse .mc-arrow { color: var(--accent); font-size: 0.8rem; transition: transform 0.25s; flex-shrink: 0; }
+  .media-card.mc-collapse[open] > summary { border-bottom: 1px solid var(--border); }
+  .media-card.mc-collapse[open] .mc-arrow { transform: rotate(90deg); }
+  .media-card.mc-collapse .mc-body { padding: 18px 20px; }
   .video-wrap { position: relative; padding-top: 56.25%; border-radius: 12px; overflow: hidden; background: #000; }
   .video-wrap iframe, .video-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
   video.local, audio.local { width: 100%; border-radius: 12px; background: #000; }
@@ -606,10 +616,10 @@
         </details>
       </div>
 
-      <!-- 來源影片 2：曾博恩 × 鄭文意 -->
+      <!-- 來源影片 2：曾博恩 × 曾文毅 -->
       <div class="media-card">
         <h3>🎬 來源影片 ②</h3>
-        <div class="media-sub">鄭文意博士 × 曾博恩《博音》— 腦霧、失智與AI：大腦的未來</div>
+        <div class="media-sub">曾文毅博士 × 曾博恩《博音》— 腦霧、失智與AI：大腦的未來</div>
         <div class="video-wrap">
           <iframe src="https://www.youtube.com/embed/NdENe_euGVU" title="腦霧、失智與AI：大腦的未來" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
@@ -619,7 +629,7 @@
             <div class="transcript-copy-bar"><button class="transcript-copy-btn" onclick="copyTranscript('transcript-toggle-2')">📋 複製全文</button></div>
             <div class="transcript-meta">
               <strong>腦霧、失智與AI：大腦的未來</strong><br>
-              主講者：鄭文意博士（上頂影像科技創辦人）<br>
+              主講者：曾文毅博士（上頂醫學影像／AcroViz 創辦人、台大教授）<br>
               頻道：曾博恩<br>
               <a href="https://www.youtube.com/watch?v=NdENe_euGVU" target="_blank">▶ YouTube 原始連結</a>　·　<a href="https://tinyurl.com/2559cnj2" target="_blank">短網址</a>
             </div>
@@ -631,7 +641,7 @@
 
             <div class="transcript-section">
               <h5>🎙️ 神秘來賓：親生父親</h5>
-              <p>失智海嘯席捲全球，失智不只是老人的事，每個人都逃不掉。你的父母、長輩甚至自己都可能正在走向這條路，只是還沒發現而已。失智的原因到底是什麼？能提早預防嗎？今天的嘉賓正是台灣預防失智、逆轉腦年齡的專家，也是研發全世界第一個腦齡檢測技術的上頂影像科技的創辦人鄭文意博士。</p>
+              <p>失智海嘯席捲全球，失智不只是老人的事，每個人都逃不掉。你的父母、長輩甚至自己都可能正在走向這條路，只是還沒發現而已。失智的原因到底是什麼？能提早預防嗎？今天的嘉賓正是台灣預防失智、逆轉腦年齡的專家，也是研發全世界第一個腦齡檢測技術的上頂醫學影像（AcroViz）創辦人曾文毅博士。</p>
             </div>
 
             <div class="transcript-section">
@@ -777,16 +787,35 @@
         </div>
       </details>
 
-      <!-- NotebookLM 影片摘要 -->
-      <div class="media-card">
-        <h3>🎞️ AI 影片摘要</h3>
-        <div class="media-sub">神經醫學藍圖：解碼馬西屏的失憶之戰（NotebookLM 生成）</div>
-        <video class="local" controls preload="metadata" playsinline>
-          <source src="assets/video-overview.mp4" type="video/mp4">
-          您的瀏覽器不支援影片播放。
-        </video>
-        <div class="dl-row">
-          <a class="dl-btn" href="assets/video-overview.mp4" download>⬇️ 下載影片 (MP4)</a>
+      <!-- NotebookLM 影片摘要（收折式）-->
+      <details class="media-card mc-collapse">
+        <summary><h3>🎞️ AI 影片摘要</h3><span class="mc-arrow">▶</span></summary>
+        <div class="mc-body">
+          <div class="media-sub">神經醫學藍圖：解碼馬西屏的失憶之戰（NotebookLM 生成）</div>
+          <video class="local" controls preload="metadata" playsinline>
+            <source src="assets/video-overview.mp4" type="video/mp4">
+            您的瀏覽器不支援影片播放。
+          </video>
+          <div class="dl-row">
+            <a class="dl-btn" href="assets/video-overview.mp4" download>⬇️ 下載影片 (MP4)</a>
+          </div>
+        </div>
+      </details>
+
+      <!-- NotebookLM AI 影片（YouTube · 不計入 .media-card 索引）-->
+      <div class="media-card2">
+        <h3>🎬 更多 AI 影片（NotebookLM 生成）</h3>
+        <div class="media-sub">由「顛覆你的理解·失智症」筆記本生成的 AI 導讀影片</div>
+        <h4 style="margin:8px 0 8px;">① 大腦健康存摺：從迷思到神經韌性</h4>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/wLOqPhDra9U" title="大腦健康存摺：從迷思到神經韌性" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h4 style="margin:18px 0 8px;">② 大腦防禦工事：解碼 20 年保衛戰</h4>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/LcwZeN_2rLo" title="大腦防禦工事：解碼20年保衛戰" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="dl-row" style="margin-top:14px;">
+          <a class="dl-btn" href="https://youtube.com/playlist?list=PLbwX_iJL-VAhXVwNXeyAgCLa0Nr6dCSFR" target="_blank">▶ 更多 AI 影片 · 完整播放清單（6 部）</a>
         </div>
       </div>
 
@@ -852,6 +881,16 @@
         <h4 style="font-size:0.92rem;margin:18px 0 8px;">② 失智症對抗自救指南</h4>
         <img class="infographic-img" src="assets/infographic-selfhelp.png" alt="失智症對抗自救指南" loading="lazy">
         <div class="dl-row"><a class="dl-btn" href="assets/infographic-selfhelp.png" download>⬇️ 下載原圖</a></div>
+        <div class="info-item">
+          <h4 style="font-size:0.92rem;margin:18px 0 8px;">③ 破解失智迷思：從預防到逆轉腦年齡的科學指南</h4>
+          <img class="infographic-img" src="assets/infographic-myths.png" alt="破解失智迷思：從預防到逆轉腦年齡的科學指南" loading="lazy" onerror="this.closest('.info-item').style.display='none'">
+          <div class="dl-row"><a class="dl-btn" href="assets/infographic-myths.png" download>⬇️ 下載原圖</a></div>
+        </div>
+        <div class="info-item">
+          <h4 style="font-size:0.92rem;margin:18px 0 8px;">④ 大腦的微量守護神：鋰元素與阿茲海默症預防指南</h4>
+          <img class="infographic-img" src="assets/infographic-lithium-guardian.png" alt="大腦的微量守護神：鋰元素與阿茲海默症預防指南" loading="lazy" onerror="this.closest('.info-item').style.display='none'">
+          <div class="dl-row"><a class="dl-btn" href="assets/infographic-lithium-guardian.png" download>⬇️ 下載原圖</a></div>
+        </div>
       </div>
 
       <!-- 互動字卡 -->
@@ -2062,7 +2101,7 @@ load();
 
   /* ── setLang ── */
   function setLang(code){
-    fetch('assets/i18n/'+code+'.json').then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+    fetch('assets/i18n/'+code+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
       window.I18N=d; currentLang=code;
       document.querySelectorAll('.global-lang').forEach(function(b){b.classList.toggle('on',b.dataset.lang===code);});
       document.querySelectorAll('.mob-lang-opt').forEach(function(b){b.classList.toggle('on',b.dataset.lang===code);});
@@ -2098,7 +2137,7 @@ load();
     });
   })();
 
-  fetch('assets/i18n/zh-Hant.json').then(function(r){return r.json();}).then(function(d){
+  fetch('assets/i18n/zh-Hant.json',{cache:'no-cache'}).then(function(r){return r.json();}).then(function(d){
     window.I18N=d;
     renderEdu(); renderMM(); renderTX(); renderSRC();
   }).catch(function(e){console.error('Initial i18n:',e);});
