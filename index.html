@@ -221,6 +221,8 @@
   .guide-box .guide-tip strong { color: var(--accent); }
 
   footer { text-align: center; padding: 30px 16px; color: var(--muted); font-size: 0.82rem; border-top: 1px solid var(--border); line-height: 1.8; }
+  .view-counter { text-align: center; padding: 0 16px 26px; color: var(--muted); font-size: 0.8rem; }
+  .view-counter b { color: var(--accent); font-variant-numeric: tabular-nums; font-weight: 700; }
   footer a { text-decoration: none; }
 
   .toast {
@@ -1133,6 +1135,7 @@
     失智症風險檢測　·　衛教用途，非醫療診斷　·　© <span id="y"></span><br>
     📡 訂閱頻道取得更多健康內容：<a href="https://t.me/sam00may" target="_blank">t.me/sam00may</a>
   </footer>
+  <div id="view-counter" class="view-counter" hidden></div>
 
   <div class="toast" id="toast"></div>
   <div class="lightbox" id="lightbox"><span class="close" id="lb-close">×</span><img id="lb-img" src="" alt=""></div>
@@ -2097,6 +2100,7 @@ load();
     if(footer&&L.footer) footer.innerHTML=L.footer.line1+'　·　© <span id="y">'+new Date().getFullYear()+'</span><br>'+L.footer.line2+' <a href="https://t.me/sam00may" target="_blank">t.me/sam00may</a>';
     var audioBtn=document.querySelector('#ts-langbar .ts-lang[data-lang="'+currentLang+'"]');
     if(audioBtn&&!audioBtn.classList.contains('on')) audioBtn.click();
+    renderViewCounter();
   }
 
   /* ── setLang ── */
@@ -2141,6 +2145,27 @@ load();
     window.I18N=d;
     renderEdu(); renderMM(); renderTX(); renderSRC();
   }).catch(function(e){console.error('Initial i18n:',e);});
+
+  /* ── 瀏覽次數計數器（counterapi.dev，免註冊；同一次造訪只計一次；服務失敗則不顯示）── */
+  var PV_LABELS={'zh-Hant':['累計瀏覽','次'],'zh-Hans':['累计浏览','次'],'en':['Total views',''],'da':['Visninger i alt',''],'id':['Total kunjungan',''],'th':['ยอดเข้าชมรวม','ครั้ง']};
+  var pvCount=null;
+  function renderViewCounter(){
+    var el=document.getElementById('view-counter');
+    if(!el||pvCount==null) return;
+    var lab=PV_LABELS[currentLang]||PV_LABELS['zh-Hant'];
+    el.innerHTML='👁️ '+lab[0]+' <b>'+Number(pvCount).toLocaleString()+'</b>'+(lab[1]?' '+lab[1]:'');
+    el.removeAttribute('hidden');
+  }
+  (function(){
+    var base='https://api.counterapi.dev/v1/dementia-3minstest/pageviews/';
+    var counted=false; try{counted=sessionStorage.getItem('pv_counted')==='1';}catch(e){}
+    fetch(counted?base:base+'up').then(function(r){return r.json();}).then(function(d){
+      if(d&&typeof d.count==='number'){
+        pvCount=d.count; renderViewCounter();
+        try{ if(!counted) sessionStorage.setItem('pv_counted','1'); }catch(e){}
+      }
+    }).catch(function(){ /* 服務不可用 → 計數器保持隱藏，不影響頁面 */ });
+  })();
 })();
 </script>
 </body>
