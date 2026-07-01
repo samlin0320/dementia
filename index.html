@@ -2157,23 +2157,14 @@ load();
     el.removeAttribute('hidden');
   }
   (function(){
-    var SELF='https://counter.3minstest.com/';                                   // 自架（NAS）— 主要
-    var FALLBACK='https://api.counterapi.dev/v1/dementia-3minstest/pageviews/';   // 備援，自架不可用時才用
+    var base='https://api.counterapi.dev/v1/dementia-3minstest/pageviews/';
     var counted=false; try{counted=sessionStorage.getItem('pv_counted')==='1';}catch(e){}
-    var suffix=counted?'':'up';
-    function apply(d){
+    fetch(counted?base:base+'up').then(function(r){return r.json();}).then(function(d){
       if(d&&typeof d.count==='number'){
         pvCount=d.count; renderViewCounter();
         try{ if(!counted) sessionStorage.setItem('pv_counted','1'); }catch(e){}
-        return true;
       }
-      throw 0;
-    }
-    fetch(SELF+suffix).then(function(r){return r.json();}).then(apply).catch(function(){
-      fetch(FALLBACK+suffix).then(function(r){return r.json();}).then(apply).catch(function(){
-        /* 兩者皆不可用 → 計數器保持隱藏，不影響頁面 */
-      });
-    });
+    }).catch(function(){ /* 服務不可用 → 計數器保持隱藏，不影響頁面 */ });
   })();
 })();
 </script>
